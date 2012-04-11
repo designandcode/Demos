@@ -1,0 +1,12 @@
+just jquery plugins that need no initialization - just put the script in your head file (or some script handler class) and add classes to elements in HTML to transform it to something else.
+
+Would be awesome if no css files are required either
+
+
+LIke:
+
+<a class="jTransform-button">Continue</a>
+turns this link into a css3 button
+
+See
+C:\apache\htdocs\apache_upload\z_demos\136_css3-buttons-frameworks\michenriksen-css3buttons-eea6bae.pdf
