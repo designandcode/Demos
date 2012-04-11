@@ -1,0 +1,3 @@
+Javascript bookmarklet or jQuery plug-in that resets default (undeclared) elements as the default for the UA of the browser selected
+
+
