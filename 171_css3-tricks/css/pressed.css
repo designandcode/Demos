@@ -1,0 +1,12 @@
+#pressed {
+	background: #222222;
+	color: #131313;
+	font-size: 40px;
+	width:300px;
+}
+
+#pressed p{
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: #2c2c2c 3px 3px 5px;
+}
