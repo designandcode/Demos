@@ -1,0 +1,19 @@
+http://createjs.org/
+
+Full Blown CMS Systems
+http://www.cushycms.com/en
+http://pagelime.com/
+http://getfuelcms.com/ [for CodeIgniter]
+http://www.adobe.com/products/contribute.html [desktop - adobe CS5]
+http://www.concrete5.org/
+http://www.impresspages.org/
+http://wordpress.org/extend/plugins/front-end-editor/
+http://www.apostrophenow.com/
+
+
+My To Do App can update a database on page unload
+C:\apache\htdocs\apache_upload\z_demos\175_todo-list-v2
+
+
+Edit text inline and save to AJAX
+http://www.appelsiini.net/projects/jeditable
