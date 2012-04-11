@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Test onCube</title>
+
+<link type="text/css" rel="stylesheet" href="css/oncube.css" />
+<!--[if lt IE 7]>
+  <style type="text/css">
+    /* Hack for transparent borders in IE6 */
+  	div.tri {
+  		filter: chroma(color=cyan);
+        overflow:hidden;
+        font-size:0;
+  	}
+    div.quad {
+    	overflow:hidden;
+        font-size:0;
+    }
+  </style>
+<![endif]-->
+
+<script type="text/javascript" language="javascript" src="jQuery/jquery-1.4.2.js"></script>
+<!--script type="text/javascript" language="javascript" src="jQuery/oncube.js"></script-->
+<script type="text/javascript" language="javascript" src="jQuery/oncube1.js"></script>
+
+<script type="text/javascript" language="javascript">
+
+$(function () { 
+	var linksArr = new Array();
+	linksArr[3] = ['Erfahren Sie mehr über uns!','http://www.oevermann.de'];
+	linksArr[6] = ['Aktuelle Stellenangebote','http://www.oevermann.de'];
+	linksArr[9] = ['Internet Highlights','http://www.oevermann.de'];
+	linksArr[15] = ['Social Media und was die beachten müssen','http://www.oevermann.de'];
+	linksArr[21] = ['Unsere Referenzen','http://www.oevermann.de'];
+	linksArr[27] = ['Entertainment und Spiele','http://www.oevermann.de'];
+	
+	$("#myCube").onCube({links:linksArr});
+});
+
+</script>
+</head>
+
+<body>
+<!-- http://plugins.jquery.com/project/onCube     Demo - http://www.oevermann.de/oncube/index.html -->
+<div id="myCube"></div>
+
+</body>
+</html>

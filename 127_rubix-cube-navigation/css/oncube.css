@@ -1,0 +1,7 @@
+#myCube { position:absolute; overflow:hidden; width:400px; height:400px; top:50px; left:50px; }
+div.cube { position:absolute; cursor:pointer; }
+div.plane { position:absolute; }
+div.tri { position:absolute; width:0; height:0; }
+div.quad { position:absolute; }
+div.card { display:none; position:absolute; width:100px; color:#000; font-family:Verdana, Geneva, sans-serif; font-size:11px; }
+div.card a { color:#000; font-family:Verdana, Geneva, sans-serif; font-size:11px; }
