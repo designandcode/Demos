@@ -1,0 +1,10 @@
+http://net.tutsplus.com/tutorials/html-css-techniques/how-to-create-presentation-slides-with-html-and-css-2/
+  Demo: http://m6method.com/shared/html5-slides/
+
+http://meyerweb.com/eric/tools/s5/
+
+http://slides.html5rocks.com/
+
+http://rahul.upakare.com/projects/jquery.presenter/demo/
+
+https://github.com/schacon/showoff
