@@ -1,0 +1,32 @@
+One URL or URL fragment tracked and updated every so often to see what's happening in another URL fragment
+
+
+URL fragment one (#bar):
+
+gets the result of some operation happening in another fragment every 10 seconds
+
+get the 10 second object from URL fragment two
+
+Some Code:
+$(function() {
+  function updateMsg() {
+    $.ajax({
+        url: "#foo",
+        cache: false,
+        success: function(html) {
+            $(#bar).append(html);
+        }
+    });
+    setTimeout('updateMsg()', 15000);
+  }
+updateMsg();
+});
+
+
+URL fragment two (#foo):
+
+does some business every second, then updates an object that URL fragment one requests the results of every 10 seconds.  This object only updates itself every 10 seconds.
+
+e.g.  add 1 to some number every second, then return the result to another object every ten seconds
+
+Other possible uses:  Update 2nd object only when first object has x number of elements
