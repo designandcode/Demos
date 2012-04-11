@@ -1,0 +1,16 @@
+www.yourwebsite.com/#/x-large
+www.yourwebsite.com/#/large
+www.yourwebsite.com/#/medium
+www.yourwebsite.com/#/small
+
+
+Each of these will dynamically load a different style sheet (onload) when called in the URL.  Also, the window size will be automatically adjusted to the screen size as defined (e.g. x-large makes window size 1980px, even if the screen resolution is less)
+
+Additionally, these URLs will be dynamically created (base URL appended with #/size) when your page is loaded at a within the bounds of a certain screen size or if you resize the page
+
+
+take it one step further and make a call to a device:
+www.yourwebsite.com/#/medium/ipad
+
+will show your ipad optimized website with an ipad skin surrounding it.
+Hmmm.. Maybe we can include device specific quirks using UA?
