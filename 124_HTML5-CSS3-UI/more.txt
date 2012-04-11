@@ -1,0 +1,5 @@
+jQuery UI (grid,spinner,menus coming)
+Wijmo (open + commercial widgets)
+jQuery Tools (not updated as regularly)
+KnockoutUI
+NinjaUI (new, not as wide a collection as the others)

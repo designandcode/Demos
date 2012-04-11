@@ -1,0 +1,28 @@
+.login-wrapper, .button-wrapper, .search-wrapper, ul.menu2, .table-wrapper {
+	border: 1px solid #ccc;
+}
+
+a.light, a.light:hover, input.light, th.light, input.login-light, th.light, th.light:first-child {
+border: 1px solid #D9D9D9;
+}
+
+a.dark, a.dark:hover, input.dark, th.dark, input.login-dark, th.dark, th.dark:first-child {
+border: 1px solid #222222;
+}
+
+input.login-field, input.password-field {
+	width: 132px;
+	border: 1px solid #d9d9d9;
+	margin-right: 10px;
+}
+
+input.login-button {
+	border: none;
+}
+
+ul.light li a { border-bottom: 1px solid #D9D9D9; }
+
+
+table {
+	background: #fff;
+}
