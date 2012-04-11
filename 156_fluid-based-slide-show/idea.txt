@@ -1,0 +1,4 @@
+If all the images can't be presented on the screen, then convert the container to an automatic slider with left/right controls (see inspiration001.png for visual)
+
+It will happen automatically based on the current screen size (whether the screen is resized or loaded)
+
