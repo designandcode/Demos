@@ -1,0 +1,30 @@
+What is this?
+
+A robust to-do list with persistent storage and full editing ability (CRUD).
+HTML5 Local Storage Frontend
+
+==========
+SQLite Backend
+==========
+SQLite DB needs to be accessed twice for each session.
+1st, when the page loads. At this stage all active tasks will populate the view from DB.
+2nd, when the page unloads. At this stage all active tasks in the view will replace previous active tasks in DB. DELETE | CREATE
+** HTML5 Local Storage is a Better Choice for this? **
+
+
+
+New features need to be branched for testing then merged to master once found default free by Unit Tests
+
+TDD
+FDD? Feature Driven Development
+1. Write tests that cover the outcome of a feature.
+     In this case I wrote a test that would confirm the status of an input when a checkbox was checked OR unchecked.
+
+2. Once the tests are green, put the code (without the test functions) into an Integration staging area.
+
+3. Do acceptance test to make sure the feature does what the user/owner expects.
+
+4. If acceptance test is acceptable, integrate the feature into the code base.
+    In this case, the code base is an imported library of functions divided by what aspect of the app is affected (Style, Dom, Behavior).  The code can then be called wherever it is needed in the file requesting the feature.
+
+5. Commit changes in git

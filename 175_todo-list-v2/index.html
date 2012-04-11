@@ -1,0 +1,74 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="jQuery/TDONS.js"></script>
+<script type="text/javascript" src="tests/tests.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script>
+	$(function(){
+		//$("body").tests(); Works if tests/01_qunit-test.js exists and has logic - else prints no tests (only test container)
+		//$("body").tests({pages: ['DeleteTask', 'CreateNewTask', 'InputBoxState']}); //tests will be run in this order
+		//$("body").tests({pages: ['PopulateViewWithTasks', 'UpdateDBFromView', 'CreateNewTask']}); //tests will be run in this order
+		//$("body").tests({pages: ['UpdateDBFromView']}); //tests will be run in this order
+		//$("body").tests(); //tests will be run in this order
+		
+		// Integration Test Staging
+		
+		
+		// Production Code
+		/* Global Variables */
+		inputDefaultValue = 'Enter a New Task';
+		
+		/**/
+		TDONS.Behavior.this_click_change_next_input_state('input.checkbox');	
+		TDONS.Behavior.this_click_add_task_and_set_default_task_text('input.addNewTask', inputDefaultValue);
+		TDONS.Behavior.self_click_delete_task('img.delete', 'You are about to delete 1 item. Are you Sure?');				
+		TDONS.Behavior.self_focus_toggle_text_and_set_default_task_text('input.input', inputDefaultValue);		
+		TDONS.Behavior.this_click_change_all_input_state('input.selectAll');
+		TDONS.Behavior.this_click_delete_selected_items('input.deleteSelected');
+		TDONS.Dom.this_load_populate_with_tasks('#tasks');
+		TDONS.db.window_unload_update_db_with_tasks();
+		
+		
+	});
+</script>
+<style>
+.deprecated { color:#ccc; }
+.completed { color:#0f0; }
+.started { color:#f00; }
+</style>
+</head>
+<body>
+<p><input type="button" class="addNewTask" value="add a new item"/></p>
+<p><input type="checkbox" class="selectAll" />Select All     <input type="button" class="deleteSelected" value="delete selected"/></p>
+<div id="tasks">
+<!--p><input type="checkbox" class="checkbox" /><input type="text" class="input" value="Get Milk" /><img class="delete" src="images/milky_119.png" /></p>
+<p><input type="checkbox" class="checkbox" /><input type="text" class="input" value="Get Eggs"  /><img class="delete" src="images/milky_119.png" /></p>
+<p><input type="checkbox" class="checkbox" /><input type="text" class="input" value="Pick up Sticks"  /><img class="delete" src="images/milky_119.png" /></p>
+<p><input type="checkbox" class="checkbox" /><input type="text" class="input" value="Introduce Foo to Bar"  /><img class="delete" src="images/milky_119.png" /></p-->
+</div>
+<br />
+<div>
+<p>Features</p>
+Clicking a checkbox will disable all inputs with class of input - <b class="deprecated">Deprecated</b><br />
+Clicking a checkbox will only disable the adjacent input with class of input - <b class="completed">Complete</b><br />
+Adding items dynamically - <b class="completed">Complete</b><br />
+Deleting items dynamically - <b class="completed">Complete</b><br />
+Input box focus and new task default - <b class="completed">Complete</b><br />
+Delete one confirmation (alert) - <b class="completed">Complete</b><br />
+Select all checkbox (toggle) - <b class="completed">Complete</b><br />
+Delete selected button - <b class="completed">Completed</b><br />
+Delete selected confirmation (alert) - <b class="completed">Complete</b><br />
+Populate task list (task and started/completed) from DB (MVC) onload - <b class="completed">Completed</b><br />
+Update task list (task and started/completed) to DB (MVC) on unload - <b class="completed">Completed</b><br />
+
+
+</div>
+</body>
+</html>

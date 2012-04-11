@@ -1,0 +1,5 @@
+{	"tests" : {
+				 "index" : ["NewChecklistGroup", "InputBoxState", "CreateNewTask", "DeleteTask", "InputBoxTextDefault","ConfirmActionDeleteSingle","SelectAllTasks","DeleteSelectedTask", "ConfirmActionDeleteSelected","PopulateViewWithTasks","UpdateDBFromView"]
+				 
+				}
+				}

@@ -1,0 +1,37 @@
+Git
+=================
+Commit Refactorings (Should Refactorings be in a separate branch so they can be merged separately from Feature Commits?)
+Commit Complete Features
+
+
+TDD
+=================
+Write a new test for each feature
+Test various situations
+Red, Green, Refactor
+
+
+Integration Testing
+=================
+1. Test features in isolation
+2. Test features with closest dependencies
+3. Test features with all source code
+
+
+Clean Code
+=================
+Namespace
+Source code should be closed for modification but open for extension.
+  1. Good Defaults
+  2. Method Arguments
+  3. Separate Reusable code blocks and call them when needed in a class (arguments)
+  4. Use descriptive text to describe methods like:
+      TDONS.Behavior.this_click_delete_selected_items(element);
+      Where 
+        TDONS = namespace
+        Behavior = package
+        this_ = element initiating method (put self_ here if the initiating element is also affected by the method)
+        click_ = event type
+        delete_ = action
+        selected_items = element affected by method
+   5. Global variables are a good way to access data across domains in the app
