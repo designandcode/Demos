@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://www.w3.org/2010/05/video/mediaevents.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>HTML5 Video</title>
+  <script src="./HTML5 Video_files/script.js">
+  </script>
+	<!--link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="tests/tests.js"></script-->
+  <link href="./HTML5 Video_files/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <h1>HTML5 Video Events and API</h1>
+
+  <p>This page demonstrates the new <a href="http://www.w3.org/TR/html5/video.html#video">HTML5 video
+  element</a>, its <a href="http://www.w3.org/TR/html5/video.html#htmlmediaelement">media API</a>, and the <a href="http://www.w3.org/TR/html5/video.html#mediaevents">media events</a>. Play, pause, and seek in the entire
+  video, change the volume, mute, change the playback rate (including
+  going into negative values). See the effect on the video and on the
+  underlying events and properties.</p>
+
+  <p>The Media Events table contains the number of times each media
+  event has been received. The Media Properties table contains the
+  value of the media properties.</p>
+
+  <div>
+    <video id="video" controls="" preload="none" poster="HTML5 Video_files/poster.png">
+      <source id="mp4" src="HTML5 Video_files/trailer.mp4" type="video/mp4">
+      <source id="webm" src="HTML5 Video_files/trailer.webm" type="video/webm">
+      <source id="ogv" src="HTML5 Video_files/trailer.ogv" type="video/ogg">
+      <p>Your user agent does not support the HTML5 Video element.</p>
+    </video>
+    <div id="buttons">
+      <button onclick="document._video.load()">load()</button>
+      <button onclick="document._video.play()">play()</button>
+      <button onclick="document._video.pause()">pause()</button>
+      <button onclick="document._video.currentTime+=10">currentTime+=10</button>
+      <button onclick="document._video.currentTime-=10">currentTime-=10</button>
+      <button onclick="document._video.currentTime=50">currentTime=50</button><br>
+      <button onclick="document._video.playbackRate++">playbackRate++</button>
+      <button onclick="document._video.playbackRate--">playbackRate--</button>
+      <button onclick="document._video.playbackRate+=0.1">playbackRate+=0.1</button>
+      <button onclick="document._video.playbackRate-=0.1">playbackRate-=0.1</button><br>
+      <button onclick="document._video.volume+=0.1">volume+=0.1</button>
+      <button onclick="document._video.volume-=0.1">volume-=0.1</button>
+      <button onclick="document._video.muted=true">muted=true</button>
+      <button onclick="document._video.muted=false">muted=false</button><br>
+      <button onclick="switchVideo(0);">Sintel teaser</button>
+      <button onclick="switchVideo(1);">Bunny trailer</button>
+      <button onclick="switchVideo(2);">Bunny movie</button>
+      <button onclick="switchVideo(3);">Test movie</button>
+
+    </div>
+    <table summary="The Media Events table contains the number of times each media event has been received">
+      <caption>Media Events</caption>
+      <tbody id="events">
+      <tr><th>loadstart</th><td id="e_loadstart" class="true">1</td><th>progress</th><td id="e_progress" class="true">3</td><th>suspend</th><td id="e_suspend" class="false">0</td><th>abort</th><td id="e_abort" class="false">0</td><th>error</th><td id="e_error" class="false">0</td></tr><tr><th>emptied</th><td id="e_emptied" class="false">0</td><th>stalled</th><td id="e_stalled" class="false">0</td><th>play</th><td id="e_play" class="false">0</td><th>pause</th><td id="e_pause" class="false">0</td><th>loadedmetadata</th><td id="e_loadedmetadata" class="true">1</td></tr><tr><th>loadeddata</th><td id="e_loadeddata" class="true">1</td><th>waiting</th><td id="e_waiting" class="false">0</td><th>playing</th><td id="e_playing" class="false">0</td><th>canplay</th><td id="e_canplay" class="true">1</td><th>canplaythrough</th><td id="e_canplaythrough" class="true">1</td></tr><tr><th>seeking</th><td id="e_seeking" class="false">0</td><th>seeked</th><td id="e_seeked" class="false">0</td><th>timeupdate</th><td id="e_timeupdate" class="true">1</td><th>ended</th><td id="e_ended" class="false">0</td><th>ratechange</th><td id="e_ratechange" class="false">0</td></tr><tr><th>durationchange</th><td id="e_durationchange" class="true">1</td><th>volumechange</th><td id="e_volumechange" class="false">0</td></tr></tbody>
+    </table>
+    <table summary="The Media Properties table contains the value of the media properties">
+      <caption>Media Properties</caption>
+      <tbody id="properties">
+      <tr><th>error</th><td id="p_error" class="true"></td><th>src</th><td id="p_src" class="true"></td><th>currentSrc</th><td id="p_currentSrc" class="true">http://media.w3.org/2010/05/sintel/trailer.mp4</td></tr><tr><th>networkState</th><td id="p_networkState" class="true">1</td><th>preload</th><td id="p_preload" class="true">none</td><th>buffered</th><td id="p_buffered" class="true">[object TimeRanges]</td></tr><tr><th>readyState</th><td id="p_readyState" class="true">4</td><th>seeking</th><td id="p_seeking" class="true">false</td><th>currentTime</th><td id="p_currentTime" class="true">0</td></tr><tr><th>initialTime</th><td id="p_initialTime" class="false">undefined</td><th>duration</th><td id="p_duration" class="true">52.20833206176758</td><th>startOffsetTime</th><td id="p_startOffsetTime" class="false">undefined</td></tr><tr><th>paused</th><td id="p_paused" class="true">true</td><th>defaultPlaybackRate</th><td id="p_defaultPlaybackRate" class="true">1</td><th>playbackRate</th><td id="p_playbackRate" class="true">1</td></tr><tr><th>played</th><td id="p_played" class="true">[object TimeRanges]</td><th>seekable</th><td id="p_seekable" class="true">[object TimeRanges]</td><th>ended</th><td id="p_ended" class="true">false</td></tr><tr><th>autoplay</th><td id="p_autoplay" class="true">false</td><th>loop</th><td id="p_loop" class="true">false</td><th>controls</th><td id="p_controls" class="true">true</td></tr><tr><th>volume</th><td id="p_volume" class="true">1</td><th>muted</th><td id="p_muted" class="true">false</td></tr></tbody>
+    </table>
+<!--
+  <div id='canPlayType'>
+      // @@TODO canPlayType
+    </div>
+    -->
+  </div>
+
+<h2>Limitations</h2>
+
+  <ul>
+    <li>Some events may be fired despite the lack of effect on the video itself,
+    in particular while trying to change the playback rate;</li>
+    <li>Not all conditions are necessarily there to generate every single
+    possible event, such as <code>stalled</code> or <code>emptied</code>;</li>
+    <li>The rendered page may not be updated while the video is
+     playing. Thus you may see plenty of <code>timeupdate</code>
+     events counted after the video is paused/stopped;</li>
+    <li>Remember, HTML5 Video is still work in progress, so anything
+    on this page may be deprecated tomorrow and no longer part of
+    HTML5;</li>
+    <li>As of May 2010, every single Web browser deployed out there
+     will run into problems or annoying limitations while you play
+     with this page. No support for the HTML5 video element,
+     <code>progress</code> events are not triggered, no update of the
+     page while the video is playing, entirely giving up on displaying
+     the video after a <code>load()</code>, unable to play the video
+     backwards, etc.</li>
+   </ul>
+<hr>
+
+<address>plh@w3.org - January 2011</address>
+<p>
+Many, many thanks to the <a href="http://www.blender.org/blenderorg/blender-foundation/">Blender
+Foundation</a> and the community around the <a href="http://www.blender.org/">blender project</a>.
+</p>
+
+     
+
+</body></html>
