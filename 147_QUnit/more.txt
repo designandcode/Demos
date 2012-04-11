@@ -1,0 +1,52 @@
+Jasmine (BDD)
+FuncUnit
+Crosscheck
+JSSpec (BDD)
+jsTestDriver
+
+MockJax - intercept and simulate ajax requests with a minimal impact on changes to production code
+
+WebDriver + Watir + jsTestDriver - automated browser testing
+
+JSCoverage - useful for discovering areas of your code which may either be broken or simply not being correctly
+
+Zombie.js - lightweight framework for testing client-side JavaScript code in a simulated environment
+
+Envjs - provides a JS implementation of the browser asa usable scripting environment
+
+Bumblebee - combines Rhino, JSpec, Envjs and Ant to provide an "out of the box" JavaScript testing toolkit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

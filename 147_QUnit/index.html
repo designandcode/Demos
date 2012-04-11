@@ -1,0 +1,18 @@
+<script>
+		var path = location.pathname.replace(/\..+/, ".js");
+		
+		var pattern = /\//;
+		var match = path.split(pattern);
+		var last = match[match.length - 1];
+		
+		if (last){
+			return last;
+			}else {
+				last = "index.js";
+			}
+		
+</script>
+
+<a href="01_qunit.html">01_qunit</a><br />
+<a href="02_format-string.html">02_format-string</a><br />
+<a href="03_account-transfer.html">03_account-transfer</a><br />

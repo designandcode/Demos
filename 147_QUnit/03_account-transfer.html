@@ -1,0 +1,34 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Testing JavaScript with QUnit</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="tests/tests.js"></script>
+<script type="text/javascript" src="jQuery/03_account-transfer.Account.js"></script>
+<script>
+	$(function(){
+		$('body').tests({pages : ['NewAccount', 'Transfer']});
+	});
+</script>
+<script>
+		var checkingAccount = new Account(564858510, 600);
+		var savingsAccount = new Account(564858507, 100);
+		
+		checkingAccount.Transfer(savingsAccount, 100);
+		
+	$(function(){
+			$("#SavingsBalance").text(savingsAccount.balance);
+		$("#CheckingBalance").text(checkingAccount.balance);
+	})
+</script>
+</head>
+<body>
+I Love Test Foooooo!
+<div id="SavingsBalance"></div>
+<div id="CheckingBalance"></div>
+</body>
+</html>
