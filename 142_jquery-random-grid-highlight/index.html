@@ -1,0 +1,53 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!--script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script-->
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script type="text/javascript">
+
+	function drawGrid(columns, rows){
+		this.columns = columns;
+		this.rows = rows;
+		var o = "o | ";
+		var x = "x | ";
+		var rand = [Math.random(), Math.random()];
+		xPos = Math.floor(this.rows*rand[0]);
+		yPos = Math.floor(this.columns*rand[1]);
+		grid = [];
+		for (i=0;i<this.rows;i++){
+			grid[i] = [];
+			for (j=0;j<this.columns;j++){
+				grid[i][j] = o;
+				}
+			}
+		grid[xPos][yPos] = x;
+		
+		for (i=0;i<this.rows;i++){
+			for (j=0;j<this.columns;j++){
+				document.write(grid[i][j]);
+			}
+				document.write("<br />");
+		}
+		//document.write("x is located at (row:" + (xPos+1) + ", col:" + (yPos+1) + ")");
+		
+		
+		//this.xPosition = function(){ return (xPos+1).toString() + "," + (yPos+1).toString() };
+		
+	}
+	
+	var newGrid = new drawGrid(3,3);
+	//document.write("foo");
+	//refresh = setInterval(function(){ new drawGrid(3,3) }, 2500);
+	//clearInterval(play);
+	//setTimeout(function(){ var newGrid = new drawGrid(3,3) }, 2500);
+</script>
+</head>
+<body>
+
+</body>
+</html>

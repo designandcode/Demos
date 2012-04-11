@@ -1,0 +1,2 @@
+Create a grid with only one grid item highlighted - all the rest will have an overlay.  The key is, the highlighted box will rotated randomly over time.
+
