@@ -1,0 +1,24 @@
+one page app
+
+data = {
+  id = "firstpage"
+  title: "One Page App",
+  description: "A super fast proof of concept Javascript MVC",
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor, neque et pellentesque ullamcorper, lectus leo ultrices neque, non egestas augue tellus a orci."
+}
+
+OPW = {
+  controller: function() {
+    get the page fragment from URL
+    get some data from model based on page fragment
+    return controller.page
+  },
+  model: function(string controller.page) {
+    open database connection and get page contents
+    db = new data()
+    return model.page
+  },
+  view: function(obj model.page) {
+    inject some data into some HTML elements
+  }
+}

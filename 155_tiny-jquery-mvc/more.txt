@@ -1,0 +1,15 @@
+JavaScriptMVC
+Backbone.js + Underscore
+Spine.js
+SproutCore
+Sammy.js
+angularjs.org
+http://agilityjs.com/
+CorMVC - http://goo.gl/R57DT
+http://activejs.org/
+claypooljs
+
+
+
+MVVM
+KnockoutJS
