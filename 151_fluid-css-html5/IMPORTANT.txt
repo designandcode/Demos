@@ -1,0 +1,15 @@
+This needs a test query to append URL
+
+
+like 
+
+
+demo/?display=ipad&orientation=landscape
+
+
+What this will do is
+
+1. change the window size to reflect to proper width
+2. show it as it would look in ipad with orientation landscape
+
+The key is how to use UA Styles like in Safari to get access to device attributes
