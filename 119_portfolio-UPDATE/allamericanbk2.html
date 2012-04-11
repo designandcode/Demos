@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="jQuery/plugin.showlarger.js"></script>
+<script type="text/javascript" src="jQuery/plugin.slider.js"></script>
+<script type="text/javascript">
+	$(function(){
+	
+		$("a[title='Home']").showLarger();
+		$("a[title='Answers']").showLarger();
+		$("a[title='Evaluation']").showLarger();
+		$("a[title='Join']").showLarger();
+		
+		
+		
+		});
+		
+		$(function(){
+	
+			$("#nav ul li").slider();
+		
+		});
+		
+		
+	
+	
+</script>
+</head>
+<body>
+<div id="contentContainer">
+
+<div id="header">
+	<h1>Portfolio</h1>
+</div>
+<div id="nav">
+	<ul>
+	<li>Home</li>
+	<li>Answers</li>
+	<li>Evaluation</li>
+	<li>Join</li>
+	</ul>
+</div>
+<div id="slideContainer">
+	<div id="imgContainer">
+		<a href="#" title="Home"><img src="images/allamerican_home_large_04-24-10-757.png" /></a>
+		<a href="#" title="Answers"><img src="images/allamerican_answers_large_04-24-10-757.png" /></a>
+		<a href="#" title="Evaluation"><img src="images/allamerican_evaluation_large_04-24-10-757.png" /></a>
+		<a href="#" title="Join"><img src="images/allamerican_join_large_04-24-10-757.png" /></a>
+	</div>
+</div>
+<div id="footer"class="hide" >
+	<ul>
+	<li>item1</li>
+	<li>item2</li>
+	<li>item3</li>
+	<li>item4</li>
+	</ul>
+</div>
+<div id="fullContainer">
+	<img class="close" src="images/001_05.png" />
+	<img class="Home" id="image1" src="images/allamerican_home_full_04-24-10-757.png" />
+	<img class="Answers" id="image2" src="images/allamerican_answers_full_04-24-10-757.png" />
+	<img class="Evaluation" id="image3" src="images/allamerican_evaluation_full_04-24-10-757.png" />
+	<img class="Join" id="image4" src="images/allamerican_join_full_04-24-10-757.png" />
+</div>
+</div>
+
+</body>
+</html>
