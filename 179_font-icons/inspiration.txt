@@ -1,0 +1,6 @@
+http://css-tricks.com/examples/IconFont/
+http://css-tricks.com/using-fonts-for-icons/
+
+Source of icons:
+http://somerandomdude.com/work/iconic/
+http://icons.marekventur.de/
