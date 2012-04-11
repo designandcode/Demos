@@ -1,0 +1,23 @@
+body{
+	width:1074px;
+}
+h3{
+	color:#fff;
+	background-color:#006;
+	position:relative;
+	clear:both;
+	padding:5px;
+	margin:5px 0;
+	font-size:28px;
+}
+p{
+	position:relative;
+	margin:10px 0;
+	padding:10px 0;
+}
+img{
+	position:relative;
+	float:left;
+	margin:10px 0;
+	padding:10px 0;
+}
