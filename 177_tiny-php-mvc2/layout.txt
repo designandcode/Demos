@@ -1,0 +1,60 @@
+Base Layout.php class
+
+Every page needs to load this
+
+Base Layout.php will also accept extensions like wordpress plugins appending the head
+
+
+Layout.php
+
+if(extended){
+  echo $Scripts
+  echo $CSS
+  echo $PHP
+  echo $META
+}
+
+
+These extensions will be declared in extended Controller.php?
+public function load($view, $data)
+ {
+   $data = extract($data);
+   include_once($view);
+   include_once($Layout);
+ }
+
+- OR - 
+
+Route?
+
+or index.php?
+
+
+VIEW
+include $layout->head
+  <doctype>
+  <head>
+
+    $extension
+  </head>
+include $layout->header
+  <body>
+  <div = page>
+  <header>
+
+  $extension
+  </header>
+end include
+
+  <div = view>
+
+   $data
+
+  </div><!-- End div = view -->
+
+include $layout->footer
+  <footer>
+
+  $extension
+  </footer>
+end include

@@ -1,0 +1,41 @@
+create database row
+
+url
+createbook.php
+ |
+ |_>  new UpdateBook($parms = $_POST)
+
+
+CreateBook
+ send $parms to model
+   $book = new Model('db', 'table');
+   $book->createOne($parms); // model responsible for parsing this?
+ redirect upon success
+
++++++++++++++++++++++
+update database row
+url
+updatebook.php
+ |
+ |_>  new UpdateBook($parms = $_POST)
+
+
+UpdateBook
+ send $parms to model
+   $book = new Model('db', 'table');
+   $book->updateOne($parms); // model responsible for parsing this?
+ redirect upon success
+
++++++++++++++++++++++
+delete database row
+url
+deletebook.php
+ |
+ |_>  new DeleteBook($parms = $_POST)
+
+
+DeleteBook
+ send $parms to model
+   $book = new Model('db', 'table');
+   $book->DeleteOne($parms); // model responsible for parsing this?
+ redirect upon success
