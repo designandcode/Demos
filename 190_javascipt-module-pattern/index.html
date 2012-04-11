@@ -1,0 +1,91 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="tests/tests.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script>
+	$(function(){
+		//$("body").tests(); Works if tests/01_qunit-test.js exists and has logic - else prints no tests (only test container)
+		$("body").tests({pages: ['CheckBoxState']}); //tests will be run in this order
+		//$("body").tests(); //tests will be run in this order
+
+		
+	});
+	
+	
+var calculator = (function (start) {
+    // private variables and functions
+
+    // constructor
+    var module = function (start) {
+			this.start = start;
+			this.foo = this.start;
+    };
+ 
+    // prototype
+    module.prototype = {
+        add: function (y) {
+					this.foo += y;
+					return this.foo;
+        }
+    };
+ 
+    // return module
+    return module;
+})();
+
+// extend it with subtract();
+var calculator = (function (calculator) {
+		
+    calculator.prototype.subtract = function (y) {			
+			this.foo -= y;
+			return this.foo;
+    };
+    return calculator;
+})(calculator);
+
+// extend it with multiply();
+var calculator = (function (calculator) {
+		
+    calculator.prototype.multiply = function (y) {			
+			this.foo *= y;
+			return this.foo;
+    };
+    return calculator;
+})(calculator);
+
+// extend it with divide();
+var calculator = (function (calculator) {
+		
+    calculator.prototype.divide = function (y) {			
+			this.foo /= y;
+			return this.foo;
+    };
+    return calculator;
+})(calculator);
+ 
+var my_calculator = new calculator(0);
+console.log(my_calculator.add(2));
+console.log(my_calculator.add(2));
+console.log(my_calculator.subtract(1));
+console.log(my_calculator.add(5));
+console.log('-----------');
+var my_calculator_2 = new calculator(2);
+console.log(my_calculator_2.subtract(1));
+console.log(my_calculator_2.add(2));
+console.log(my_calculator_2.add(2));
+console.log(my_calculator_2.multiply(10));
+console.log(my_calculator_2.divide(5));
+</script>
+</head>
+<body>
+I CAN HAZ TDD?
+<div id="jQuery"></div>
+</body>
+</html>
