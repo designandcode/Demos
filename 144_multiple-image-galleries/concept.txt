@@ -1,0 +1,19 @@
+take a bunch of html and convert it to different view
+
+<div id="container-type">
+<div>
+<img>
+<p>
+<div>
+<div>
+<img>
+<p>
+<div>
+...
+</div>
+
+depending on the container-type (and other parameters as classes) will determine how it will be shown on the screen
+
+id="slider" class="large" - kalimfleet.net or C:\apache\htdocs\apache_upload\z_demos\036_jquery-carousel
+         - or -
+id="grid" class="medium" - C:\apache\htdocs\apache_upload\z_demos\143_css3-pretty-containers\inspiration001.png
