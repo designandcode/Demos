@@ -1,0 +1,23 @@
+Basic
+Expert
+Master
+
+
+Like unblock me
+
+Many different ways to "solve the problem" with code.
+Points accumulate for criteria
+
+Readability
+Conventions
+
+
+Inspiration
+http://nathansjslessons.appspot.com/
+
+
+
+Regex on text box, then show score (stars) 
+1 Star - Basic
+2 Star - Expert
+3 Star - Master

@@ -1,0 +1,6 @@
+http://attractivechaos.github.com/plb/kudoku.html
+https://github.com/furbiesandbeans/PyPong
+http://www.xarg.org/project/html5-snake/
+http://a1k0n.net/code/tron.html
+Framework (Python) - http://pygame.org/news.html
+Framework (HTML5) - http://www.melonjs.org/
