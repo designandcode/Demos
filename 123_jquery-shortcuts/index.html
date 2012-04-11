@@ -1,0 +1,37 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script type="text/javascript">
+	$(function(){
+		divs = {1: "get-index-of-clicked-item", 2: "foo"};
+		for (key in divs)
+			{
+				$("body").append("<div id="+divs[key]+"></div>");
+			}
+		for (key in divs)
+			{
+				divs[key] = "#"+divs[key];
+			}
+		
+		// get-index-of-clicked-item
+		$(divs[1]).append("<p>Click to show index</p><ul><li>One</li><li>Two</li><li>Three</li><li>Four</li></ul>");
+		$(divs[1]+" li").click(function(){
+			var index = $(divs[1]+" li").index(this);
+			$(this).append(index);
+		});
+		
+		
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>
