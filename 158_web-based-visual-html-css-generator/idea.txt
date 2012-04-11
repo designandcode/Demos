@@ -1,0 +1,38 @@
+Uses Controls like seen in Desktop IDE like Eclipse, Netbean, Flex, Visual Studio and others
+
+
+Controls dropped onto the state will generate the code needed to build out the page framework.
+
+
+Controls dropped in can take parameters, properties can be adjusted
+
+
+
+E.g.
+
+Image Slider Control
+
+When dropped onto the stage opens a dialog asking for images to use, and parameters.  When Click Okay, the code is generated (HTML, CSS, JS) and folders are updated (
+May be able to do the generation from XML, which is what will be updated by section
+<xml>
+<root>
+<control1>
+  <html>
+  <css>
+  <js>
+  <files>
+</control1>
+<control id="slider1">
+  .
+  .
+  .
+</control>
+</root>
+
+Do it mostly in JavaScript, but since it is web based can use other scripting language like PHP, Ruby, Python, C# (ASP.NET), Java and SQL for back end processing
+
+Things that would need to be processed on the backend include
+Storage of files
+Packaging of files
+Persistence
+Image processing
