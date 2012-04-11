@@ -1,0 +1,12 @@
+Clients push data to a hub.  Hub broadcasts changes to clients every so often (polling).
+
+This is also known as The Observer Pattern.
+The Observer Pattern defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.
+
+***More***
+Subject (Publisher) accepts requests from objects to subscribe to it by observers.  In this case, lets have objects (observers) subscribe for x iterations of i (as defined by the interface) and then unsubscribe automatically.  We can then test the individual values of each object
+
+***Another implementation***
+Subject (Publisher) sends update to one or more subscribers, recieves a response from those subscribers, then sends the update to the rest of the subscribers.  An example would be an approval workflow where a special subscriber receives the update and a callback to approve/deny the update.  Upon approval, the Subject will then push the update to the subscribers.
+
+see concept.png

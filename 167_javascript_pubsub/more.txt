@@ -1,0 +1,7 @@
+AmplifyJS
+PubSubJS
+Ben Alman's implementation
+Peter Higgen's version
+jsSignals
+OpenAjaxHub
+jQuery custom events
