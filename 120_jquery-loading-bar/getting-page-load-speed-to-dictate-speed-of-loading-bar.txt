@@ -1,0 +1,4 @@
+http://ditio.net/2008/08/06/detect-connection-speed-with-javascript/
+http://alexle.net/archives/257
+http://www.ehow.com/how_5804819_detect-connection-speed-javascript.html
+http://www.phaster.com/golden_hill_free_web/ghfw_connection_speed.shtml

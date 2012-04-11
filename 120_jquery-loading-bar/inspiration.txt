@@ -1,0 +1,28 @@
+http://www.catswhocode.com/blog/how-to-create-a-kick-ass-css3-progress-bar
+	Demo: http://skunkworks.ivanvanderbyl.com/
+
+http://css-tricks.com/css3-progress-bars/
+	Demo: http://css-tricks.com/examples/ProgressBars/
+
+
+
+http://www.splashnology.com/blog/html5/1000.html
+
+http://jsfiddle.net/addyosmani/XKrcX/show/
+
+http://demo.superdit.com/jquery/simple_vote/
+
+http://www.matlus.com/html5-file-upload-with-progress/
+
+http://coding.smashingmagazine.com/2011/11/14/analyzing-network-characteristics-using-javascript-and-the-dom-part-1/
+
+
+jQuery
+http://www.csslab.cl/2011/08/18/jquery-timelinr/
+
+http://tutorialzine.com/2010/01/advanced-event-timeline-with-php-css-jquery/
+
+
+HTML5
+http://www.useragentman.com/blog/2012/01/03/cross-browser-html5-progress-bars-in-depth/
+http://thinkpixellab.com/pxloader/
