@@ -1,0 +1,65 @@
+Loading data 
+(Retrieve)
+http://www.tinymvc.com/index.php?view=books&sort=title&reverse=true
+
+http://www.tinymvc.com/?view=books&sort=title&reverse=true
+
+http://www.tinymvc.com/index.php?rt=books/title/reverse
+ |
+ |_ .htaccess
+ |
+ |
+ http://www.tinymvc.com/books/title/reverse
+
+Updating Data
+(Update)
+controllers/update/book/<POST>
+controllers/update/book/1/Michael+Bowers/Pro+CSS+and+HTML+Design+Patterns/39.99
+http://www.tinymvc.com/update/book/title/Pro CSS and HTML Design Patterns/price/49.99
+http://www.tinymvc.com/update/book/1/title/Pro CSS and HTML Design Patterns/price/49.99
+http://www.tinymvc.com/update/book/1/[POST]
+http://www.tinymvc.com/update/book/[POST]
+like: $_POST['id'], $_POST['title']
+
+(Create)
+controllers/create/book/<POST>
+controllers/create/book/Bill+Gates/The+Microsoft+Way/9.99
+http://www.tinymvc.com/create/book/[POST]
+like: $_POST['id'], $_POST['title']
+
+(Delete)
+controllers/delete/book/1
+http://www.tinymvc.com/delete/book
+like: $_POST['id'], $_POST['title']
+Update an 'inactive' field -OR-
+Delete row
+
+
+.htaccess
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?rt=$1 [L,QSA]
+
+source: http://www.phpro.org/tutorials/Model-View-Controller-MVC.html
+
+
+
+
+RewriteEngine On
+
+RewriteBase /my_mvc/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+source: http://www.henriquebarroso.com/how-to-create-a-simple-mvc-framework-in-php/
+
+
+
+

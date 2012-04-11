@@ -1,0 +1,52 @@
+<form method=POST action=books/add >
+<input type=text name=foo />
+<input type=text name=bar />
+<input type=submit />
+</form>
+
+
+View: url /books
+Controller(Books.php): $books = Model::Retrieve -> books
+Controller(Books.php): $books -> View
+View: $books
+
+
+View: post /books/add
+Controller(Controller.php): $books = Model::Create -> book
+Controller: $books->errors || $books->success
+View: $books
+
+
+/ - GET (Main Controller)
+/books -> GET (Books Controller)
+/books/sort=author_order=reverse -> GET
+/books/1/ -> GET
+/books/add/ -> POST
+/books/update/1/ -> POST
+/books/delete/1/ -> POST
+
+Routes:
+/ -> [0] =>main
+/books/ -> [0] => books [1] =>
+/books/sort=author_order=reverse -> [0] => books [1] => sort=author_order=reverse
+/books/add/ -> [0] => books [1] => add [2] =>
+/books/update/1/ -> [0] => books [1] => update [2] => 1 [3] =>
+/books/delete/1/ -> [0] => books [1] => delete [2] => 1 [3] =>
+
+
+Controller -> $books = new Model (books);
+Controller -> $db = new Model($route[0]);
+Actions -> 
+if !$route[1]
+$get = $db->getAll()
+elseif $route[1] contains =
+$get = $db->getAll(ORDER BY $sort $order)
+elseif $route[1] == add
+$add = $db->createOne($_POST)
+elseif $route[1] == update
+$update = $db->updateOne($route[2], $_POST)
+elseif $route[1] == delete
+$delete = $db->deleteOne($route[2])
+
+
+
