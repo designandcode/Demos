@@ -1,0 +1,175 @@
+<html>
+<head>
+	<title>EMPTY</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>	
+	<!--script type="text/javascript">
+	
+	var zip = "13202";
+		//$.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text%3D%22'+zip+'%22&format=json&callback=?', function(data){
+		
+			
+			lat = data.query.results.place[0].centroid.latitude;
+			lon = data.query.results.place[0].centroid.longitude;
+			
+			document.write(lat + " " + lon);
+		});
+	
+	</script-->
+	<script type="text/javascript">
+		Object.prototype.p = function(){
+			
+			return document.write("<p>" + this.valueOf() + "</p>");
+			
+		}
+	</script>
+	<script type="text/javascript">
+		Array.prototype.Assertions = function(callback){
+		
+		for (var i=0; i < this.length; i++){
+			callback(this[i]);
+		}
+		
+	}
+	</script>
+	
+	<script type="text/javascript">
+	
+		
+		
+		// 1km latitude = 0.00898226415141
+		// 1km longitude = 0.00614887777457
+		/*
+				43.05213321605918
+				43.03416868775635
+				0.01796452830283 = 2km
+				0.00898226415141 = 1km
+
+
+				-76.13836646300976
+				-76.16280854479959
+				0.02444208178983 = 2km
+				0.01222104089491 = 1km
+		*/
+		var zip = "13202";
+		radius = 50;
+		latRadius = radius * 0.00898226415141;
+		lonRadius = radius * 0.01222104089491;
+		//points = ["43.1922532075705,-76.2615720447455",
+		//					"45.1922532075705,-78.2615720447455"];
+		/*
+		contact = { points : [],
+								id : [],
+								username : []
+							};
+		contact.points.push("43.1922532075705,-76.2615720447455");
+		contact.points.push("45.1922532075705,-78.2615720447455");
+		*/
+		/*
+		db = { contacts : 
+								[
+									{
+										id : 124, username : "cooldood137", points: "43.1922532075705,-76.2615720447455"
+									},
+									{
+										id : 345, username : "jillchill9", points: "45.1922532075705,-78.2615720447455"
+									},
+								]
+		
+							};
+		*/
+		db = { count : 4,
+					 0 : [124, "cooldood137", "43.1922532075705,-76.2615720447455"],
+					 1 : [345, "jillchill9", "45.1922532075705,-78.2615720447455"],
+					 2 : [987, "bobdabanka", "42.6922532075705,-75.6615720447455"],
+					 3 : [654, "foobarlounge", "46.1922532075705,-79.2615720447455"]
+					};
+		//dbCount = db.count;
+		//alert(dbCount);
+		//alert(db[0][2]);					
+				
+		//$.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text%3D%22'+zip+'%22&format=json&callback=?', function(data){
+		$.getJSON('YQL-RESULTS.json', function(data){
+			
+			count = data.query.results.place.length;
+			//latCount = data.query.results.place[0].country.content;
+			//alert(count);
+			
+			latitude = [];
+			longitude = [];
+			for (i=0;i<count;i++) {
+				latitude[data.query.results.place[i].country.content] = data.query.results.place[i].centroid.latitude;
+				longitude[data.query.results.place[i].country.content] = data.query.results.place[i].centroid.longitude;
+			}
+			//latitude["United States"] = data.query.results.place[0].centroid.latitude;
+			
+			//alert(latitude["United States"]);
+			//alert(longitude["United States"]);
+			
+			
+			lat = 1*latitude["United States"];
+			lon = 1*longitude["United States"];
+			
+			
+			var coord = [];
+			coord[0] = lat + "," + lon;
+			maxLat = lat + latRadius;
+			minLat = lat - latRadius;
+			maxLon = lon + lonRadius;
+			minLon = lon - lonRadius;
+			//document.write(minLat + " | " + maxLat + " | " + minLon + " | " + maxLon + " | ");
+			
+			for (i=0;i<db.count;i++) {
+				if (db[i][2].split(',')[0] > minLat && db[i][2].split(',')[0] < maxLat && db[i][2].split(',')[1] > minLon && db[i][2].split(',')[1] < maxLon) {
+					db[i][1].p();
+				} //else {
+					//return false;
+				//}
+			}
+			
+			
+			
+			
+			/*
+			var test = function(test){
+			
+				var testX = 1*test.split(',')[0];
+				var testY = 1*test.split(',')[1];
+
+				if (testX > minLat && testX < maxLat && testY > minLon && testY < maxLon) {
+					("Pass: ".fontcolor("green") + test).p();
+					return true;
+				}else {
+					("Fail: ".fontcolor("red") + test).p();
+					return false;
+				}
+			}
+
+			"Testing coordinates within 50 kilometers of zip central".p();
+			db.contacts.points.Assertions(test);
+			*/
+			
+			
+			
+			
+			//document.write(coord[0]);
+			//document.write(maxLat);
+			/*
+			maxLat.p();
+			lat.p();
+			minLat.p();
+			
+			maxLon.p();
+			lon.p();
+			minLon.p();
+			*/
+			
+		});
+	</script>
+	
+</head>	
+<body>
+
+</body>
+</html>

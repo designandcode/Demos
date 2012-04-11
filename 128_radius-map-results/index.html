@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+   <head>
+      <title></title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.3"></script>
+      <script type="text/javascript">
+     var map = null;
+    var dataLayer = new VEShapeLayer();
+    var searchShapeLayer = new VEShapeLayer();
+        /*
+         function GetMap()
+         {
+             map = new VEMap('myMap');
+      map.LoadMap();
+      
+      var veLayerSpec = new VEShapeSourceSpecification(VEDataType.GeoRSS,"http://www.microsoft.com/maps/isdk/ajax/geoRSSTest.xml",dataLayer);
+            map.ImportShapeLayerData(veLayerSpec,hideEachShape);  
+            
+            map.AddShapeLayer(searchShapeLayer);   
+         }   
+        */
+					
+         function hideEachShape()
+         {
+           for(var i=0;i<dataLayer.GetShapeCount();i++)
+         {
+           var shape = dataLayer.GetShapeByIndex(i);
+           shape.Hide();
+          }
+         }
+				/*
+         function boundingBoxSearch()
+         {
+          //hide previous results
+          hideEachShape();
+          
+          //clear the search shape layer
+          searchShapeLayer.DeleteAllShapes();
+          
+          //bounding box coordinates
+         var topLeft = new VELatLong(43.645,-79.389);
+         var bottomRight = new VELatLong(43.642,-79.385); 
+      
+         //checks to see if bounding box crosses 180 degrees
+         if(topLeft.Longitude > bottomRight.Longitude)
+        {
+           //iterate through shapes in dataLayer
+           for(var i=0;i<dataLayer.GetShapeCount();i++)
+           {
+             var shape = dataLayer.GetShapeByIndex(i);
+          var latlong = shape.GetPoints()[0];
+          var lat = latlong.Latitude;
+          var lon = latlong.Longitude;
+
+             if(topLeft.Longitude >= lon && bottomRight.Longitude <= lon && topLeft.Latitude >= lat && bottomRight.Latitude <= lat)
+             {
+               shape.Show();
+             }       
+           }
+         }
+        else
+        {
+         //iterate through shapes in dataLayer
+           for(var i=0;i<dataLayer.GetShapeCount();i++)
+           {
+             var shape = dataLayer.GetShapeByIndex(i);
+          var latlong = shape.GetPoints()[0];
+          var lat = latlong.Latitude;
+          var lon = latlong.Longitude;
+          
+          if(topLeft.Longitude <= lon && bottomRight.Longitude >= lon && topLeft.Latitude >= lat && bottomRight.Latitude <= lat)
+             {
+               shape.Show();
+             }
+        }           
+        }
+        
+        //draw search area
+        drawBox(topLeft,bottomRight);
+        
+        map.SetMapView([topLeft,bottomRight]);
+         }
+         */ 
+					/*
+         function drawBox(topLeft,bottomRight)
+         {
+           var topRight = new VELatLong(topLeft.Latitude,bottomRight.Longitude);
+           var bottomLeft = new VELatLong(bottomRight.Latitude,topLeft.Longitude);
+           var box = new VEShape(VEShapeType.Polyline,[topLeft,topRight,bottomRight,bottomLeft,topLeft]);
+           box.HideIcon();
+           searchShapeLayer.AddShape(box);
+         }
+         */
+				 
+        function radiusSearch() 
+    {
+      //hide previous results
+          hideEachShape();
+          
+          //clear the search shape layer
+          searchShapeLayer.DeleteAllShapes();
+      
+      //center of search Radius
+      var origin = new VELatLong(43.645,-79.389);
+      
+      //search radius in km
+      var radius = 1;
+      
+      for(var i=0; i < dataLayer.GetShapeCount(); i++)
+      {
+        var shape = dataLayer.GetShapeByIndex(i);
+        var latlong = shape.GetPoints()[0];
+        
+        var d = distance(origin,latlong);
+      
+        if(Math.abs(d)<= Math.abs(radius))
+        {
+          shape.Show();
+        }
+      }
+      
+      drawCircle(origin,radius);
+    }
+         
+    //calculation of Haversine Forumla
+    function distance(latlong,latlong2)
+    {
+      var lat1 = latlong.Latitude;
+      var lon1 = latlong.Longitude;
+      var lat2 = latlong2.Latitude;
+      var lon2 = latlong2.Longitude;
+      var earthRadius = 6371;
+      
+      var factor = Math.PI/180;
+      var dLat = (lat2-lat1)*factor;
+      var dLon = (lon2-lon1)*factor; 
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2)+Math.cos(lat1*factor)*Math.cos(lat2*factor)*Math.sin(dLon/2) * Math.sin(dLon/2); 
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      var d = earthRadius * c;
+      
+      return d;
+    }
+    
+    function drawCircle(origin,radius)
+    {  
+      var earthRadius = 6371;
+      
+      //latitude in radians
+        var lat = (origin.Latitude*Math.PI)/180; 
+        
+        //longitude in radians
+        var lon = (origin.Longitude*Math.PI)/180; 
+        
+        //angular distance covered on earth's surface
+        var d = parseFloat(radius)/earthRadius;  
+        
+        var points = new Array();
+        for (i = 0; i <= 360; i++) 
+        { 
+            var point = new VELatLong(0,0)            
+            var bearing = i * Math.PI / 180; //rad
+            point.Latitude = Math.asin(Math.sin(lat)*Math.cos(d) + Math.cos(lat)*Math.sin(d)*Math.cos(bearing));
+            point.Longitude = ((lon + Math.atan2(Math.sin(bearing)*Math.sin(d)*Math.cos(lat), Math.cos(d)-Math.sin(lat)*Math.sin(point.Latitude))) * 180) / Math.PI;
+            point.Latitude = (point.Latitude * 180) / Math.PI;
+            points.push(point);
+        }
+        document.write(points[90] + " | ");  document.write(points[180] + " | ");  document.write(points[270] + " | ");  document.write(points[0] + " | ");  
+       var circle = new VEShape(VEShapeType.Polyline, points); 
+       circle.HideIcon();
+       searchShapeLayer.AddShape(circle);
+       
+       map.SetMapView(points);
+    }
+    
+    /*
+    function polygonSearch()
+    {
+      //hide previous results
+          hideEachShape();
+          
+          //clear the search shape layer
+          searchShapeLayer.DeleteAllShapes();
+      
+      //polygon coordinates
+      var points = new Array(new VELatLong(43.64486433588385, -79.3791389465332),
+  new VELatLong(43.64508171979899, -79.3930435180664),
+  new VELatLong(43.63682057801007, -79.38437461853027),
+  new VELatLong(43.63946054004705, -79.36819553375244),
+  new VELatLong(43.652720712083266, -79.37201499938965),
+  new VELatLong(43.65793702655821, -79.39111232757568),
+  new VELatLong(43.64927396999741, -79.37222957611084),
+  new VELatLong(43.64486433588385, -79.3791389465332));
+      
+      for(var i=0; i < dataLayer.GetShapeCount(); i++)
+      {
+        var shape = dataLayer.GetShapeByIndex(i);
+        var latlong = shape.GetPoints()[0];
+        var lat = latlong.Latitude;
+        var lon = latlong.Longitude;
+        
+        if(pointInPolygon(points,lat,lon))
+        {
+          shape.Show();
+        }
+      }
+      
+      drawPolygon(points);
+    }
+    */
+		/*
+    function pointInPolygon(points,lat,lon) 
+     {
+        var i;
+        var j=points.length-1;
+        var inPoly=false;
+
+        for (i=0; i<points.length; i++) 
+        {
+          if (points[i].Longitude<lon && points[j].Longitude>=lon ||  points[j].Longitude<lon && points[i].Longitude>=lon) 
+          {
+              if (points[i].Latitude+(lon-points[i].Longitude)/(points[j].Longitude-points[i].Longitude)*(points[j].Latitude-points[i].Latitude)<lat) 
+              {
+                inPoly=!inPoly; 
+              }
+          }
+          j=i; 
+        }
+
+      return inPoly; 
+    }
+    */
+		/*
+    function drawPolygon(points)
+    {
+      var polygon = new VEShape(VEShapeType.Polyline, points);
+      polygon.HideIcon();
+           searchShapeLayer.AddShape(polygon); 
+           
+           map.SetMapView(points);  
+    }
+		*/
+      </script>
+   </head>
+   <body onload="GetMap();">
+      <div id='myMap' style="position: relative; width: 600px; height: 400px;"></div>
+      
+      <INPUT id="box" type="button" value="Bounding Box Search" name="box" onclick="boundingBoxSearch();"> 
+      <INPUT id="radius" type="button" value="Radius Search" name="radius" onclick="radiusSearch();"> 
+      <INPUT id="poly" type="button" value="Polygon Search" name="poly" onclick="polygonSearch();"> 
+   </body>
+</html>

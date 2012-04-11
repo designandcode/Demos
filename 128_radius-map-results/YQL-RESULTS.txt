@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query xmlns:yahoo="http://www.yahooapis.com/v1/base.rng"
+    yahoo:count="6" yahoo:created="2011-03-12T20:05:14Z" yahoo:lang="en-US">
+    <diagnostics>
+        <publiclyCallable>true</publiclyCallable>
+        <url execution-time="93"><![CDATA[http://where.yahooapis.com/v1/places.q(13202);start=0;count=10]]></url>
+        <user-time>96</user-time>
+        <service-time>93</service-time>
+        <build-version>11622</build-version>
+    </diagnostics> 
+    <results>
+        <place xmlns="http://where.yahooapis.com/v1/schema.rng"
+            xml:lang="en-US" yahoo:uri="http://where.yahooapis.com/v1/place/12762716">
+            <woeid>12762716</woeid>
+            <placeTypeName code="11">Zip Code</placeTypeName>
+            <name>13202</name>
+            <country code="US" type="Country">United States</country>
+            <admin1 code="US-NY" type="State">New York</admin1>
+            <admin2 code="" type="County">Onondaga</admin2>
+            <admin3/>
+            <locality1 type="Town">Syracuse</locality1>
+            <locality2/>
+            <postal type="Zip Code">13202</postal>
+            <centroid>
+                <latitude>43.043140</latitude>
+                <longitude>-76.150520</longitude>
+            </centroid>
+            <boundingBox>
+                <southWest>
+                    <latitude>43.031761</latitude>
+                    <longitude>-76.159103</longitude>
+                </southWest>
+                <northEast>
+                    <latitude>43.054699</latitude>
+                    <longitude>-76.141151</longitude>
+                </northEast>
+            </boundingBox>
+            <areaRank>1</areaRank>
+            <popRank>0</popRank>
+        </place>
+        <place xmlns="http://where.yahooapis.com/v1/schema.rng"
+            xml:lang="en-US" yahoo:uri="http://where.yahooapis.com/v1/place/24529169">
+            <woeid>24529169</woeid>
+            <placeTypeName code="11">Postal Code</placeTypeName>
+            <name>13202</name>
+            <country code="FR" type="Country">France</country>
+            <admin1 code="" type="Region">Provence-Alpes-Cote d'Azur</admin1>
+            <admin2 code="" type="Department">Bouches-du-Rhone</admin2>
+            <admin3/>
+            <locality1 type="Town">Marseille</locality1>
+            <locality2/>
+            <postal type="Postal Code">13202</postal>
+            <centroid>
+                <latitude>43.300201</latitude>
+                <longitude>5.382630</longitude>
+            </centroid>
+            <boundingBox>
+                <southWest>
+                    <latitude>43.291012</latitude>
+                    <longitude>5.370770</longitude>
+                </southWest>
+                <northEast>
+                    <latitude>43.309391</latitude>
+                    <longitude>5.394490</longitude>
+                </northEast>
+            </boundingBox>
+            <areaRank>1</areaRank>
+            <popRank>0</popRank>
+        </place>
+        <place xmlns="http://where.yahooapis.com/v1/schema.rng"
+            xml:lang="en-US" yahoo:uri="http://where.yahooapis.com/v1/place/24553161">
+            <woeid>24553161</woeid>
+            <placeTypeName code="11">Postal Code</placeTypeName>
+            <name>132</name>
+            <country code="MX" type="Country">Mexico</country>
+            <admin1 code="MX-DIF" type="Federal District">Distrito Federal</admin1>
+            <admin2 code="" type="Municipality">Tlahuac</admin2>
+            <admin3/>
+            <locality1/>
+            <locality2/>
+            <postal type="Postal Code">132</postal>
+            <centroid>
+                <latitude>19.269760</latitude>
+                <longitude>-98.985580</longitude>
+            </centroid>
+            <boundingBox>
+                <southWest>
+                    <latitude>19.197399</latitude>
+                    <longitude>-99.068916</longitude>
+                </southWest>
+                <northEast>
+                    <latitude>19.325640</latitude>
+                    <longitude>-98.940193</longitude>
+                </northEast>
+            </boundingBox>
+            <areaRank>4</areaRank>
+            <popRank>0</popRank>
+        </place>
+        <place xmlns="http://where.yahooapis.com/v1/schema.rng"
+            xml:lang="en-US" yahoo:uri="http://where.yahooapis.com/v1/place/24603730">
+            <woeid>24603730</woeid>
+            <placeTypeName code="11">Postal Code</placeTypeName>
+            <name>13202</name>
+            <country code="SE" type="Country">Sweden</country>
+            <admin1 code="SE-AB" type="County">Stockholm</admin1>
+            <admin2 code="" type="Municipality">Nacka</admin2>
+            <admin3/>
+            <locality1 type="Town">Saltsj&ouml; Boo</locality1>
+            <locality2/>
+            <postal type="Postal Code">13202</postal>
+            <centroid>
+                <latitude>59.332329</latitude>
+                <longitude>18.065090</longitude>
+            </centroid>
+            <boundingBox>
+                <southWest>
+                    <latitude>59.331181</latitude>
+                    <longitude>18.061180</longitude>
+                </southWest>
+                <northEast>
+                    <latitude>59.336609</latitude>
+                    <longitude>18.068560</longitude>
+                </northEast>
+            </boundingBox>
+            <areaRank>0</areaRank>
+            <popRank>0</popRank>
+        </place>
+        <place xmlns="http://where.yahooapis.com/v1/schema.rng"
+            xml:lang="en-US" yahoo:uri="http://where.yahooapis.com/v1/place/26800054">
+            <woeid>26800054</woeid>
+            <placeTypeName code="11">Postal Code</placeTypeName>
+            <name>13202</name>
+            <country code="BR" type="Country">Brazil</country>
+            <admin1 code="BR-SP" type="State">Sao Paulo</admin1>
+            <admin2 code="" type="Municipality">Jundia&iacute;</admin2>
+            <admin3/>
+            <locality1 type="Town">Jundiai</locality1>
+            <locality2/>
+            <postal type="Postal Code">13202</postal>
+            <centroid>
+                <latitude>-23.203501</latitude>
+                <longitude>-46.874500</longitude>
+            </centroid>
+            <boundingBox>
+                <southWest>
+                    <latitude>-23.326040</latitude>
+                    <longitude>-47.028172</longitude>
+                </southWest>
+                <northEast>
+                    <latitude>-23.075500</latitude>
+                    <longitude>-46.786919</longitude>
+                </northEast>
+            </boundingBox>
+            <areaRank>6</areaRank>
+            <popRank>0</popRank>
+        </place>
+        <place xmlns="http://where.yahooapis.com/v1/schema.rng"
+            xml:lang="en-US" yahoo:uri="http://where.yahooapis.com/v1/place/12703446">
+            <woeid>12703446</woeid>
+            <placeTypeName code="11">Postal Code</placeTypeName>
+            <name>13</name>
+            <country code="TR" type="Country">Turkey</country>
+            <admin1 code="" type="Il">Bitlis</admin1>
+            <admin2/>
+            <admin3/>
+            <locality1/>
+            <locality2/>
+            <postal type="Postal Code">13</postal>
+            <centroid>
+                <latitude>38.517818</latitude>
+                <longitude>42.385738</longitude>
+            </centroid>
+            <boundingBox>
+                <southWest>
+                    <latitude>37.970081</latitude>
+                    <longitude>41.523602</longitude>
+                </southWest>
+                <northEast>
+                    <latitude>39.065552</latitude>
+                    <longitude>43.247879</longitude>
+                </northEast>
+            </boundingBox>
+            <areaRank>8</areaRank>
+            <popRank>0</popRank>
+        </place>
+    </results>
+</query>
+ 
