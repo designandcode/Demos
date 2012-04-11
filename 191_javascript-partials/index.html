@@ -1,0 +1,54 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="tests/tests.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script>
+	$(function(){
+		//$("body").tests(); Works if tests/01_qunit-test.js exists and has logic - else prints no tests (only test container)
+		$("body").tests({pages: ['CheckBoxState']}); //tests will be run in this order
+		//$("body").tests(); //tests will be run in this order
+
+		
+	});
+	
+		
+	Function.prototype.partial = function(){
+    var fn = this, args = Array.prototype.slice.call(arguments);
+    return function(){
+      var arg = 0;
+      for ( var i = 0; i < args.length && arg < arguments.length; i++ )
+        if ( args[i] === undefined )
+          args[i] = arguments[arg++];
+      return fn.apply(this, args);
+    };
+  };
+	
+	var foo = function(){ console.log("bar") }	
+	var delay = setTimeout.partial(undefined, 3000);	
+	delay(foo);
+	
+	
+	var one = 1;
+	var two = 2;
+	
+	function add(x,y,z){
+		//return x + y;
+		console.log(x + y + z);
+	}
+	
+	var step = add.partial(undefined, 5, null);
+	step(one,10);
+	
+</script>
+</head>
+<body>
+I CAN HAZ TDD?
+</body>
+</html>
