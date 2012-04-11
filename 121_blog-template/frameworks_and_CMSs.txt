@@ -1,0 +1,40 @@
+PHP
+
+Joomla
+http://net.tutsplus.com/tutorials/php/how-to-build-a-joomla-template-start-to-finish/
+
+Wordpress
+http://www.webdesignermag.co.uk/tutorials/create-a-personalised-wordpress-theme/
+http://line25.com/tutorials/how-to-build-your-own-wordpress-theme
+http://line25.com/tutorials/how-to-create-your-own-custom-wordpress-theme
+
+Drupal
+http://tips.webdesign10.com/how-to-make-a-drupal-theme
+http://www.nerdliness.com/article/2007/09/10/drupal-theming
+http://neemtree.com.au/drupal-theming-designers
+
+CodeIgniter
+http://net.tutsplus.com/tutorials/php/codeigniter-basics/
+
+Ruby
+http://www.usabledevelopment.com/rubytemplates
+
+Ruby-on-rails
+http://www.alistapart.com/articles/gettingstartedwithrubyonrails
+http://net.tutsplus.com/tutorials/ruby/from-codeigniter-to-ruby-on-rails-a-conversion/
+http://rorrocket.com/2010/04/16/make-any-html-template-a-cms-using-ruby-on-rails-part-1/
+http://rorrocket.com/2010/04/21/make-any-web-template-a-cms-using-ruby-on-rails-part-2/
+http://rorrocket.com/2010/04/25/make-any-web-template-a-cms-using-ruby-on-rails-part-3/
+
+Python
+http://docs.python.org/howto/webservers.html
+C:\Users\Fleet\Downloads\Reading\0_diveintopython-5.4\diveintopython.pdf
+
+Django http://www.djangoproject.com/
+
+Django CMS - https://www.django-cms.org/
+http://www.webmonkey.com/2010/02/get_started_with_django/
+http://docs.djangoproject.com/en/dev/intro/tutorial01/
+
+
+Pending: Java, C#, symfony
