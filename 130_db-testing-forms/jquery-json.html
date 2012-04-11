@@ -1,0 +1,223 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/jquery-json-style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+<!--script type="text/javascript" src="db/json.js"></script-->
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script type="text/javascript">
+					
+//$.getJSON('db/json.php', function(data){
+$.getJSON('db/json.js', function(data){
+	
+	
+	// Autopopulate column into dropdown
+	for (i in data.db["records"]) {
+		//$('#single form select').append('<option>'+db["records"][i][0]+'</option>');
+		$('#single form select').append('<option value="'+data.db["records"][i][0]+'">'+data.db["records"][i][1]+'</option>');
+	}
+	
+	// Select all columns from a single record
+	$("select").change(function(){
+		var selectedOption = $(this).val();
+		$("#single-results").empty();
+			$('.table tr').removeClass('active');
+		
+		if (selectedOption == "Select a Record") {
+			$("#single-results").append(selectedOption);
+		}
+		for (i in data.db["records"][selectedOption]) {
+			$("#single-results").append(data.db["records"][selectedOption][i] +"<br />");
+			$('.table tr.'+selectedOption).addClass('active');
+		}
+	});	
+		
+	
+	// Search for single predefined record from a column
+	$('#search input:submit').click(function(){
+		inputVal = $('#search input:text').val();
+			$('#search #search-single-results').empty();
+			if (typeof data.db["records"][inputVal] == 'undefined') {
+				$("#search #search-single-results").append("Record does not exist in the database");
+			}
+			
+			$('.table tr').removeClass('active');
+			
+			for (i in data.db["records"][inputVal]) {
+				$("#search #search-single-results").append(data.db["records"][inputVal][i] +"<br />");
+				
+				$('.table tr.'+inputVal).addClass('active');
+			};
+			
+			
+		
+		return false;
+	});
+
+	
+	// Search for multiple predefined records from a column
+	$('#search2 input:submit').click(function(){
+			$('.table tr').removeClass('active');
+		inputVal = $('#search2 input:text').val();
+		inputRecords = inputVal.split(' and ');
+			$('#search2 #search-multi-results').empty();
+			for (j=0;j<inputRecords.length;j++){
+				if (typeof data.db["records"][inputRecords[j]] == 'undefined') {
+					$("#search2 #search-multi-results").append('<div class="jFail">'+inputRecords[j] +" Record does not exist in the database</div> <br />");
+					$("#search2 #search-multi-results").append('<hr>');
+				} else if (typeof data.db["records"][inputRecords[j]] != 'undefined') {
+			for (i in data.db["records"][inputRecords[j]]) {
+					$("#search2 #search-multi-results").append(data.db["records"][inputRecords[j]][i] +"<br />");
+				$('.table tr.'+inputRecords[j]).addClass('active');
+			};
+					$("#search2 #search-multi-results").append('<hr>');
+				}
+			}
+			
+			/*
+			for (i in data.db["records"][inputVal]) {
+				$("#search2 #search-multi-results").append(data.db["records"][inputVal][i] +"<br />");
+				
+				$('.table tr.'+inputVal).addClass('active');
+			};
+			*/
+			
+		
+		return false;
+	});
+	
+	// return all columns from a single record that matches a column record that matches an input
+	$('#search3 input:submit').click(function(){
+			$('.table tr').removeClass('active');
+			$('#search3 #search-filter-results').empty();
+			inputVal = $('#search3 input:text').val();
+			//for (i in data.db["records"][inputVal][0]) {
+			
+				$("#search3 #search-filter-results").append('<div class="jFail">'+inputVal +" Record does not exist in the database</div> <br />");
+			//}
+			for (i in data.db["records"]) {
+			for (j in data.db["records"][i]) {
+			if (data.db["records"][i][j] == inputVal) {
+				//alert('found it');
+				for (k in data.db["records"][i]) {
+				$("#search3 #search-filter-results").append(data.db["records"][i][k] +"<br />");
+				$('.table tr.'+data.db["records"][i][0]).addClass('active');
+				$('.jFail').remove();
+				}
+			
+			}
+			}
+			}
+			
+		return false;
+	});
+	
+	// return all columns from all records that match the criteria - in this case records that are within 50 miles of the entered coordinates
+	$('#search4 input:submit').click(function(){
+			/* 43.1922532075705,-76.2615720447455 
+			0.4491132075705 lat
+			0.6110520447455 lon
+			*/
+			
+			$('.table tr').removeClass('active');
+			$('#search4 #search-filter-results').empty();
+		radius = 50;
+		latRadius = radius * 0.00898226415141;
+		lonRadius = radius * 0.01222104089491;
+			inputVal = $('#search4 input:text').val();
+			lat = 1*inputVal.split(',')[0];
+			lon = 1*inputVal.split(',')[1];
+			maxLat = lat + latRadius;
+			minLat = lat - latRadius;
+			maxLon = lon + lonRadius;
+			minLon = lon - lonRadius;
+			for (i in data.db["records"]) {
+			if (data.db["records"][i][2].split(',')[0] > minLat && data.db["records"][i][2].split(',')[0] < maxLat && data.db["records"][i][2].split(',')[1] > minLon && data.db["records"][i][2].split(',')[1] < maxLon) {
+			for (j in data.db["records"][i]) {
+				if (data.db["records"][i][2] != inputVal) {
+				$("#search4 #search-filter-results").append(data.db["records"][i][j] +"<br />");
+				$('.table tr.'+data.db["records"][i][0]).addClass('active');
+				}
+				}
+			}
+			}
+			
+			
+			
+		return false;
+	});
+	
+	
+	
+	// Return all fields from all records
+	$(".table").append('<p>Count: '+ data.db["count"] +'</p>');
+	var myRows = [], $myTable = $('.table');
+	myRows.push('<table><tbody>');
+	
+	for (i in data.db["records"]) {
+		myRows.push('<tr class="'+data.db["records"][i][0]+'">');
+		for (j in data.db["records"][i]) {
+			myRows.push('<td>' + data.db["records"][i][j] + '</td>');
+		}
+		myRows.push('</tr>');
+	}
+	
+	myRows.push('</tbody></table>');
+	$myTable.append(myRows.join(''));
+	
+	
+});					
+</script>
+</head>
+<body>
+<div id="single">
+	<form>
+		<h4>Single Record</h4>
+		<select>
+			<option>Select a Record</option>
+		</select>
+		</form>
+	<div id="single-results">Single Record</div>
+</div>
+	<div id="search">
+		<h4>Search Single Record</h4>
+		<form>
+			<input type="text" />
+			<input type="submit" value="Search" />
+		</form>
+		<div id="search-single-results"></div>
+	</div>
+	<div id="search3">
+		<h4>Filter Records</h4>
+		<form>
+			<input type="text" />
+			<input type="submit" value="Search" />
+		</form>
+		<div id="search-filter-results"></div>
+	</div>
+	<div id="search2">
+		<h4>Search Multiple Records</h4>
+		<form>
+			<input type="text" size="50" />
+			<input type="submit" value="Search" />
+		</form>
+		<div id="search-multi-results"></div>
+	</div>
+	<div id="search4">
+		<h4>Filter Records2</h4>
+		<form>
+			<input type="text" size="50"/>
+			<input type="submit" value="Search" />
+		</form>
+		<div id="search-filter-results"></div>
+	</div>
+	<div id="all">
+	<h4 class="all-records">All Records</h4>
+	<div class="table"></div>
+	</div>
+</body>
+</html>

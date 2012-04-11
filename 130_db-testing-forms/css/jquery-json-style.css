@@ -1,0 +1,64 @@
+*{
+	/*border:1px solid black;*/
+}
+body{
+	font-size:70%;
+}
+#single{
+	position:relative;
+	float:left;
+}
+#single form{
+	position:relative;
+	float:left;
+	width:175px;
+	height:175px;
+}
+div#single-results{
+	position:relative;
+	float:left;
+	width:225px;
+	height:175px;
+}
+div.table{
+	clear:both;
+}
+h4.all-records{
+
+	clear:both;
+}
+div.table td{
+	border:1px solid blue;
+	padding:3px;
+}
+tr.active{
+	background-color:#ccc;
+}
+
+.table tr.row0{
+	background-color:#ccc;
+}
+#search, #search2, #search3{
+	width:225px;
+	position:relative;
+	float:left;
+}
+#search2, #search4{
+	width:400px;
+}
+#search4{
+	position:absolute;
+	top:200px;
+	left:400px;
+}
+#all{
+	position:absolute;
+	top:200px;
+}
+.jFail{
+	color:red;
+}
+.jSuccess{
+	
+	border:1px solid green;
+}

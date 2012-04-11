@@ -1,0 +1,43 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/jquery-json-style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="db/json.js"></script>
+<script type="text/javascript" src="jsonsql-0.1.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script type="text/javascript">
+					
+jsonsql.query("select * from db.records[124]",json);
+	
+	
+});					
+</script>
+</head>
+<body>
+<div id="single">
+	<form>
+		<h4>Single Record</h4>
+		<select>
+			<option>Select a Record</option>
+		</select>
+		</form>
+	<div id="single-results">Single Record</div>
+</div>
+	<div id="search">
+		<form>
+			<input type="text" />
+			<input type="submit" value="Search" />
+		</form>
+		<div id="search-single-results"></div>
+	</div>
+	<h4 class="all-records">All Records</h4>
+	<div id="all">
+	<div class="table"></div>
+	</div>
+</body>
+</html>
