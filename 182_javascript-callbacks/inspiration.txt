@@ -1,0 +1,20 @@
+http://paynedigital.com/2011/11/bootbox-js-alert-confirm-dialogs-for-twitter-bootstrap
+/*********************************************/
+bootbox.alert("Hello World!", function() {
+    // any code you want to happen after the alert is dismissed
+    console.log("Alert dismissed");
+});
+/*********************************************/
+
+
+Idea about how this can work
+bootbox = {
+	alert: function(args){
+	  alert(args[0]);
+	  return args[1];
+	},
+	confirm: function(args){
+	  result = confirm(args[0]);
+	  return args[1];
+	}
+}
