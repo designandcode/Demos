@@ -1,0 +1,17 @@
+Excerpt from The cloud at your service: the when, how, and why of enterprise cloud computing 978-1-935182-52-8
+
+Consider the problem of counting the number of occurences of each word in a large collection of documents (something Google would do to help give relevant results).  The following shows the MapReduce code for such a problem:
+
+void map(String name, String document):
+  for each word w in document:
+    EmitIntermediate(w,1);
+
+void reduce(String word, Iterator partialCounts):
+  int result = 0;
+  for each pc in partialCoutns:
+    result += ParseInt(pc);
+  Emit(result);
+
+On the first line, name is the document name and document is the document conents.  Then, for the reduce function, word is a word, and partialCounts is a list of aggregated partial counts.
+
+The map function emits each word plus an associated count of occurences (1, in this example).  The reduce function sums together all the counts emitted for a particular word.
