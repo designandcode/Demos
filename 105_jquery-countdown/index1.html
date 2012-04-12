@@ -1,0 +1,81 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script type="text/javascript">
+	Object.prototype.p = function(){
+		
+		return document.write("<p>" + this.valueOf() + "</p>");
+		
+	}
+</script>
+<script>
+$(function(){
+	
+	function CountDown(){
+		
+		SecondsPerMinute = 60;
+		SecondsPerHour = 60 * 60;
+		SecondsPerDay = 60 * 60 * 24;
+		
+		MSecondsPerSecond = 1000;
+		MSecondsPerMinute = 60 * 1000;
+		MSecondsPerHour = 60 * 60 * 1000;
+		MSecondsPerDay = 60 * 60 * 24 * 1000;
+		
+		
+		
+		today = new Date();
+		
+		daysSinceEpoch = today.getTime() / MSecondsPerDay;
+		hoursSinceEpoch = today.getTime() / MSecondsPerHour;
+		minutesSinceEpoch = today.getTime() / MSecondsPerMinute;
+		secondsSinceEpoch = today.getTime() / MSecondsPerSecond;
+		
+		
+		futureTime = new Date('19 February, 2011');
+		
+		Rdays = Math.floor((futureTime.getTime() - today.getTime()) / MSecondsPerDay);
+		/**/
+		hoursUntilFutureTime = (futureTime.getTime() - today.getTime()) / MSecondsPerHour;
+		minutesUntilFutureTime = (futureTime.getTime() - today.getTime()) / MSecondsPerMinute;
+		secondsUntilFutureTime = (futureTime.getTime() - today.getTime()) / MSecondsPerSecond;
+		/**/
+		Rhours = Math.floor(hoursUntilFutureTime % 24);
+		Rminutes = Math.floor(minutesUntilFutureTime % 60);
+		Rseconds = Math.floor(secondsUntilFutureTime % 60);
+		
+		
+		$('#days').html(Rdays + ' days : ');
+		$('#hours').html(Rhours + ' hours : ');
+		$('#minutes').html(Rminutes + ' minutes : ');
+		$('#seconds').html(Rseconds + ' seconds');
+		
+		
+		};
+		
+		
+		CountDown();
+
+});	
+</script>
+</head>
+<body>
+<div>
+	<span id="days"></span>
+	<span id="hours"></span>
+	<span id="minutes"></span>
+	<span id="seconds"></span>
+</div>
+<!--div id="days"></div>
+<div id="hours"></div>
+<div id="minutes"></div>
+<div id="seconds"></div-->
+</body>
+</html>

@@ -1,0 +1,2 @@
+http://keith-wood.name/countdown.html
+http://demo.tutorialzine.com/2011/12/countdown-jquery/
