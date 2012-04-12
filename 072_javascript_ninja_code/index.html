@@ -1,0 +1,31 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!--script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script-->
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body>
+<script type="text/javascript">
+	function AssertException(message) { this.message = message; }
+	AssertException.prototype.toString = function () {
+	  return 'AssertException: ' + this.message;
+	}
+	function assert(exp, message) {
+	  if (!exp) {
+		throw new AssertException(message);
+	  }
+	}
+</script>
+<script type="text/javascript">
+	function isNimble(){ return true; } 
+	var canFly = function(){ return true; }; 
+	window.isDeadly = function(){ return true; }; 
+	log(isNimble, canFly, isDeadly);
+</script>
+</body>
+</html>
