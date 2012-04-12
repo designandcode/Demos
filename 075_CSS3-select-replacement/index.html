@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tutorialzine CSS3 Select Replacement Plugin | Tutorialzine Demo</title>
+
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="stylesheet" type="text/css" href="tzSelect/jquery.tzSelect.css" />
+<script src="tzSelect/jquery-1.4.3.js"></script>
+<script src="tzSelect/jquery.tzSelect.js"></script>
+<script>
+	$(function(){
+		$('select.makeMeFancy').tzSelect({
+		render : function(option){
+			return $('<li>',{
+				html:	'<img src="'+option.data('icon')+'" /><span>'+
+						option.data('html-text')+'</span>'
+			});
+		},
+		className : 'hasDetails'
+	});
+		$('select.regularSelect').tzSelect();
+		
+	});
+</script>
+</head>
+<body>
+
+<div id="page">
+	<form method="post" action="">
+    
+    	<!-- We are going to use jQuery to hide the select element and replace it -->
+        
+		<select name="fancySelect" class="makeMeFancy">
+        
+        	<!-- Notice the HTML5 data attributes -->
+        
+	        <option value="0" selected="selected" data-skip="1">Choose Your Product</option>
+        	<option value="1" data-icon="img/products/iphone.png" data-html-text="iPhone 4&lt;i&gt;in stock&lt;/i&gt;">iPhone 4</option>
+        	<option value="2" data-icon="img/products/ipod.png" data-html-text="iPod &lt;i&gt;in stock&lt;/i&gt;">iPod</option>
+            <option value="3" data-icon="img/products/air.png" data-html-text="MacBook Air&lt;i&gt;out of stock&lt;/i&gt;">MacBook Air</option>
+            <option value="4" data-icon="img/products/imac.png" data-html-text="iMac Station&lt;i&gt;in stock&lt;/i&gt;">iMac Station</option>
+        </select>
+        
+        <select class="regularSelect">
+	        <option value="0" selected="selected" data-skip="1">Choose extras</option>
+        	<option value="1">A protective case</option>
+        	<option value="2">Colorful panel</option>
+            <option value="3">A membership card</option>
+            <option value="4">App store credit</option>
+        </select>
+        
+        <select class="regularSelect">
+	        <option value="0" selected="selected" data-skip="1">Payment method</option>
+        	<option value="1">PayPal</option>
+        	<option value="2">Credit Card</option>
+            <option value="3">Wire transfer</option>
+            <option value="4">On delivery</option>
+        </select>
+    </form>
+    
+</div>
+
+<!-- Feel free to remove this footer -->
+
+<div id="footer">
+	<div class="tri"></div>
+	<h1>Tutorialzine CSS3 Select Replacement Plugin</h1>
+	<a class="tzine" href="http://tutorialzine.com/2011/02/converting-jquery-code-plugin/">Read &amp; Download on</a>
+</div>
+
+<!--script src="js/script.js"></script-->
+
+</body>
+</html>
