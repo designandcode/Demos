@@ -1,0 +1,10 @@
+Wordpress plugin?
+Inspiration:
+ http://is.gd/CcPOCl
+ http://is.gd/trZn0n
+
+
+The template we used to do IKS had an HTML pricing table - maybe I can use this to get started
+
+http://speckyboy.com/2011/04/14/css-data-table-techniques-and-resources/
+http://line25.com/tutorials/how-to-create-a-slick-features-table-in-html-css
