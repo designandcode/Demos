@@ -1,0 +1,7 @@
+make a jQuery newsticker using a remote json feed and timing
+
+
+one local (XML)
+
+
+one remote (JSON)
