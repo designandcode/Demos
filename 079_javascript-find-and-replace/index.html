@@ -1,0 +1,29 @@
+<html>
+<head>
+<style>
+	span.foo{
+		color:blue;
+		text-transform: uppercase;
+	}
+</style>
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<script>
+$(function(){
+	var foo = $('p');
+	//alert(foo.html.html());
+	foo.eq(1).html(foo.eq(1).html().replace('fo', '<span class="foo">' + 'FO' + '</span>'));
+	foo.eq(3).html(foo.eq(3).html().replace('foo', '<span class="foo">' + 'foo' + '</span>'));
+	//foo.eq(3).html(foo.eq(3).html().replace(foo.eq(3).html(), '<span class="foo">' + foo.html() + '</span>'));
+});
+</script>
+</head>
+<body>
+<div id="container">
+<p>Original:<br />foo</p>
+<p>Replacement:<br />foo</p>
+<p>Original:<br />foo</p>
+<p>Replacement:<br />foo</p>
+<div>FOO</div>
+</div>
+</body>
+</html>
