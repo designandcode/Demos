@@ -1,0 +1,37 @@
+@charset utf-8;
+body,html{background:url(body_bkg.jpg) repeat-x #141414;font-size:16px;font-family:Verdana, Arial, Helvetica, sans-serif;}
+a img{border:0;}
+p{font-size:.6em;font-weight:lighter;color:#333;margin:4px;}
+p a{text-decoration:none;border-bottom:1px dotted #666;}
+p a:hover{border-bottom-style:solid;}
+#container{min-height:550px;width:975px;background:url(shadow_b.jpg) no-repeat left top;margin:0 auto;}
+#shadow_wrapper{background:url(ajd_faux.gif) repeat-y left top;float:left;margin:0 0 3px 10px;}
+.ie #shadow_wrapper{background-image:none;} /*** stops faux column from showing up on homepage due to activeX warning extending below lower_content ***/
+#content_upper{min-height:200px;width:955px;float:left;background-color:#242424;}
+#content_middle{height:150px;width:955px;background-color:#242424;float:left;position:relative;} /*** for middle message ***/
+#content_lower{min-height:200px;width:955px;float:left;display:inline;background-color:#242424;}
+#logo_container{width:215px;float:left;padding:40px 40px 0 100px;}
+#message_middle{position:absolute;top:50px;left:358px;}
+#message_middle h1{font-size:1.3em;font-weight:700;color:#ccc;}
+.padding_left{padding-left:175px;}
+.padding_left_identity{padding-left:75px;}
+.italic{font-style:italic;}
+.coming_soon{color:#ccc;font-size:.7em;}
+#logo_nav{height:170px;width:320px;}
+#logo{margin-left:70px;padding-top:40px;}
+#nav_container{float:left;clear:left;padding-left:45px;padding-top:5px;}
+ul.nav{font-family:Verdana, Arial, Helvetica, sans-serif;float:left;width:100%;font-size:.67em;font-weight:700;margin:0;padding:0;}
+ul.nav li{list-style:none;float:left;width:auto;border-right:1px solid #333;border-left:1px solid #333;margin:0;padding:0 3px;} /*** overlaps left and right border to look like just 1 border ***/
+ul.nav li a{text-decoration:none;display:block;color:#CCC;padding:.3em .5em;}
+ul.nav li a:hover,ul.nav	li a:focus{background-color:#CCC;color:#333;}
+ul.nav li ul{padding-left:3px;display:none;}
+ul.nav li:hover ul{display:block;}
+ul.nav li ul li{float:none;border:none;position:relative;z-index:400;} /*** enables subnav to be on top of lower boxes, gets rid of double border on hover ***/
+ul.nav li ul li a{font-size:.9em;}
+.footer ul{margin-left:6px;}
+.footer ul li{display:inline;list-style-type:none;margin-bottom:10px;padding-left:5px;font-size:.55em;color:#444;}
+.border{background:url(footer_s.gif) no-repeat left top;}
+.footer a{color:#666;text-decoration:none;border-bottom:1px dotted #666;}
+.footer a:hover{border-bottom:1px solid #aaa;color:#aaa;}
+::-moz-selection,::selection{background:#BF5323;}
+#content ul li a::-moz-selection,#content ul li a::selection{background:#2f1603;}

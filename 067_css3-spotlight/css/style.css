@@ -1,0 +1,27 @@
+body{
+	background-color:#141414;
+}
+
+a.print_required{display: block; border-width: 0 1px 1px 0; float: left; position: relative; text-decoration: none; font-family: Verdana, Geneva, sans-serif; overflow: hidden;  /*** hides negative text indent upon click ***/}
+
+a.print_required:hover{ background-color: transparent}
+ /*** something about ie6 needs this to activate hover,  see css ninja for details ***/
+a.print_required:hover .overlay01{position: absolute; z-index: 113;  /*** changed from 3 to 133, you want hover state to be on top of everything, so this value must be the largest on the page ***/width: 192px; height: 192px;  /*** width and height of box on hover ***/border: 4px solid #29C921;  /*** should be modified in conjunction with span hover_bkg_color ***/ /*** MODIFY FOR DIFFERENT HOVERS ***/}
+
+.short155{ width: 147px !important}
+ /*** redefines width for 155px images,  important overrides cascade ***/
+
+a.identity:hover .overlay01{ border-color: #BF0052}
+a.web:hover .overlay01{ border-color: #E64500}
+a.other:hover .overlay01{ border-color: #666}
+
+a.print_required .overlay01 .caption01{position: absolute; height: 200px;  /*** modifies hieght of rgba background color. ***/line-height: 30px; width: 100%;  /*** required for overlay to work ***/z-index: 3; text-indent: -9999em; color: #fff;  /*** modifies text color for spans hover state ***/font-size: .9em;  /*** modifies span text hover identifiers font size ***/font-weight: 700; text-transform: uppercase; bottom: 0;  /*** moves rgba box around ***/overlay: hidden; /***background: rgb(0,0,0);  Usually applied for older browsers, however, a microsoft filter property has been applied in the conditional stylesheets ***/background: rgba(0, 0, 0, 0.8);  /* for browsers that know rgba */ /*** regular state bkg color ***/}
+
+a.print_required:hover .caption01{text-indent: 0;  /*** aligns hover_bkg_color with border ***/background: rgba(51, 51, 51, 0.00);  /*** changes rgba opacity back to 0 ***/}
+
+a.print_required:hover .caption01 span.hover_bkg_color{background-color: #29C921;  /*** modifies the bkg color of the hover text, added by AJ  1-29-09 ***/ /*** MODIFY FOR DIFFERENT HOVERS ***/padding: 0 10px 0 6px;  /*** gives some space around word in span ***/position: absolute; bottom: -3px;  /*** this positioning tells where the span text appears in the hover box, in this case, bottom left ***/}
+
+a.identity:hover .caption01 span.hover_bkg_color{ background-color: #bf0052}
+a.web:hover .caption01 span.hover_bkg_color{ background-color: #E64500}
+a.other:hover .caption01 span.hover_bkg_color{ background-color: #666}
+a.print_required img{ display: block}
