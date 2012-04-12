@@ -1,0 +1,2 @@
+http://davidwalsh.name/web-service-php-mysql-xml-json
+http://particletree.com/features/how-to-add-an-api-to-your-web-service/
