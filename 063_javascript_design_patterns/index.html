@@ -1,0 +1,1686 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Javascript Design Patterns</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/code-style.css" rel="stylesheet" type="text/css" />
+<!--script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script-->
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script type="text/javascript">
+	Object.prototype.p = function(){
+		
+		return document.write("<p>" + this.valueOf() + "</p>");
+		
+	}
+</script>
+</head>
+<body>
+<h4>The Creational Pattern</h4>
+<p></p>
+<script type="text/javascript">
+var newObject = new MyClass();				// instantiates newObject as an object of the class MyClass()
+
+function MyClass(foo){								// defines class MyClass
+	this.foo = foo;											// defines property this.foo
+}
+newObject.foo = "bar";								// sets property this.foo for object newObject
+
+newObject.foo.p();										// prints bar
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+// instantiates newObject as an object of the class MyClass()
+var newObject = new MyClass();        
+
+// defines class MyClass
+function MyClass(foo){  
+              
+  // defines property this.foo
+	this.foo = foo;                     
+}
+
+// sets property this.foo for object newObject
+newObject.foo = "bar";                
+
+// prints bar
+newObject.foo.p();                    
+</pre>
+</div>
+<hr>
+
+
+<h4>The Constructor Pattern</h4>
+<script type="text/javascript">
+function Car(model, year, miles){										// defines class Car
+this.model = model;																	// defines properties this.model, this.year, this.miles
+this.year = year;										
+this.miles = miles;
+this.whatCar = function(){													// defines method this.whatCar
+console.log(this.model);
+};
+}
+var civic = new Car("Honda Civic", 2009, 20000);		// instantiates civic as an object of the class Car and sets properties this.model, this.year, this.miles
+var mondeo = new Car("Ford Mondeo", 2010, 5000);		// instantiates mondeo as an object of the class Car and sets properties this.model, this.year, this.miles
+
+civic.model.p();																		// prints "<p>Honda Civic</p>"
+civic.miles.p();																		// prints "<p>20000</p>"
+mondeo.year.p();																		// prints "<p>2010</p>"
+mondeo.whatCar();																		// writes "Ford Mondeo" to the console
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+// defines class Car
+function Car(model, year, miles){	
+
+  // defines properties this.model, this.year, this.miles									
+  this.model = model;																	
+  this.year = year;										
+  this.miles = miles;
+
+  // defines method this.whatCar
+    this.whatCar = function(){													
+    console.log(this.model);
+  };
+}
+
+// instantiates civic as an object of the class Car and sets properties this.model, this.year, this.miles
+var civic = new Car("Honda Civic", 2009, 20000);		
+
+// instantiates mondeo as an object of the class Car and sets properties this.model, this.year, this.miles
+var mondeo = new Car("Ford Mondeo", 2010, 5000);		
+
+// prints Honda Civic
+civic.model.p();	
+
+// prints 20000			
+civic.miles.p();	
+
+// prints 2010																	
+mondeo.year.p();																		             
+</pre>
+</div>
+<hr>
+
+
+<h4>The Singleton Pattern</h4>
+<p>The Singleton Pattern ensures a class has only one instance, and provides a global point of access to it.</p>
+<script type="text/javascript">
+/*
+var SingletonTester = (function(){
+	//args: an object containing arguments for the singleton
+	function Singleton(args) {
+		//set args variable to args passed or empty object if none provided.
+		var args = args || {};
+		//set the name parameter
+		this.name = 'SingletonTester';
+		//set the value of pointX
+		this.pointX = args.pointX || 6; //get parameter from arguments or set default
+		//set the value of pointY
+		this.pointY = args.pointY || 10;
+	}
+	//this is our instance holder
+	var instance;
+	//this is an emulation of static variables and methods
+	var _static = {
+		name: 'SingletonTester',
+		//This is a method for getting an instance
+		//It returns a singleton instance of a singleton object
+		getInstance: function (args){
+			if (instance === undefined) {
+				instance = new Singleton(args);
+			}
+			return instance;
+		}
+	};
+	return _static;
+})();
+var singletonTest = SingletonTester.getInstance({pointX: 5});
+
+//console.log(singletonTest.pointX);
+singletonTest.pointX.p();	// outputs 5
+// notice the default property is returned if one is not set in getInstance(args)
+singletonTest.pointY.p(); 	// outputs 10
+
+// new objects return the data that has been already set - it cannot be changed
+var singletonTest2 = SingletonTester.getInstance();
+singletonTest2.pointX.p();	// outputs 5
+*/
+
+
+
+var Singleton = {
+	getInstance: function(x) {
+		if(Singleton.uniqueInstance === undefined) {
+			Singleton.uniqueInstance = x || 'bar';
+		}
+		return Singleton.uniqueInstance;
+	}
+}
+
+document.write(Singleton.getInstance('foo'));
+
+document.write(Singleton.getInstance('bar'));
+
+var foo = Singleton;
+document.write(foo.getInstance('bar'));
+
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+var SingletonTester = (function(){
+    //args: an object containing arguments for the singleton
+    function Singleton(args) {
+	
+      //set args variable to args passed or empty object if none provided.
+      var args = args || {};
+		
+      //set the name parameter
+      this.name = 'SingletonTester';
+		
+      //set the value of pointX
+      this.pointX = args.pointX || 6; //get parameter from arguments or set default
+		
+      //set the value of pointY
+      this.pointY = args.pointY || 10;
+    }
+	
+  //this is our instance holder
+  var instance;
+
+  //this is an emulation of static variables and methods
+  var _static = {
+      name: 'SingletonTester',
+      //This is a method for getting an instance
+      //It returns a singleton instance of a singleton object
+      getInstance: function (args){
+        if (instance === undefined) {
+        instance = new Singleton(args);
+      }
+      return instance;
+    }
+  };
+  return _static;
+})();
+var singletonTest = SingletonTester.getInstance({pointX: 5});
+
+//console.log(singletonTest.pointX);
+singletonTest.pointX.p();	// prints 5
+
+// notice the default property is returned if one is not set in getInstance(args)
+singletonTest.pointY.p(); 	// prints 10
+
+// new objects return the data that has been already set - it cannot be changed
+var singletonTest2 = SingletonTester.getInstance();
+singletonTest2.pointX.p();	// prints 5																	             
+</pre>
+</div>
+<hr>
+
+
+<h4>The Module Pattern</h4>
+<script type="text/javascript">
+var someModule = (function(){
+	//private attributes
+	var privateVar = 5;
+		
+	//private methods
+	var privateMethod = function(){
+		return 'Private Test +';
+	};
+	return {
+		//public attributes
+		publicVar : 10,
+		//public methods
+		publicMethod : function(){
+			return ' Followed By Public Test + ';
+		},
+		//let's access the private members
+		getData : function(){
+		
+			return privateMethod() // works because privateMethod() is within the scope of someModule
+					+ this.publicMethod() // use "this" because publicMethod is outside of the scope of someModule 
+					+ privateVar;	// works because privateVar is within the scope of someModule
+		}
+	}
+})(); //the parens here cause the anonymous function to execute and return
+someModule.getData().p();	// outputs "Private Test Followed By Public Test 5"
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+var someModule = (function(){
+
+    //private attributes
+    var privateVar = 5;
+
+    //private methods
+    var privateMethod = function(){
+      return 'Private Test +';
+    };
+    return {
+
+      //public attributes
+      publicVar : 10,
+
+      //public methods
+      publicMethod : function(){
+      return ' Followed By Public Test + ';
+      },
+
+      //let's access the private members
+      getData : function(){
+
+        // works because privateMethod() is within the scope of someModule
+        return privateMethod() 
+
+        // use "this" because publicMethod is outside of the scope of someModule
+        + this.publicMethod()
+
+        // works because privateVar is within the scope of someModule
+        + privateVar;	
+      }
+     }
+})(); //the parens here cause the anonymous function to execute and return
+
+// prints "Private Test Followed By Public Test 5"		
+someModule.getData().p();											             
+</pre>
+</div>
+<hr>
+
+
+<h4>The Revealing Module Pattern</h4>
+<script type="text/javascript">
+/*
+The idea here is that you have private methods
+which you want to expose as public methods.
+What are are doing below is effectively defining
+a self-executing function and immediately returning
+the object.
+*/
+var myRevealingModule = function(){
+	var name = 'John Smith';						// declare private property name to 'John Smith'
+	var age = 40;												// declare private property age to 40
+	function updatePerson(){						// define private function updatePerson()
+		name = 'John Smith Updated';
+	}
+	function setPerson () {							// define private function setPerson()
+		name = 'John Smith Set';
+	}
+	function getPerson () {							// define private function getPerson()
+		return name;
+	}
+	return{
+		set: setPerson,										// assign private function setPerson() to the set method of the myRevealingModule object
+		get: getPerson,										// assign private function getPerson() to the get method of the myRevealingModule object
+		update: updatePerson,							// assign private function updatePerson() to the update method of the myRevealingModule object
+		getAge: age												// assign private variable age to the getAge property of the myRevealingModule object
+	}
+}();
+// Sample usage:
+myRevealingModule.get().p();
+myRevealingModule.set();
+myRevealingModule.get().p();
+myRevealingModule.update();
+myRevealingModule.get().p();
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+/*
+The idea here is that you have private methods
+which you want to expose as public methods.
+What are are doing below is effectively defining
+a self-executing function and immediately returning
+the object.
+*/
+var myRevealingModule = function(){
+
+    // declare private property name to 'John Smith'
+    var name = 'John Smith';	
+
+    // declare private property age to 40
+    var age = 40;
+
+    // define private function updatePerson()
+    function updatePerson(){						
+      name = 'John Smith Updated';
+    }
+
+    // define private function setPerson()
+    function setPerson () {							
+      name = 'John Smith Set';
+    }
+
+    // define private function getPerson()
+    function getPerson () {							
+      return name;
+    }
+    return{
+      // assign private function setPerson() to the set method of the myRevealingModule object
+      set: setPerson,
+
+      // assign private function getPerson() to the get method of the myRevealingModule object
+      get: getPerson,	
+
+      // assign private function updatePerson() to the update method of the myRevealingModule object
+      update: updatePerson,		
+
+      // assign private variable age to the getAge property of the myRevealingModule object
+      getAge: age												
+    }
+}();
+
+// Sample usage:
+
+// prints John Smith
+myRevealingModule.get().p();
+myRevealingModule.set();
+
+// prints John Smith Set
+myRevealingModule.get().p();
+myRevealingModule.update();
+
+// prints John Smith Updated
+myRevealingModule.get().p();										             
+</pre>
+</div>
+<hr>
+
+
+<h4>The Factory Pattern</h4>
+<p>Abstract Factory - Provide an interface for creating families of related or dependent objects without specifying their concrete classes.</p>
+<p>Factory Method - Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to the subclass</p>
+<script type="text/javascript">
+
+
+var createBaseVehicle = function(type) {
+	//this.type = type;
+	if (type == "truck") {
+		//return "This car weighs over 2 ton";
+		return {  
+						weight: "This car weighs over 2 ton",
+						doors: 2,
+						length: "long",
+						utility: "high"
+						};
+		//return "This car weighs over 2 ton";
+		//this.weight = "2000 lbs or more";
+	}
+	if (type == "van") {
+		return {  
+						weight: "This car weighs over 2 ton",
+						doors: 4
+						};
+	}
+	if (type == "economy") {
+		return {  
+						weight: "This car weighs over 2000 lbs",
+						doors: 2
+						};
+	}
+	if (type == "toy") {
+		return {  
+						weight: "This car weighs over 2 ounces",
+						doors: 4
+						};
+	}
+	
+}
+var Vehicle = function(type, model, year, miles) {
+	this.type = type;
+	this.model = model;
+	this.year = year;
+	this.miles = miles;
+	
+	// Construct a base vehicle based on type 
+	var vehicle = createBaseVehicle(this.type);
+	for (i in vehicle) {
+		this[i] = vehicle[i];
+	}
+	//this.weight = vehicle.weight;
+	//this.doors = vehicle.doors;
+	//alert(this.weight);
+	
+};
+
+
+
+var f350 = new Vehicle("truck","Ford F-150",2010,1000);
+var astro = new Vehicle("van","Ford Astro",2010,1000);
+var mini = new Vehicle("economy","Mini Cooper",2010,1000);
+var tonka = new Vehicle("toy","Tonka Truck",2010,1000);
+document.write("You have selected a *"+f350.year+"*  *"+f350.model+"*. This is a *"+f350.type+"*. Like all *"+f350.type+"*s, the *"+f350.model+"* is a *"+f350.utility+"* utility vehicle.");
+//f350.weight.p(); f350.doors.p(); f350.utility.p();
+astro.weight.p(); astro.doors.p();
+mini.weight.p(); mini.doors.p();
+tonka.weight.p(); tonka.doors.p(); tonka.utility.p();
+</script>
+
+
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+var Truck = (function() {
+    var Vehicle = function (model, year, miles){
+      this.model = model;
+      this.year = year;
+      this.miles = miles;
+    };
+    return function (model, year, miles) {
+      return new Vehicle(model, year, miles);
+    }
+})();
+
+// Vehicle is protected so only have access to it through Truck
+//var f150 = new Vehicle("Ford F-150", 2010, 1000);
+//f150.model.p();
+
+// Works - we access Vehicle through Truck
+var f150 = new Truck("Ford F-150", 2010, 1000);
+
+// prints Ford F-150
+f150.model.p();								             
+</pre>
+</div>
+<hr>
+
+
+<h4>The Decorator Pattern</h4>
+<p>The Decorator Pattern attaches additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.</p>
+<script type="text/javascript">
+//The class we're going to decorate
+function Macbook(){
+	this.cost = function(){
+		return 1000;
+	};
+}
+function Memory(macbook){
+	this.cost = function(){
+		return macbook.cost() + 75;
+	};
+}
+function BlurayDrive(macbook){
+	this.cost = function(){
+		return macbook.cost() + 300;
+	};
+}
+function Insurance(macbook){
+	this.cost = function(){
+		return macbook.cost() + 250;
+	};
+}
+// Sample usage
+var myMacbook = new Insurance(new BlurayDrive(new Memory(new Macbook())));
+//console.log( myMacbook.cost() );
+myMacbook.cost().p();
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+//The class we're going to decorate
+function Macbook(){
+  this.cost = function(){
+  return 1000;
+  };
+}
+function Memory(macbook){
+  this.cost = function(){
+  return macbook.cost() + 75;
+  };
+}
+function BlurayDrive(macbook){
+  this.cost = function(){
+  return macbook.cost() + 300;
+  };
+}
+function Insurance(macbook){
+  this.cost = function(){
+  return macbook.cost() + 250;
+  };
+}
+
+// Sample usage
+var myMacbook = new Insurance(new BlurayDrive(new Memory(new Macbook())));
+
+// prints 1625
+myMacbook.cost().p();	             
+</pre>
+</div>
+<hr>
+
+
+<h4>The Decorator Pattern 2</h4>
+<script type="text/javascript">
+//The class we're going to decorate
+function Macbook(memory, bluraydrive, insurance){
+	this.memory = memory;
+	this.bluraydrive = bluraydrive;
+	this.insurance = insurance;
+	this.cost = function(){
+
+	this.memory = new Memory(this.memory);
+	this.bluraydrive = new BlurayDrive(this.bluraydrive);
+	this.insurance = new Insurance(this.insurance);
+	
+	return 1000 + this.memory.cost + this.bluraydrive.cost + this.insurance.cost;
+	};
+}
+function Memory(cost){
+		if (cost === undefined || cost == 0){
+			this.cost = 0;
+		}else if (cost == "memory"){
+			this.cost = 75;
+		}
+	};
+
+function BlurayDrive(cost){
+	if (cost === undefined || cost == 0){
+			this.cost = 0;
+		}else if (cost == "bluraydrive"){
+			this.cost = 300;
+		}
+	};
+
+function Insurance(cost){
+	if (cost === undefined || cost == 0){
+			this.cost = 0;
+		}else if (cost == "insurance"){
+			this.cost = 250;
+		}
+	};
+
+// Sample usage
+var myMacbook = new Macbook("memory",0,"insurance");
+"My Macbook with Memory and Insurance:".p(); myMacbook.cost().p();
+var yourMacbook = new Macbook();
+"Your Macbook with no extras:".p(); yourMacbook.cost().p();
+var yourMacbook = new Macbook(0,0,"insurance");
+"Your Macbook - now with Insurance:".p(); yourMacbook.cost().p();
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+//The class we're going to decorate
+function Macbook(memory, bluraydrive, insurance){
+  this.memory = memory;
+  this.bluraydrive = bluraydrive;
+  this.insurance = insurance;
+  this.cost = function(){
+
+    this.memory = new Memory(this.memory);
+    this.bluraydrive = new BlurayDrive(this.bluraydrive);
+    this.insurance = new Insurance(this.insurance);
+
+    return 1000 + this.memory.cost + this.bluraydrive.cost + this.insurance.cost;
+  };
+}
+function Memory(cost){
+  if (cost === undefined || cost == 0){
+    this.cost = 0;
+  }else if (cost == "memory"){
+    this.cost = 75;
+  }
+};
+
+function BlurayDrive(cost){
+  if (cost === undefined || cost == 0){
+    this.cost = 0;
+  }else if (cost == "bluraydrive"){
+    this.cost = 300;
+  }
+};
+
+function Insurance(cost){
+  if (cost === undefined || cost == 0){
+    this.cost = 0;
+  }else if (cost == "insurance"){
+    this.cost = 250;
+  }
+};
+
+// Sample usage
+var myMacbook = new Macbook("memory",0,"insurance");
+
+// prints My Macbook with Memory and Insurance: 1325
+"My Macbook with Memory and Insurance:".p(); myMacbook.cost().p();
+var yourMacbook = new Macbook();
+
+// prints Your Macbook with no extras: 1000
+"Your Macbook with no extras:".p(); yourMacbook.cost().p();
+var yourMacbook = new Macbook(0,0,"insurance");
+
+// prints Your Macbook - now with Insurance: 1250
+"Your Macbook - now with Insurance:".p(); yourMacbook.cost().p();	             
+</pre>
+</div>
+<hr>
+
+
+<h4>The Strategy Pattern</h4>
+<p>The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.</p>
+<script type="text/javascript">
+var animals = {
+	Duck: {
+		"weight": "light",
+		"speak": function() { return "Quack" }
+	},
+	Lion: {
+		"weight": "big",
+		"speak": function() { return "Roar" }
+	},
+	Pig: {
+		"weight": "medium",
+		"speak": function() { return "Squeal" }
+	}
+}
+
+for (animal in animals) {
+	if (animals.hasOwnProperty(animal)) {
+		document.write(animals[animal].weight + ' ' + animals[animal].speak() + '<br />');
+	}
+}
+/*
+function User(name, address, mobile, userid){
+	this.name = name;
+	this.address = address;
+	this.mobile = mobile;
+	this.userid = userid;
+	this.auth = function(){
+	
+		if( this.userid == "null"){
+			document.write("You need to create a new user");
+		} else{
+			document.write("Welcome user " + this.userid.bold() + "!");
+		}
+		};
+	
+};
+var session01 = new User();
+
+session01.userid = "null"; 	// set userid to null
+session01.userid.p();		// confirm userid set to null
+session01.auth();			// call method to write welcome message
+session01.userid = "Carl_81818";	// change userid to something other than "null"
+session01.userid.p();				// confirm userid value
+session01.auth();					// call method to write welcome message
+*/
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function User(name, address, mobile, userid){
+    this.name = name;
+    this.address = address;
+    this.mobile = mobile;
+    this.userid = userid;
+    this.auth = function(){
+
+      if( this.userid == "null"){
+        document.write("You need to create a new user");
+      } else{
+        document.write("Welcome user " + this.userid.bold() + "!");
+      }
+    };
+
+};
+var session01 = new User();
+
+// set userid to null
+session01.userid = "null"; 	
+
+// confirm userid set to null
+// prints null
+session01.userid.p();		
+
+// call method to write welcome message
+// prints You need to create a new user
+session01.auth();			
+
+// change userid to something other than "null"
+session01.userid = "Carl_81818";	
+
+// confirm userid value
+// prints Carl_81818
+session01.userid.p();	
+
+// call method to write welcome message 
+// prints Welcome user Carl_81818!
+session01.auth();					            
+</pre>
+</div>
+<hr>
+
+
+<h4>The Adapter/Wrapper Pattern</h4>
+<p>The Adapter Pattern converts the interface of a class into another interface the clients expect. Adapter lets classes work together that couldn't otherwise becuase of incompatible interfaces.</p>
+<script type="text/javascript">
+/* Instantiate a group of related classes */
+/*
+function ListContainer(container){
+	this.container = container;
+	this.print = function(){
+		document.write(this.container);
+	}
+}
+function ListItem(item){
+	this.item = item;
+	this.print = function(){
+		document.write(this.item);
+	}
+}
+
+function ListCreator(){
+	this.init = function(){
+		ULlist = new ListContainer("<ul>");
+		ULlist.print();
+		
+		
+		ULlist = new ListItem("<li>Hello</li>");
+		ULlist.print();
+	}
+};
+
+var newList = new ListCreator();
+newList.init();
+*/
+/* Here is a Duck class which contains methods I want to use in other Animal types */
+function Duck() {
+	this.type = "Duck";
+	this.quack = function() { return "Quack!!!" };
+	this.fly = function() { return "I'm "+this.type+", Flying is Easy for me, Fool!!" };
+}
+
+/* Here is a Turkey class with it's own unique methods that I want to call using method names in the Duck class */
+function Turkey() {
+	this.type = "Turkey";
+	this.gobble = function() { return "Gobble, Gobble!" };
+	this.travel = function() { return ""+this.type+", I fly a short distance" };
+}
+function Lion() {
+	this.type = "Lion";
+	this.roar = function() { return "Rooooaaaarrr!" };
+	this.move = function() { return "I'm a "+this.type+", I don't fly!" };
+}
+
+/* Given the Duck and Turkey classes (neither of which I want to alter) - how do i call the quack() method that lives in the Duck class but return the value of gobble() method in the Turkey class? */
+/* Here is the TurkeyAdapter class that instantiates a new Turkey object and returns the value of a method I want to call using a Duck method name */
+function TurkeyAdapter(turkey) {
+	this.turkey = new Turkey();
+	//this.type = this.turkey.type;
+	this.quack = function() { return this.turkey.gobble() }
+	this.fly = function() { return this.turkey.travel() }
+}
+function LionAdapter(lion) {
+	this.lion = new Lion();
+	//this.type = this.lion.type;
+	this.quack = function() { return this.lion.roar() }
+	this.fly = function() { return this.lion.move() }
+}
+
+TurkeyAdapter.prototype = new Duck();
+LionAdapter.prototype = new Duck();
+
+
+var duckie = new Duck();
+duckie.quack().p();
+duckie.fly().p();
+
+/* Notice the use of the duck's quack() method out of context */
+var butterball = new TurkeyAdapter();
+butterball.quack().p();
+
+var simba = new LionAdapter();
+simba.quack().p();
+/* LionAdapter now has it's own implementation of the Duck fly() method */
+simba.fly().p();
+</script>
+</ul>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+&lt;script type="text/javascript">
+/* Instantiate a group of related classes */
+function ListContainer(container){
+  this.container = container;
+  this.print = function(){
+    document.write(this.container);
+  }
+}
+function ListItem(item){
+  this.item = item;
+  this.print = function(){
+    document.write(this.item);
+  }
+}
+
+function ListCreator(){
+    this.init = function(){
+      ULlist = new ListContainer("&lt;ul>");
+      ULlist.print();
+
+
+      ULlist = new ListItem("&lt;li>Hello&lt;/li>");
+      ULlist.print();
+    }
+};
+
+var newList = new ListCreator();
+
+// prints &lt;ul>&lt;li>Hello&lt;/li>
+newList.init();
+&lt;/script>
+&lt;/ul>			            
+</pre>
+</div>
+<hr>
+
+<h4>The Iterator Pattern</h4>
+<p>The Iterator Pattern provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation</p>
+<script type="text/javascript">
+function Iterator(){
+	array = [];
+	this.current = 0;
+	this.collection = function(obj){
+		this.obj = obj;
+		if (typeof(this.obj) == "object" && this.obj.length) {
+			for (i=0;i<this.obj.length;i++)
+				{
+				 array.push(obj[i]);
+				}
+		}
+		
+		if (typeof(this.obj) == "object" && !this.obj.length) {
+			//obj2array = [];
+				for (i in this.obj){
+					array.push(this.obj[i]);
+				};
+		}
+		
+			if (typeof(this.obj) == "string") {
+				//var args = this.obj.split(',');
+				for (i=0;i<arguments.length;i++)
+				{
+				 array.push(arguments[i]);
+				}
+			}
+		
+	};
+  this.next = function(){
+	 //this.push();
+	 if (this.current < array.length - 1)
+		{
+		 this.current += 1;
+	  }
+	 else if (this.current == array.length)
+    {
+		  this.current = array.length - 1;
+    }		
+		 return array[this.current];
+	 
+	};
+	this.getCurrent = function() {
+		return array[this.current];
+	}
+}
+
+var list = new Iterator;
+//var fooArray = ["bob","sue","mike","john"];
+list.collection(["bob","sue","mike","john"]);
+//list.collection("bob","sue","mike","john");
+document.write('The Array - bob: list[0], sue: list[1], mike: list[2], john: list[3]<br />');
+
+
+document.write("Start: " + list.getCurrent() + "<br />");
+
+document.write("Next: " + list.next() + " : current(list[" + list.current + "]) == "+list.getCurrent()+"<br />");
+
+document.write("Next: " + list.next() + " : current(list[" + list.current + "]) == "+list.getCurrent()+"<br />");
+
+document.write("Next | Last: " + list.next() + " : current(list[" + list.current + "]) == "+list.getCurrent()+"<br />");
+document.write("================================================================<br />");
+
+var list2 = new Iterator;
+//var fooObject = {1:'bob',2:'sue',3:'mike',4:'john'}
+list2.collection({1:'bob',2:'sue',3:'mike',4:'john'});
+//list.collection("bob","sue","mike","john");
+document.write('The Array - bob: list[0], sue: list[1], mike: list[2], john: list[3]<br />');
+
+
+document.write("Start: " + list2.getCurrent() + "<br />");
+
+document.write("Next: " + list2.next() + " : current(list[" + list2.current + "]) == "+list2.getCurrent()+"<br />");
+
+document.write("Next: " + list2.next() + " : current(list[" + list2.current + "]) == "+list2.getCurrent()+"<br />");
+
+document.write("Next | Last: " + list2.next() + " : current(list[" + list2.current + "]) == "+list2.getCurrent()+"<br />");
+document.write("================================================================<br />");
+
+var list3 = new Iterator;
+//var fooArgs = '"bob","sue","mike","john"';
+list3.collection("bob","sue","mike","john");
+document.write('The Array - bob: list[0], sue: list[1], mike: list[2], john: list[3]<br />');
+
+
+document.write("Start: " + list3.getCurrent() + "<br />");
+
+document.write("Next: " + list3.next() + " : current(list[" + list3.current + "]) == "+list3.getCurrent()+"<br />");
+
+document.write("Next: " + list3.next() + " : current(list[" + list3.current + "]) == "+list3.getCurrent()+"<br />");
+
+document.write("Next | Last: " + list3.next() + " : current(list[" + list3.current + "]) == "+list3.getCurrent()+"<br />");
+document.write("================================================================<br />");
+
+/*
+function repeat(text, upto) {
+	var result = [];
+	for (var i = 1; i <= upto; i++){
+		result[i] = text;
+		document.write(result[i]);
+	}
+}
+repeat("foo", 4);
+repeat("bar", 6);
+*/
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function repeat(text, upto) {
+  var result = [];
+  for (var i = 1; i &lt;= upto; i++){
+    result[i] = text;
+    document.write(result[i]);
+  }
+}
+
+// prints foofoofoofoo
+repeat("foo", 4);
+
+// prints barbarbarbarbarbar
+repeat("bar", 6);	            
+</pre>
+</div>
+<hr>
+
+<h4>The Composite Pattern</h4>
+<p>The Composite Pattern allows you to compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and composition of objects uniformly.</p>
+<script type="text/javascript">
+function SomeMap(text){
+	this.text = text;
+	var thisArgs = arguments
+	var args = arguments.length;
+	//alert(arguments.length);
+	this.checker = function(){
+	
+		if (typeof(this.text) == "string" && args > 1){
+			
+			"this is a string".p();
+			for (var i=0; i < args; i++){
+				//thisArgs[0].p();
+				document.write(thisArgs[i] + " ");
+			}
+			//arguments[1].p();
+			//alert(typeof(this.text));
+		}
+		if (typeof(this.text) == "number" && args > 1){
+			"this is an number".p();
+			var total = 0;
+			for (var i=0; i < args; i++){
+				total += thisArgs[i];
+				
+			}
+			document.write(total);
+		}
+		if (typeof(this.text) == "object"){
+			"this is an array".p();
+			
+			var arrayText = this.text;
+			var arrayTextLength = this.text.length;
+			
+			for (var i=0; i < arrayTextLength; i++){
+				document.write(arrayText[i] + " ");
+			}
+		} else if (args == 1){
+			this.text.p();
+			
+		}
+		
+	}
+	
+}
+var stringConfirm = new SomeMap("foo", "bar");
+
+// prints this is a string foo bar
+stringConfirm.checker();
+var numberConfirm = new SomeMap(5, 5, 5);
+
+// prints this is a number 15
+numberConfirm.checker();
+var arrayConfirm = new SomeMap(["foo", 5]);
+arrayConfirm.checker();
+var singleConfirm = new SomeMap("bar");
+singleConfirm.checker();
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function SomeMap(text){
+    this.text = text;
+    var thisArgs = arguments
+    var args = arguments.length;
+    //alert(arguments.length);
+    this.checker = function(){
+
+      if (typeof(this.text) == "string" && args > 1){
+
+        "this is a string".p();
+        for (var i=0; i &lt; args; i++){
+          //thisArgs[0].p();
+          document.write(thisArgs[i] + " ");
+        }
+      }
+      if (typeof(this.text) == "number" && args > 1){
+        "this is an number".p();
+        var total = 0;
+        for (var i=0; i &lt; args; i++){
+          total += thisArgs[i];
+        }
+        document.write(total);
+      }
+      if (typeof(this.text) == "object"){
+        "this is an array".p();
+
+        var arrayText = this.text;
+        var arrayTextLength = this.text.length;
+
+        for (var i=0; i &lt; arrayTextLength; i++){
+        document.write(arrayText[i] + " ");
+        }
+      }  else if (args == 1){
+          this.text.p();
+
+        }
+
+    }
+
+}
+var stringConfirm = new SomeMap("foo", "bar");
+
+// prints this is a string foo bar
+stringConfirm.checker();
+var numberConfirm = new SomeMap(5, 5, 5);
+
+// prints this is a number 15
+numberConfirm.checker();
+var arrayConfirm = new SomeMap(["foo", 5]);
+
+// prints this is aan array foo 5
+arrayConfirm.checker();
+var singleConfirm = new SomeMap("bar");
+
+// prints bar
+singleConfirm.checker();            
+</pre>
+</div>
+<hr>
+
+<h4>The Observer Pattern</h4>
+<p>The Observer Pattern defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.</p>
+<script type="text/javascript">
+
+function SomeFoo(foo){
+	this.foo = foo;
+}
+
+
+function Observer(observeThis){
+	this.observeThis = observeThis;
+	this.check = function(){
+	if (observeThis){
+		document.write("SomeFoo() initialized <br />");
+	} else if (observeThis === undefined){
+			document.write("SomeFoo() not ready <br />");
+		}	
+	}
+};
+
+var someFoo = new SomeFoo();
+
+var observer = new Observer(someFoo.foo);
+
+// prints SomeFoo() not ready
+observer.check();
+
+someFoo.foo = 'bar';
+var observer = new Observer(someFoo.foo);
+
+// prints SomeFoo() initialized
+observer.check();
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function SomeFoo(foo){
+  this.foo = foo;
+}
+
+
+function Observer(observeThis){
+    this.observeThis = observeThis;
+    this.check = function(){
+      if (observeThis){
+        document.write("SomeFoo() initialized &lt;br />");
+      } else if (observeThis === undefined){
+        document.write("SomeFoo() not ready &lt;br />");
+      }	
+    }
+};
+
+var someFoo = new SomeFoo();
+
+var observer = new Observer(someFoo.foo);
+
+// prints SomeFoo() not ready
+observer.check();
+
+someFoo.foo = 'bar';
+var observer = new Observer(someFoo.foo);
+
+// prints SomeFoo() initialized
+observer.check();         
+</pre>
+</div>
+<hr>
+
+<h4>The Facade Pattern</h4>
+<p>The Facade Pattern provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.</p>
+<script type="text/javascript">
+//IE
+function IEBrowser()  {
+	this.hello=function(){
+		//alert("IE browser");
+		document.write("You are using an IE Browser");
+	}
+}
+//Non-IE browser
+function NonIEBrowser()  {
+	this.hello =function(){
+		//alert("Non-IE browser");
+		var browserUserAgent = navigator.userAgent;
+		
+		var browserSafari = /safari/i;
+		var browserChrome = /chrome/i;
+		var browserFirefox = /firefox/i;
+		var browserOpera = /opera/i;
+		if(browserUserAgent.match(browserOpera) == "Opera"){
+			//alert("You are using Opera");
+			document.write("You are using a Opera");
+			
+		}
+		if(browserUserAgent.match(browserSafari) == "Safari" || browserUserAgent.match(browserChrome) == "Chrome"){
+			//alert("You are using Opera");
+			document.write("You are using a Web-kit Browser");
+			
+		}
+		if(browserUserAgent.match(browserFirefox) == "Firefox"){
+			//alert("You are using Opera");
+			document.write("You are using a Firefox");
+			
+		}
+		
+	}
+}
+
+
+function Browser(){
+	this.hello=function(){
+		if(window.ActiveXObject){  
+			//alert("windows");
+			browser=new IEBrowser();
+			browser.hello();
+		  //Non-IE browser
+		  }
+		else {
+			//alert("nonwindows");
+			browser=new NonIEBrowser();
+			browser.hello();
+			//browser=new NonIEBrowser();
+			}
+	}
+}
+var browser = new Browser();
+browser.hello();
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+//IE
+function IEBrowser()  {
+  this.hello=function(){
+    //alert("IE browser");
+    document.write("You are using an IE Browser");
+  }
+}
+//Non-IE browser
+function NonIEBrowser()  {
+  this.hello =function(){
+    //alert("Non-IE browser");
+    var browserUserAgent = navigator.userAgent;
+
+    var browserSafari = /safari/i;
+    var browserChrome = /chrome/i;
+    var browserFirefox = /firefox/i;
+    var browserOpera = /opera/i;
+    if(browserUserAgent.match(browserOpera) == "Opera"){
+      //alert("You are using Opera");
+      document.write("You are using a Opera");
+
+    }
+    if(browserUserAgent.match(browserSafari) == "Safari" || browserUserAgent.match(browserChrome) == "Chrome"){
+      //alert("You are using Opera");
+      document.write("You are using a Web-kit Browser");
+
+    }
+    if(browserUserAgent.match(browserFirefox) == "Firefox"){
+      //alert("You are using Opera");
+      document.write("You are using a Firefox");
+
+    }
+
+  }
+}
+
+
+function Browser(){
+  this.hello=function(){
+    if(window.ActiveXObject){  
+      //alert("windows");
+      browser=new IEBrowser();
+      browser.hello();
+      //Non-IE browser
+    }
+    else {
+      //alert("nonwindows");
+      browser=new NonIEBrowser();
+      browser.hello();
+      //browser=new NonIEBrowser();
+    }
+  }
+}
+var browser = new Browser();
+
+// prints You are using an IE Browser or You are using a Opera | Web-kit Browser | Firefox 
+browser.hello();         
+</pre>
+</div>
+<hr>
+
+<h4>The Facade Pattern 2</h4>
+<script type="text/javascript">
+
+Array.prototype.each = function(callback){
+	
+	for (var i=0; i < this.length; i++){
+		callback(this[i]);
+	}
+	
+}
+
+boz = [1,2,3];
+boz.each(function(number){
+	document.write(number);
+});
+boz.each(function(number){
+	document.write(2 * number);
+});
+
+var list = ["foo", "bar", "baz", "bat"];
+list.each(function(item){
+	document.write("<li>"+item.bold()+"</li>");
+});
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+Array.prototype.each = function(callback){
+
+  for (var i=0; i &lt; this.length; i++){
+    callback(this[i]);
+  }
+
+}
+
+boz = [1,2,3];
+
+// prints 123
+boz.each(function(number){
+  document.write(number);
+});
+
+// prints 246
+boz.each(function(number){
+  document.write(2 * number);
+});
+
+var list = ["foo", "bar", "baz", "bat"];
+
+// prints &lt;li>&lt;b>foo&lt;/b>&lt;/li>&lt;li>&lt;b>bar&lt;/b>&lt;/li>&lt;li>&lt;b>baz&lt;/b>&lt;/li>&lt;li>&lt;b>bat&lt;/b>&lt;/li>
+list.each(function(item){
+  document.write("&lt;li>"+item.bold()+"&lt;/li>");
+});      
+</pre>
+</div>
+<hr>
+
+<h4>The Command Pattern</h4>
+<p>The Command Pattern encapsulates a request as an object, thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.</p>
+<script type="text/javascript">
+//function CommandGroup(argsArray) {
+//this.argsArray = argsArray;
+function Calculate(argsArray) {
+	this.argsArray = argsArray;
+	var args = this.argsArray.length;
+	var argz = args - 1;
+	var result = this.argsArray[1];
+	//Addition(this.argsArray);
+	
+	for (i=2;i<args;i++)
+		{
+			if (this.argsArray[0] == 'add') {
+				result += this.argsArray[i];
+			}
+			if (this.argsArray[0] == 'subtract') {
+				result -= this.argsArray[i];
+			}
+			if (this.argsArray[0] == 'multiply') {
+				result *= this.argsArray[i];
+			}
+			if (this.argsArray[0] == 'divide' && this.argsArray[argz] != 0) {
+				result /= this.argsArray[i];
+			}
+			if (this.argsArray[0] == 'divide' && this.argsArray[argz] == 0) {
+				result = "Division by zero returns NAN";
+			}
+		}	
+		
+	return result;
+	
+};
+
+function ManipulateString(argsArray) {
+	this.argsArray = argsArray;
+	var args = this.argsArray.length;
+	
+	//for (i=2;i<args;i++)
+		//{
+			if (this.argsArray[0] == 'uppercase') {
+				result = this.argsArray[1].toUpperCase();
+			}
+		//}
+		return result;
+}
+
+function Command(foo) {
+	this.foo = foo; //alert(this.foo);
+	this.execute = function() {
+		args = arguments.length;
+		arg0 = arguments[0];
+		var argsArray = [];
+		for (i=0;i<args;i++) {
+			argsArray.push(arguments[i]);
+		}
+		return eval(this.foo + '(argsArray)');
+	}
+}
+
+var calculator = new Command("Calculate");
+var stringman = new Command("ManipulateString");
+
+
+calculator.execute("add",2,4).p();
+calculator.execute("subtract",6,3,1).p();
+calculator.execute("multiply",2,2,2,2).p();
+calculator.execute("divide",16,0).p();
+stringman.execute("uppercase","Some Foo bar 00000.").p();
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Calculator(){
+  this.calc = function(type,x,y){
+    args = arguments.length
+
+    var total = arguments[1];	
+    for (i=2;i&lt;args;i++)
+      {
+        // addition
+        if (arguments[0] == "add"){
+          //return x + y;
+          total += arguments[i];
+        }
+
+        // subtraction
+        if (arguments[0] == "subtract"){
+        //return x + y;
+        total -= arguments[i];
+        }
+
+        // multiplication
+        if (arguments[0] == "multiply"){
+        //return x + y;
+        total *= arguments[i];
+        }
+
+        // division
+        if (arguments[0] == "divide"){
+        //return x + y;
+          if (arguments[last] != 0){
+            total /= arguments[i];
+          } else if (arguments[last] == 0){
+            total = "Division by zero returns NAN";
+          }
+
+        }
+      }
+  return total;
+
+  }
+
+  this.add = function(x,y){
+    return x + y;
+  }
+  this.subtract = function(x,y){
+    return x-y;
+  }
+  this.multiply = function(x,y){
+    return x*y;
+  }
+  this.divide = function(x,y){
+    return x/y;
+  }
+}
+
+var calculate = new Calculator();
+
+// prints 5
+calculate.add(2,3).p();
+
+// prints 10
+calculate.add(7,3).p();
+
+// prints 4
+calculate.subtract(7,3).p();
+
+// prints 6
+calculate.multiply(2,3).p();
+
+// prints 3
+calculate.divide(9,3).p();
+
+
+// prints 6
+calculate.calc("add",2,4).p();
+
+// prints 2
+calculate.calc("subtract",6,3,1).p();
+
+// prints 16
+calculate.calc("multiply",2,2,2,2).p();
+
+// prints 4
+calculate.calc("divide",16,0).p();
+</pre>
+</div>
+<hr>
+
+
+<h4>The State Pattern</h4>
+<p>The State Pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class.</p>
+<script type="text/javascript">
+function LifeDecision() {
+	this.age = 0; //just beginning life
+	this.setAge = function(age) {
+		this.age = age;
+		//return age;
+	}
+	this.whatToDo = function() {
+		if (this.age == 5) {
+			currentAge = this.age;
+			this.setAge(18);
+			return "You are "+currentAge+" years old. Time to go to school son!";
+		}
+		if (this.age == 18) {
+			currentAge = this.age;
+			this.setAge(35);
+			return "You are "+currentAge+" years old. Time to get out the house kid!";
+		}
+		if (this.age == 35) {
+			currentAge = this.age;
+			return "You are "+currentAge+" years old. Time to go to start your own family!";
+		}
+		return "You are "+this.age+" years old. Your just a baby, take it easy!";
+	}
+	
+}
+
+var Joe = new LifeDecision;
+Joe.whatToDo().p();
+
+Joe.setAge(5);
+Joe.whatToDo().p();
+Joe.whatToDo().p();
+Joe.whatToDo().p();
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+Some Code goes here
+</pre>
+</div>
+
+<hr>
+
+
+<h4>The Proxy Pattern</h4>
+<p>The Proxy Pattern provides a surrogate or placeholder for another object to control access to it.</p>
+<script type="text/javascript">
+// This Class lives on another machine
+function Inventory() {
+	this.stock = 0;
+	this.setStock = function(stock) {
+		this.stock = stock;
+		//return stock;
+	};
+	this.getStock = function() {
+		return this.stock;
+	}
+}
+
+function Proxy() {
+	// Instructions on how to access this machine over a remote connection go here
+}
+
+Proxy.prototype = new Inventory;
+
+// Through Proxy() we can access all the methods and variables from the Inventory class
+var coffee = new Proxy;
+coffee.stock.p();
+
+coffee.setStock(10);
+coffee.stock.p();
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+Some Code goes here
+</pre>
+</div>
+<br />
+
+<h4>The Bridge Pattern</h4>
+<p>The Bridge Pattern allows you to vary the implementation and abstraction by placing the two in separate class hierarchies.</p>
+<br />
+
+<h4>The Builder Pattern</h4>
+<p>The Builder Pattern is used to encapsulate the construction of a product and allow it to be constructed in steps.</p>
+<br />
+
+<h4>The Chain of Responsibility Pattern</h4>
+<p>The Chain of Responsibility Pattern is used when you want to give more than one object a chance to handle a request.</p>
+<br />
+
+<h4>The Flyweight Pattern</h4>
+<p>The Flyweight Pattern is used when one instance of a class can be used to provide many "virtual instances".</p>
+<br />
+
+<h4>The Interpreter Pattern</h4>
+<p>The Interpreter Pattern is used to build an interpeter for a language.</p>
+<br />
+
+<h4>The Mediator Pattern</h4>
+<p>The Mediator Pattern is used to centralize complex communications and control between related objects.</p>
+<br />
+
+<h4>The Memento Pattern</h4>
+<p>The Memento Pattern is used when you need to be able to return an object to one of its previous states; for instance, if your user requests and "undo".</p>
+<br />
+
+<h4>The Prototype Pattern</h4>
+<p>The Prototype Pattern is used when creating an instance of a given class is either expensive or complicated.</p>
+<br />
+
+<h4>The Visitor Pattern</h4>
+<p>The Visitor Pattern is used when you want to add capabilities to a composite of objects and encapsulation is not important.</p>
+</body>
+</html>
