@@ -1,0 +1,47 @@
+.sharing-cl{
+	  overflow:hidden;
+	  margin:0;
+	  padding:0;
+	  list-style:none;
+	}
+	.sharing-cl a{
+	  overflow:hidden;
+	  width:75px;
+	  height:30px;
+	  float:left;
+	  margin-right:5px;
+	  text-indent:-200px;
+	  background:url("../images/share-sprite.png") no-repeat;
+	}
+	a.sh-su{background-position:-210px -40px;}
+	a.sh-feed{background-position:-70px -40px;}
+	a.sh-tweet{background-position:-140px -40px;}
+	a.sh-mail{background-position:0 -40px;}
+	a.sh-digg{background-position:-280px -40px;}
+	a.sh-face{
+	  margin-right:0;
+	  background-position:-350px -40px;
+	}
+	a.sh-mail:hover{background-position:0 1px;}
+	a.sh-feed:hover{background-position:-70px 1px;}
+	a.sh-tweet:hover{background-position:-140px 1px;}
+	a.sh-su:hover{background-position:-210px 1px;}
+	.sh-digg:hover{background-position:-280px 1px;}
+	a.sh-face:hover{
+	  background-position:-350px 1px;
+	}
+ 
+	#text{
+	  margin-top:3em;
+	  font-weight:bold;
+	  font-family:helvetica,arial,sans-serif;
+	}
+	#text a{
+	  text-indent:0;
+	  height:auto;
+	  text-align:center;
+	  font-size:11px;
+	  padding-top:35px;
+	  color:#999;
+	  text-decoration:none;
+	}
