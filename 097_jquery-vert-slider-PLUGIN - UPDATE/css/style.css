@@ -1,0 +1,227 @@
+body{
+	width:95%;
+	font-size:14px;
+	color:#fff;
+	/*background-image:url('images/meshbackgrounddarkgray.png');*/
+	font-family:Tahoma, sans-serif, Helvetica;
+}
+
+img a{
+	border:none;
+}
+
+.row-54{
+	position:relative;
+	clear:left;
+	clear:right;
+	width:100%;
+	height:54px;
+	/*border:1px solid yellow;*/
+	padding-top:6px;
+	padding-left:7px;
+	
+}
+
+
+
+#wrapper-content{
+	position:absolute;
+	/*top:6px;*/
+	top:4px;
+	left:246px;
+	/*border:1px solid red;*/
+	width:587px;
+	height:347px;
+}
+
+#side-nav{
+	position:relative;
+	float:left;
+	margin-top:3px;
+	margin-left:11px;
+	margin-right:6px;
+	width:117px;
+	height:162px;
+	visibility:hidden;
+	/*border:1px solid red;*/
+
+}
+#side-nav a{
+	/*color:#fff;	*/
+	color:#999;
+	text-decoration:none;
+	font-weight:bold;
+	display:block;
+	width:117px;
+	height:40px;
+
+}
+#side-nav span{
+	float:right;
+	margin-right:5px;
+	margin-top:12px;
+	cursor:pointer;
+}
+
+.row-24{
+	position:relative;
+	clear:left;
+	clear:right;
+	width:100%;
+	height:40px;
+	/*margin-top:5px;
+	padding:2px;
+	border-bottom:1px solid #777;*/
+	
+}
+
+.section-1{
+	/*background-color:#ff0d4c;*/
+	margin-top:0;
+	border-right:3px solid #ff0d4c;
+	/*border-right:3px solid #000;*/
+}
+.section-1a{
+	display:none;
+}
+
+.section-2{
+	/*background-color:#0d13ff;*/
+	border-right:3px solid #0d13ff;
+}
+
+.section-3{
+	/*background-color:#0dff18;*/
+	border-right:3px solid #0dff18;
+}
+
+.section-4{
+	/*background-color:#fff10d;*/
+	border-right:3px solid #fff10d;
+}
+
+.section-5{
+	/*background-color:#0dcfff;*/
+	border-right:3px solid #0dcfff;
+}
+
+.section-6{
+	/*background-color:#ff0deb;*/
+	border-right:3px solid #ff0deb;
+}
+.remove-right-border{
+	border:none;
+}
+
+#main-container-background{
+	position:relative;
+	margin-left:-17px;
+	width:442px;
+	width:427px;
+	/*height:273px;*/
+	height:1833px;
+	/*border:1px solid red;*/
+	background-color:#FFFDFD;
+	/*background-image:url('images/map-manhattan-1-2009-10-26_07_46_39.jpg');
+	background-repeat:no-repeat;*/
+}
+#main-container{
+	position:relative;
+	float:left;
+	margin-top:3px;
+	margin-left:0px;
+	width:442px;
+	height:273px;
+	/*border:1px solid red;
+	background-color:#fff;
+	background-image:url('images/map-manhattan-1-2009-10-26_07_46_39.jpg');
+	background-repeat:no-repeat;*/
+	overflow:scroll;
+	border-left:1px solid #aaa;
+	/*overflow-x: hidden;*/
+}
+.row-273{
+	position:relative;
+	/*margin-left:2px;
+	margin-bottom:3px;*/
+	clear:left;
+	clear:right;
+	width:100%;
+	/*#width:95%;*/
+	height:300px;
+	/*border:1px solid yellow;*/
+}
+
+.row-273 img{
+	border:none;
+	margin-left:3px;
+}
+.row-273 img.first{
+	margin-left:0;
+}
+
+.row-273 a.outbound,a.outbound:link{
+	color:#7E8DE8;
+}
+.row-273 a.outbound:hover{
+	color:#999;
+}
+.row-273 a.outbound-2{
+	color:#7E8DE8;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#wrapper-footer{
+	position:relative;
+	top:0;
+	left:0;
+	/*border:1px solid red;*/
+	width:206px;
+	height:206px;
+	display:none;
+}
+
+.smaller{
+	font-size:13px;
+}
+.smaller-9{
+	font-size:9px;
+	color:#000;
+}
+.clear{
+	position:relative;
+	clear:left;
+	clear:right;
+	padding:5px;
+}
+.top{
+	position:absolute;
+	right:5px;
+	bottom:5px;
+}
+.line-height{
+	line-height:130%;
+}
+
+.overlay{
+	position:absolute;
+	bottom:-2px;
+	left:0;
+	width:100%;
+	z-index:100;
+	color:#fff;
+	/*background-color:#000;*/
+	background-color:#ff0d4c;
+	padding:.375em;
+	text-transform:uppercase;
+	font-weight:bold;
+}
+
+/**** HIDDEN ELEMENTS *********/
+.top{
+	display:none;
+}
+#mobile-header{
+	display:none;
+}
