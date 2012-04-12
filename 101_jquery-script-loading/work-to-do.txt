@@ -1,0 +1,2 @@
+also need a demo that will allow you to import scripts through jQuery and also dynamically on a page
+
