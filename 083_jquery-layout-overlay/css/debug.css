@@ -1,0 +1,77 @@
+/*IMPLEMENT*/
+
+.sitenav{
+	height:50px;
+	background-color:#000;
+}
+
+#header .top-background{
+	width:100%;
+	height:100px;
+	background-color:#000;
+	margin-bottom:-100px;
+}	
+
+
+
+.hide{
+	visibility:hidden;
+}
+
+/*END IMPLEMENT*/
+
+.redBorder{
+	border:1px solid ;
+}
+
+.orangeBorder{
+
+}
+
+.yellowBorder{
+
+}
+
+.greenBorder{
+
+}
+
+.blueBorder{
+
+}
+
+.section{
+	border:3px dashed #000;
+}
+
+#page1 .header{
+	border:1px solid #fff;
+}
+
+#page1 .sitenav{
+	border:1px solid red;
+}
+
+#page1 .maincallout{
+
+}
+
+#page1 .mainnav{
+	/*border:1px solid #000;*/
+	background-color:#6af;
+}
+
+#page1 .article{
+	
+	background-color:#6af;
+}
+
+#page1 .sidebar{
+	
+	background-color:#a6f;
+}
+
+#page1 .footer{
+	background-color:#a6f;
+}
+

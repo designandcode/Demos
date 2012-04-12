@@ -1,0 +1,3 @@
+By initializing the plugin a toggle button will display an overlay that will outline the page elements (including the element name etc)
+
+Like ?tp=1 on  a zoomla site (except less visually confusing)

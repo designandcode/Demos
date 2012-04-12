@@ -1,0 +1,44 @@
+.tail-top{ background:url(../images/bg.jpg) top repeat-x #dfdfe0}
+.tail-bottom{background:url(../images/bot.gif) bottom repeat-x  }
+
+
+.col-1, .col-2, .col-3, .col-4{ float:left}
+/*======= width =======*/
+.main{margin:0 auto; text-align:left; width:1001px; }
+
+/*======= header =======*/
+#header {height:448px;  background:url(../images/New_Home.jpg) top center no-repeat}
+/* http://knightguardsecurity-llc.com/ESW/../images/New_Home.jpg */
+
+/*======= index.html =======*/
+#page1 #content .box .col-1{ width:190px; margin-right:60px}
+#page1 #content .box .col-2{ width:180px}
+#page1 #content .col-1{ width:578px; margin-right:65px}
+#page1 #content .col-2{ width:284px}
+#page1 #content .col-3{ width:278px; margin-right:22px}
+#page1 #content .col-4{ width:278px}
+#page1 #content .bg{ background:url(../images/tail.gif) repeat-y 214px top } 
+#page1 #content .bg1{ background:url(../images/tail.gif) repeat-y 464px top } 
+#page1 #content .bg2{ background:url(../images/tail.gif) repeat-y 714px top } 
+/*======= index-1.html =======*/
+#page2 #content .col-1{ width:284px; margin-right:65px}
+#page2 #content .col-2{ width:578px}
+/*======= index-2.html =======*/
+#page3 #content .box .col-1{ width:190px; margin-right:60px}
+#page3 #content .box .col-2{ width:180px}
+#page3 #content .col-1{ width:293px; margin-right:20px}
+#page3 #content .col-2{ width:293px}
+#page3 #content .bg{ background:url(../images/tail.gif) repeat-y 214px top } 
+#page3 #content .bg1{ background:url(../images/tail.gif) repeat-y 464px top } 
+#page3 #content .bg2{ background:url(../images/tail.gif) repeat-y 714px top }
+/*======= index-3.html =======*/
+#page4 #content .col-1{ width:284px; margin-right:65px}
+#page4 #content .col-2{ width:578px}
+/*======= index-4.html =======*/
+#page5 #content .col-1{ width:578px; margin-right:65px}
+#page5 #content .col-2{ width:284px}
+#page5 #content .col-3{ width:230px; margin-right:60px}
+#page5 #content .col-4{ width:230px}
+
+/*======= footer =======*/
+#footer { height:68px; }
