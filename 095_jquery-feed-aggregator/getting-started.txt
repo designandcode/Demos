@@ -1,0 +1,15 @@
+Consume this feed with jquery
+http://web-design.alltop.com/rss/
+
+
+or
+
+
+Create an OPML file that you can consume with jquery
+
+
+
+or 
+
+
+Find some other way
