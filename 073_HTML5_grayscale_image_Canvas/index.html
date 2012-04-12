@@ -1,0 +1,106 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script type="text/javascript">
+	
+	// On window load. This waits until images have loaded which is essential
+	$(window).load(function(){
+		
+		// Fade in images so there isn't a color "pop" document load and then on window load
+		$(".item img").fadeIn(500);
+		
+		// clone image
+		$('.item img').each(function(){
+			var el = $(this);
+			el.css({"position":"absolute"}).wrap("<div class='img_wrapper' style='display: inline-block'>").clone().addClass('img_grayscale').css({"position":"absolute","z-index":"998","opacity":"0"}).insertBefore(el).queue(function(){
+				var el = $(this);
+				el.parent().css({"width":this.width,"height":this.height});
+				el.dequeue();
+			});
+			this.src = grayscale(this.src);
+		});
+		
+		// Fade image 
+		$('.item img').mouseover(function(){
+			$(this).parent().find('img:first').stop().animate({opacity:1}, 1000);
+		})
+		$('.img_grayscale').mouseout(function(){
+			$(this).stop().animate({opacity:0}, 1000);
+		});		
+	});
+	
+	// Grayscale w canvas method
+	function grayscale(src){
+        var canvas = document.createElement('canvas');
+		var ctx = canvas.getContext('2d');
+        var imgObj = new Image();
+		imgObj.src = src;
+		canvas.width = imgObj.width;
+		canvas.height = imgObj.height; 
+		ctx.drawImage(imgObj, 0, 0); 
+		var imgPixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+		for(var y = 0; y < imgPixels.height; y++){
+			for(var x = 0; x < imgPixels.width; x++){
+				var i = (y * 4) * imgPixels.width + x * 4;
+				var avg = (imgPixels.data[i] + imgPixels.data[i + 1] + imgPixels.data[i + 2]) / 3;
+				imgPixels.data[i] = avg; 
+				imgPixels.data[i + 1] = avg; 
+				imgPixels.data[i + 2] = avg;
+			}
+		}
+		ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
+		return canvas.toDataURL();
+    }
+	    
+</script>
+</head>
+<body>
+<div id="pagewrap">
+	<h1>HTML5 &amp; jQuery Grayscale Demo</h1>
+	<h2>Tutorial by <a href="http://www.webdesignerwall.com/">Web Designer Wall</a> (<a href="http://www.webdesignerwall.com/tutorials/html5-grayscale-image-hover/">read article</a>). Coding by <a href="http://darcyclarke.me/">Darcy Clarke</a>.</h2>
+	<div class="item first">
+		<a href="http://themify.me/"><img src="images/themify0.jpg"></a>
+		<h3>Themify</h3>
+	</div>
+	<div class="item">
+		<a href="http://icondock.com/"><img src="images/icondock.jpg"></a>
+		<h3>IconDock</h3>
+	</div>
+	<div class="item">
+		<a href="http://www.webdesignerwall.com/"><img src="images/webdesig.jpg"></a>
+		<h3>Web Designer Wall</h3>
+	</div>
+	<div class="item first">
+		<a href=""><img src="images/koifish0.jpg"></a>
+		<h3>Koi</h3>
+	</div>
+	<div class="item">
+		<a href=""><img src="images/phoenix0.jpg"></a>
+		<h3>Phoenix</h3>
+	</div>
+	<div class="item">
+		<a href=""><img src="images/peacock0.jpg"></a>
+		<h3>Peacock</h3>
+	</div>
+	<div class="item first">
+		<a href=""><img src="images/flow0000.jpg"></a>
+		<h3>Flow</h3>
+	</div>
+	<div class="item">
+		<a href=""><img src="images/webdesih.jpg"></a>
+		<h3>Web Designer</h3>
+	</div>
+	<div class="item">
+		<a href=""><img src="images/sakura00.jpg"></a>
+		<h3>Sakura</h3>
+	</div>
+</div>
+</body>
+</html>
