@@ -1,0 +1,37 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="jQuery/validation.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body>
+<div class="module" id="content-module-1">
+
+<h1>Realtors Sign Up Free!</h1>
+	<div>
+	
+	<form id="pre-registration" method="POST" action="../_class.lib/db/create.php">
+		<p style="margin-bottom:0"><label for="short_signup_email">Email Address: </label><br /><input type="text" id="short_signup_email" name="email" class="input"/></p>
+		<p class="warning" id="warning_email" style="margin:0; font-size:12px">Please enter a valid email</p>
+		<p style="margin-bottom:0"><label for="short_signup_password">Password:&nbsp; </label><br /><input type="text" id="short_signup_password" name="password" class="input"/></p>
+		<p class="warning" id="warning_password" style="margin:0; font-size:12px">Please use 8 or more characters</p>
+		<p style="margin-bottom:0"><label for="short_signup_username">Username: </label><br /><input type="text" id="short_signup_username" name="username" class="input"/></p>
+		<p class="warning" id="warning_username" style="margin:0; font-size:12px">Please use 5 or more letters or numbers</p>
+		<input type="hidden" name="firstname" value="NULL" />
+		<input type="hidden" name="lastname" value="NULL" />
+		<input type="hidden" name="confirmed" value="no" />
+		<input type="hidden" name="free" value="no" />
+		
+		<p><input type="submit" id="short_signup_submit" class="submit" value="Begin!" disabled="disabled" /></p>
+	</form>
+	</div>
+<p class="Clear"></p>
+</div>
+</body>
+</html>
