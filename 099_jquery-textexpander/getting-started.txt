@@ -1,0 +1,5 @@
+Add elipse if text is longer than space allowed
+Animate text left (negative left margin) when mouseover, return to OG position when mouseleave
+
+
+C:/apache/htdocs/apache_upload/0_clients/DESIGN/covidien/javascript_showmore_link.html
