@@ -1,0 +1,12 @@
+body{
+	background-color:#141414;
+}
+
+ul.nav{font-family:Verdana, Arial, Helvetica, sans-serif;float:left;width:100%;font-size:.67em;font-weight:700;margin:0;padding:0;}
+ul.nav li{list-style:none;float:left;width:auto;border-right:1px solid #333;border-left:1px solid #333;margin:0;padding:0 3px;} /*** overlaps left and right border to look like just 1 border ***/
+ul.nav li a{text-decoration:none;display:block;color:#CCC;padding:.3em .5em;}
+ul.nav li a:hover,ul.nav	li a:focus{background-color:#CCC;color:#333;}
+ul.nav li ul{padding-left:3px;display:none;}
+ul.nav li:hover ul{display:block;}
+ul.nav li ul li{float:none;border:none;position:relative;z-index:400;} /*** enables subnav to be on top of lower boxes, gets rid of double border on hover ***/
+ul.nav li ul li a{font-size:.9em;}
