@@ -1,0 +1,59 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/code-style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="jQuery/pretty-code.js"></script>
+<!--script type="text/javascript" >
+	$(function(){
+		$("pre").wrapInner("<span></span>");
+		$('.code-block').mouseover(function(){
+		//alert($('pre span', this).width());
+			var blockWidth = $('pre span', this).width() + 40;
+			var defaultWidth = $('.code-block').width();
+			if (blockWidth - 40 > defaultWidth){
+			$(this).css({'width': blockWidth+'px'});
+			} else if (blockWidth - 40 < defaultWidth) {
+			$(this).css({'width': defaultWidth+'px'});
+			}
+			$(this).unbind('mouseover');
+		});
+		
+});
+</script-->
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body>
+<!-- I want the container to be expandable to show all code if the user chooses -->
+<div id="code-block-1" class="code-block">
+<pre>
+<h1>/* CSS */</h1>
+input.submit {
+  background:none repeat scroll	0 0 transparent;  border:0 none; 	color: #FFF;  cursor:pointer;
+}
+
+<h1>&lt;!-- HTML --></h1>
+input.submit {
+  background:none repeat scroll 
+	0 0 transparent;
+  border:0 none;
+  color: #FFF;
+  cursor:pointer;
+}
+
+<h1>// PHP</h1>
+input.submit {
+  background:none repeat scroll 
+	0 0 transparent;
+  border:0 none;
+  color: #FFF;
+  cursor:pointer;
+}
+</pre>
+</div>
+</body>
+</html>

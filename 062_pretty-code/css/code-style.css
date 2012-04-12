@@ -1,0 +1,36 @@
+body{
+}
+pre{
+	color:#fff;
+	font-size:20px;
+	font-weight:bold;
+	font-family:Tahoma, Geneva, sans-serif;
+	/*font-family:Verdana, Verdana, Geneva, sans-serif;
+	font-family:Impact, Impact, Charcoal, sans-serif;
+	font-family:"Lucida Console", Monaco, monospace;
+	**************/
+	/*font-family:"Comic Sans MS", "Comic Sans MS", cursive;
+	
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;*/
+	text-shadow:-1px -1px -1px #ccc;
+	padding:0;
+	margin:0;
+	margin-top:20px;
+	margin-left:20px;
+	
+}
+pre h1{
+	font-family:Impact, Impact, Charcoal, sans-serif;
+	color:#9BCBEB; 
+	text-shadow:1px 1px 1px #fff;
+	display:block;
+}
+.code-block{
+	background:url(../images/blue_noise.png);
+	width:500px;
+	min-height:300px;
+	border: 3px solid #0af;
+	/*overflow-x:auto;*/
+	overflow-x:hidden;
+	padding-bottom:20px;
+}
