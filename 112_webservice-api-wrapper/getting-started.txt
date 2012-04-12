@@ -1,0 +1,11 @@
+The idea is to group the webservices I featured above into categories.
+Then, I will create a dropdown list that people can choose between the services.  Since the returning JSON object will have different properties, I 
+will write a wrapper class that will convert their properties to something that my app can understand.
+
+Use this to get you started - 
+http://localhost:8080/apache_upload/z_demos/052_jQuery-RSS
+
+May Not Be Necessary to Code this - I think this does it already
+http://api.embed.ly/embed
+
+
