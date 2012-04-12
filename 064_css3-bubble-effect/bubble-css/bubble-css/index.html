@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Bubble effect with CSS</title>
+<style type="text/css">
+<!--
+
+body {
+	background-color: #EDEDED;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	margin: 0px;
+	padding: 0px;
+}
+
+div#content {
+	width: 1024px;
+	margin: 50px auto 0px auto;
+	text-align: center;
+}
+
+#bubble {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+#bubble li {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+
+}
+
+#bubble li a.icon {
+	background: url(images/sprites.png) no-repeat;
+	border: none;
+	display: block;
+	width: 128px;
+	height: 128px;
+	text-indent: -9999px;
+}
+
+#bubble li a.feed {
+	background-position: -139px -12px;
+}
+#bubble li a.feed:hover {
+	background-position: -13px -12px;
+}
+#bubble li a.email {
+	background-position: -139px -149px;
+}
+#bubble li a.email:hover {
+	background-position: -13px -149px;
+}
+#bubble li a.twitter {
+	background-position: -139px -283px;
+}
+#bubble li a.twitter:hover {
+	background-position: -13px -283px;
+}
+#bubble li a.facebook {
+	background-position: -139px -422px;
+}
+#bubble li a.facebook:hover {
+	background-position: -13px -422px;
+}
+#bubble li a.delicious {
+	background-position: -139px -559px;
+}
+#bubble li a.delicious:hover {
+	background-position: -13px -559px;
+}
+#bubble li a.technorati {
+	background-position: -139px -698px;
+}
+#bubble li a.technorati:hover {
+	background-position: -13px -698px;
+}
+
+
+
+
+
+#bubble2 {
+	list-style: none;
+	margin: 20px 0px 0px;
+	padding: 0px;
+}
+#bubble2 li {
+	display: inline-block;
+	margin: 0px 5px;
+	padding: 0px;
+	width: 72px;
+	height: 72px;
+}
+
+#bubble2 li a img {
+	position: relative;
+	border: none;
+}
+
+#bubble2 li a img.large {
+	display: none;
+}
+
+#bubble2 li a:hover img.small {
+	display: none;
+	z-index: 0;
+}
+
+#bubble2 li a:hover img.large {
+	display: block;
+	margin-top: -28px;
+	margin-left: -28px;
+	z-index: 1000;
+}
+
+-->
+</style>
+
+<!--[if IE 7]>
+<style type="text/css">
+#bubble li, #bubble2 li {
+    display: inline;
+}
+</style>
+<![endif]-->
+
+</head>
+
+<body>
+<div style="position: relative; height: 50px;">
+	<div style="width: 720px; margin:25px auto 0 auto; padding-top: 5px; text-align: left;">
+		<span style="color: #333; font-family:'Arial Black',Gadget,sans-serif; font-size: 35px; font-weight: bold; letter-spacing: -5px;"><a href="http://aext.net" style="color: #333; text-decoration: none;" title="AEXT.NET">AEXT</a></span> - <a style="color: #333; font-size: 18px; font-family: Georgia, 'Times New Roman', Times, serif; font-style:italic; font-weight:bold;" href="http://aext.net/2009/11/bubble-effect-with-css/" title="Bubble effect with CSS">Bubble effect with CSS</a>
+	</div>
+</div>
+
+<div id="content">
+	
+	<h3>Using CSS Sprites</h3>
+    <ul id="bubble">
+      <li> 
+        <a class="icon feed" href="http://feeds2.feedburner.com/prlamnguyen" title="Full RSS Feed">Full RSS Feed</a> 
+      </li>
+      <li> 
+        <a class="icon email" href="http://feedburner.google.com/fb/a/mailverify?uri=prlamnguyen&loc=en_U" title="Feed via Emal">Feed via email</a> 
+      </li>
+      <li> 
+        <a class="icon twitter" href="http://twitter.com/prlamnguyen" title="Full RSS Feed">Follow me on Twitter</a> 
+      </li>
+      <li> 
+        <a class="icon facebook" href="http://facebook.com/duylamng" title="Full RSS Feed">I'm on Facebook</a> 
+      </li>
+      <li>
+        <a class="icon delicious" href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&amp;noui&amp;jump=close&amp;url=http://aext.net&amp;title=AEXT.NET', 'delicious','toolbar=no,width=550,height=550'); return false;" title="Full RSS Feed">Save me</a> 
+      </li>
+      <li> 
+        <a class="icon technorati" href="http://technorati.com/faves?sub=addfavbtn&add=http://aext.net" title="Full RSS Feed">Fave me</a> 
+      </li>
+    </ul>
+    
+    <h3>Using Image Swapping</h3>
+    <ul id="bubble2">
+      <li> 
+        <a href="http://feeds2.feedburner.com/prlamnguyen" title="Full RSS Feed">
+        	<img class="small" src="images/feed.png" alt="Full RSS" />
+        	<img class="large" src="images/feed_large.png" alt="Full RSS" />
+        </a> 
+      </li>
+      <li> 
+        <a href="http://feedburner.google.com/fb/a/mailverify?uri=prlamnguyen&loc=en_U" title="Feed via Emal">
+        	<img class="small" src="images/email.png" alt="Feed via Emal" />
+        	<img class="large" src="images/email_large.png" alt="Feed via Emal" />
+        </a> 
+      </li>
+      <li> 
+        <a href="http://twitter.com/prlamnguyen" title="Follow me on Twitter">
+        	<img class="small" src="images/twitter.png" alt="Follow me on Twitter" />
+        	<img class="large" src="images/twitter_large.png" alt="Follow me on Twitter" />
+        </a> 
+      </li>
+      <li> 
+        <a href="http://facebook.com/duylamng" title="I'm on Facebook">
+        	<img class="small" src="images/facebook.png" alt="I'm on Facebook" />
+        	<img class="large" src="images/facebook_large.png" alt="I'm on Facebook" />
+        </a> 
+      </li>
+      <li>
+        <a href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&amp;noui&amp;jump=close&amp;url=http://aext.net&amp;title=AEXT.NET', 'delicious','toolbar=no,width=550,height=550'); return false;" title="Save me">
+        	<img class="small" src="images/delicious.png" alt="Save me" />
+        	<img class="large" src="images/delicious_large.png" alt="Save me" />
+        </a> 
+      </li>
+      <li> 
+        <a href="http://technorati.com/faves?sub=addfavbtn&add=http://aext.net" title="Fave me on Technorati">
+        	<img class="small" src="images/technorati.png" alt="Fave me on Technorati" />
+        	<img class="large" src="images/technorati_large.png" alt="Fave me on Technorati" />
+        </a> 
+      </li>
+    </ul>    
+
+</div>
+
+</body>
+</html>

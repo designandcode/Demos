@@ -1,0 +1,130 @@
+body {
+	background-color: #EDEDED;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	margin: 0px;
+	padding: 0px;
+}
+
+div#content {
+	width: 1024px;
+	margin: 50px auto 0px auto;
+	text-align: center;
+}
+
+#bubble {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+#bubble li {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+
+}
+
+#bubble li a.icon {
+	background: url(../images/sprites.png) no-repeat;
+	border: none;
+	display: block;
+	width: 128px;
+	height: 128px;
+	text-indent: -9999px;
+	margin-left:-28px;
+	margin-right:-28px;
+}
+#bubble li.first{
+	z-index:6;
+}
+#bubble li a.feed {
+	background-position: -139px -12px;
+}
+#bubble li a.feed:hover {
+	background-position: -13px -12px;
+	position:relative;
+	z-index:15000;
+}
+#bubble li a.email {
+	background-position: -139px -149px;
+}
+#bubble li a.email:hover {
+	background-position: -13px -149px;
+	position:relative;
+	z-index:15000;
+}
+#bubble li a.twitter {
+	background-position: -139px -283px;
+	z-index:4;
+}
+#bubble li a.twitter:hover {
+	background-position: -13px -283px;
+	position:relative;
+	z-index:15000;
+}
+#bubble li a.facebook {
+	background-position: -139px -422px;
+	z-index:3;
+}
+#bubble li a.facebook:hover {
+	background-position: -13px -422px;
+	position:relative;
+	z-index:15000;
+}
+#bubble li a.delicious {
+	background-position: -139px -559px;
+	z-index:2;
+}
+#bubble li a.delicious:hover {
+	background-position: -13px -559px;
+	position:relative;
+	z-index:15000;
+}
+#bubble li a.technorati {
+	background-position: -139px -698px;
+	z-index:1;
+}
+#bubble li a.technorati:hover {
+	background-position: -13px -698px;
+	position:relative;
+	z-index:15000;
+}
+
+
+
+
+/*
+#bubble2 {
+	list-style: none;
+	margin: 20px 0px 0px;
+	padding: 0px;
+}
+#bubble2 li {
+	display: inline-block;
+	margin: 0px 5px;
+	padding: 0px;
+	width: 72px;
+	height: 72px;
+}
+
+#bubble2 li a img {
+	position: relative;
+	border: none;
+}
+
+#bubble2 li a img.large {
+	display: none;
+}
+
+#bubble2 li a:hover img.small {
+	display: none;
+	z-index: 0;
+}
+
+#bubble2 li a:hover img.large {
+	display: block;
+	margin-top: -28px;
+	margin-left: -28px;
+	z-index: 1000;
+}
+*/
