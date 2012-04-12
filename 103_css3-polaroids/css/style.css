@@ -1,0 +1,15 @@
+.polaroid{
+	position:relative;
+	border:1px solid #999;
+	width:300px;
+	padding:20px;
+	padding-bottom:40px;
+}
+
+.polaroid div{
+	margin-top:30px;
+	text-align:center;
+	font-style:bold;
+	font-size:20px;
+	
+}
