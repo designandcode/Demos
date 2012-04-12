@@ -1,0 +1,3 @@
+The idea is to create a bookmarklet that will load UA specific styles to the page you are viewing.
+
+Each browser has it's own default styles that it applies to elements.  I will create a jquery bookmarklet that will hold all the style quirks in an object that will be attached to the UA and then apply them to the page you are viewing
