@@ -1,0 +1,14 @@
+body {font-family:Verdana,sans-serif;font-size:12px;line-height:20px;}
+
+.blogroll {position:relative;width:274px;}
+.blogroll p {width:274px;height:21px;background:url(../images/pbd-css-.png) 0 0 no-repeat;text-indent:-9999px;margin:0;}
+.blogroll ul {width:272px;background:#214868;border:1px solid #48758d;border-width:0 1px 1px 1px;position:absolute;left:0;top:21px;margin:0;padding:0;list-style:none;}
+
+.blogroll ul a:link, .blogroll ul a:visited {display:block;width:252px;padding:2px 10px 2px 10px;text-decoration:none;color:#93b8d3;font-weight:normal;}
+.blogroll ul a:hover, .blogroll ul a:active {background:#366386;}
+
+.blogroll {height:21px;overflow:hidden;}
+.blogroll:hover {overflow:visible;}
+
+.blogroll {display:none;}
+html>body .blogroll {display:block;}
