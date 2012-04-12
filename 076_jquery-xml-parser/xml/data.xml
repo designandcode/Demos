@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+	<message>
+		<message-id id="1">1</message-id>
+		<message-text>
+			<heading>Some Foo Heading</heading>
+			<body>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</body>
+			<foo>Foo</foo>
+		</message-text>
+	</message>
+	<message>
+		<message-id id="2">2</message-id>
+		<message-text>
+			<heading>Some Bar Heading</heading>
+			<body>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</body>
+			<foo>Foo</foo>
+		</message-text>
+	</message>
+</messages>
