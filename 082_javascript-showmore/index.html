@@ -1,0 +1,35 @@
+<html>
+<head>
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<script>
+$(function(){
+	$('p').each(function(){
+		// Max length of characters to show at once
+		var maxL = 130;
+		var html = $(this).html();
+		// Length of this string
+		var cL = html.length;
+		
+		if (cL > maxL){
+			substr1 = html.substr(0,130);
+			substr2 = html.substr(131,cL);
+			
+			$(this).replaceWith('<p>' + substr1 + '<span style="display:none">' + substr2 + '</span>' + '<a href="more" class="link3" target="_blank">+ more....</a></p>');
+			$("a[href$='more']").click(function(){
+				$(this).prev().show();
+				$(this).remove();
+				return false;
+			});
+			
+			
+		}
+	});
+});
+</script>
+</head>
+<body>
+<div id="container">
+<p>Lorem ipsum dolor sit amet, id habitant phasellus, posuere interdum. Id sed nec maecenas sed urna, dui velit est amet, viverra quam pede. Eu congue ultrices vestibulum, sociosqu nunc, ac duis id, at metus sapien tellus commodo rutrum. Neque rhoncus. Sodales et. Sollicitudin fusce, molestie egestas, leo vel magna, ad aliquam ac.</p>
+</div>
+</body>
+</html>
