@@ -1,0 +1,28 @@
+<!--?xml-stylesheet type="text/xsl" href="table.xsl"?-->
+<!--?xml-stylesheet type="text/css" href="table.css"?-->
+<contracts>
+
+<contract>
+<recipient>Josiah Smith</recipient>
+<signing_date>1999-06-03</signing_date>
+<signing_time>09:03:22</signing_time>
+<birthyear>1962</birthyear>
+<birthday>--06-21</birthday>
+<male>true</male>
+<payment_amount>0004002.00200</payment_amount>
+<years_to_pay>26</years_to_pay>
+</contract>
+
+
+<contract>
+<recipient>Jane Zang</recipient>
+<signing_date>1999-04-03</signing_date>
+<signing_time>11:04:28</signing_time>
+<birthyear>1968</birthyear>
+<birthday>--04-23</birthday>
+<male>false</male>
+<payment_amount>000401.0200</payment_amount>
+<years_to_pay>2</years_to_pay>
+</contract>
+
+</contracts>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE time SYSTEM "time.dtd">
+
+<!-- a time instant -->
+<time timezone="PST">
+	<hour>11</hour>
+	<minute>59</minute>
+	<second>59</second>
+	<meridiem>p.m.</meridiem>
+	<atomic signal="true" />
+</time>

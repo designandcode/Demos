@@ -1,0 +1,8 @@
+<!ELEMENT time (hour,minute,second,meridiem,atomic)>
+<!ATTLIST time timezone CDATA #REQUIRED>
+<!ELEMENT hour (#PCDATA)>
+<!ELEMENT minute (#PCDATA)>
+<!ELEMENT second (#PCDATA)>
+<!ELEMENT meridiem (#PCDATA)>
+<!ELEMENT atomic EMPTY>
+<!ATTLIST atomic signal CDATA #REQUIRED>

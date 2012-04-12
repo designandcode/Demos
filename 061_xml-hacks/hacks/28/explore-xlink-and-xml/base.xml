@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="base.css" type="text/css"?>
+
+<links xml:base="http://www.xml.com/"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+<heading>Resources on XML.com.</heading>
+<block>Start here:
+ <link xlink:type="simple" xlink:href="index.csp">Home</link> </block>
+<block>Topics: 
+ <link xlink:type="simple" xlink:href="/programming/">Programming articles</link> :
+ <link xlink:type="simple" xlink:href="/schemas/">Schema articles</link> : 
+ <link xlink:type="simple" xlink:href="/style/">Style articles</link>
+</block>
+<block xml:base="/images/">Logo for XML.com:
+ <link xlink:type="simple" xlink:href="logo_tagline.jpg">logo</link>
+</block>
+</links>

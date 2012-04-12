@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope"> 
+ <env:Header>
+  <dt:instant xmlns:dt="http://www.wyeast.net/date" 
+      env:role="http://www.w3.org/2003/05/soap-envelope/role/next"
+      env:mustUnderstand="true">
+    <dt:date year="2004" month="06" day="30"/>
+  </dt:instant>
+ </env:Header>
+ <env:Body>
+  <tz:time timezone="PST" xmlns:tz="http://www.wyeast.net/time" env:encodingStyle="http://www.w3.org/2003/05/soap-encoding">
+   <tz:hour>11</tz:hour>
+   <tz:minute>59</tz:minute>
+   <tz:second>59</tz:second>
+   <tz:meridiem>p.m.</tz:meridiem>
+   <tz:atomic signal="true"/>
+  </tz:time>
+ </env:Body>
+</env:Envelope>

@@ -1,0 +1,9 @@
+time {font-size:30pt; text-align: center } 
+hour {font-family: sans-serif; color: gray}
+hour:after {content: ":"; color: black}
+minute {font-family: sans-serif; color: gray}
+minute:after {content: ":"; color: black}
+second {font-family: sans-serif; color: gray}
+second:after {content: " "; color: black}
+meridiem {font-variant: small-caps}
+copyright {display:block;font-size:9pt}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="time.css" type="text/css"?>
+
+<!-- a time instant -->
+<time timezone="PST">
+	<hour>11</hour>
+	<minute>59</minute>
+	<second>59</second>
+	<meridiem>p.m.</meridiem>
+</time>

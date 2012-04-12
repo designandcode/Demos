@@ -1,0 +1,12 @@
+<rss version="2.0">
+ <channel>
+  <title>Wy'east Communications</title>
+  <link>http://www.wyeast.net</link>
+  <description> Wy'east Communications is an XML consultancy.</description>
+  <item>
+   <title>Legend of Wy'east</title>
+   <link>http://www.wyeast.net/wyeast.html</link>
+   <description>The Native American story behind the name Wy'east.</description>
+  </item>
+ </channel>
+</rss>

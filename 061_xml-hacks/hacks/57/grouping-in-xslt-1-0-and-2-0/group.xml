@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<?xml-stylesheet href="group.xsl" type="text/xsl"?>
+
+<uscities>
+ <western>
+  <uscity state="Nevada">Las Vegas</uscity>
+  <uscity state="Arizona">Phoenix</uscity>
+  <uscity state="California">San Francisco</uscity>
+  <uscity state="Nevada">Silver City</uscity>
+  <uscity state="Washington">Seattle</uscity>
+  <uscity state="Montana">Missoula</uscity>
+  <uscity state="Washington">Spokane</uscity>
+  <uscity state="California">Los Angeles</uscity>
+  <uscity state="Utah">Salt Lake City</uscity>
+  <uscity state="California">Sacramento</uscity>
+  <uscity state="Idaho">Boise</uscity>
+  <uscity state="Montana">Butte</uscity>
+  <uscity state="Washington">Tacoma</uscity>
+  <uscity state="Montana">Helena</uscity>
+  <uscity state="Oregon">Portland</uscity>
+  <uscity state="Nevada">Reno</uscity>
+  <uscity state="Oregon">Salem</uscity>
+  <uscity state="Oregon">Eugene</uscity>
+  <uscity state="Utah">Provo</uscity>
+  <uscity state="Idaho">Twin Falls</uscity>
+  <uscity state="Utah">Ogden</uscity>
+  <uscity state="Arizona">Flagstaff</uscity>
+  <uscity state="Idaho">Idaho Falls</uscity>
+  <uscity state="Arizona">Tucson</uscity>
+ </western>
+</uscities>

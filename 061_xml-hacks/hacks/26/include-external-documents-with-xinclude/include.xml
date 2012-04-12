@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- a time instant -->
+<time timezone="PST">
+ <hour>11</hour>
+ <minute>59</minute>
+ <second>59</second>
+ <meridiem>59</meridiem>
+ <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+     parse="xml" href="http://www.wyeast.net/rmt.ent"> 
+  <xi:fallback>Oops!</xi:fallback>
+ </xi:include>
+</time>

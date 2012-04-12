@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="csv.xsl"?>
+<!-- Generated using Dave Pawson's CSVToXML -->
+<Inventory>
+ <Line>
+  <ItemNumber>line</ItemNumber>
+  <Description>desc</Description>
+  <Quantity>quan</Quantity>
+  <Date>date</Date>
+ </Line>
+ <Line>
+  <ItemNumber>1</ItemNumber>
+  <Description>Oak chairs</Description>
+  <Quantity>6</Quantity>
+  <Date>31 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>2</ItemNumber>
+  <Description>Dining tables</Description>
+  <Quantity>1</Quantity>
+  <Date>31 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>3</ItemNumber>
+  <Description>Folding chairs</Description>
+  <Quantity>4</Quantity>
+  <Date>29 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>4</ItemNumber>
+  <Description>Couch</Description>
+  <Quantity>1</Quantity>
+  <Date>31 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>5</ItemNumber>
+  <Description>Overstuffed chair</Description>
+  <Quantity>1</Quantity>
+  <Date>30 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>6</ItemNumber>
+  <Description>Ottoman</Description>
+  <Quantity>1</Quantity>
+  <Date>31 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>7</ItemNumber>
+  <Description>Floor lamp</Description>
+  <Quantity>1</Quantity>
+  <Date>20 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>8</ItemNumber>
+  <Description>Oak bookshelves</Description>
+  <Quantity>1</Quantity>
+  <Date>31 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>9</ItemNumber>
+  <Description>Computer desk</Description>
+  <Quantity>1</Quantity>
+  <Date>31 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>10</ItemNumber>
+  <Description>Folding tables</Description>
+  <Quantity>3</Quantity>
+  <Date>31 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>11</ItemNumber>
+  <Description>Oak writing desk</Description>
+  <Quantity>1</Quantity>
+  <Date>28 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>12</ItemNumber>
+  <Description>Table lamps</Description>
+  <Quantity>5</Quantity>
+  <Date>26 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>13</ItemNumber>
+  <Description>Pine night tables</Description>
+  <Quantity>3</Quantity>
+  <Date>26 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>14</ItemNumber>
+  <Description>Oak dresser</Description>
+  <Quantity>1</Quantity>
+  <Date>30 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>15</ItemNumber>
+  <Description>Pine dressers</Description>
+  <Quantity>1</Quantity>
+  <Date>31 Dec 2004</Date>
+ </Line>
+ <Line>
+  <ItemNumber>16</ItemNumber>
+  <Description>Pine armoire</Description>
+  <Quantity>1</Quantity>
+  <Date>31 Dec 2004</Date>
+ </Line>
+</Inventory>

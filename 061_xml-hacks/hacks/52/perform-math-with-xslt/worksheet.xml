@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sums.xsl"?>
+<worksheet>
+ <column>
+  <row>12</row>
+  <row>199</row>
+  <row>72</row>
+  <row>29</row>
+ </column>
+ <column>
+  <row>5</row>
+  <row>783</row>
+  <row>43</row>
+  <row>1432</row>
+ </column>
+ <column>
+  <row>2</row>
+  <row>429</row>
+  <row>598</row>
+  <row>56</row>
+ </column>
+</worksheet>

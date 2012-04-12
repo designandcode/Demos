@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE time [
+<!ENTITY tm "59">
+<!ENTITY tme SYSTEM "tm.ent">
+<!ENTITY rmt SYSTEM "http://www.wyeast.net/rmt.ent">
+]>
+
+<!-- a time instant -->
+<time timezone="PST">
+ <hour>11</hour>
+ <minute>&tm;</minute>
+ <second>&tme;</second>
+ <meridiem>p.m.</meridiem>
+ &rmt;
+</time>
