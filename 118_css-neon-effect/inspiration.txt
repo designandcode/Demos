@@ -1,0 +1,2 @@
+http://codehero.es
+hover over rails or jquery to see the effect to emulate
