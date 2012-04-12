@@ -1,0 +1,65 @@
+img{
+	border:none;
+}
+#topxImgContainer{
+	width:862px;
+	height:362px;
+	position:relative;
+	float:left;
+	overflow:hidden;
+}
+#topxImgContainer  img{
+	position:absolute;
+	top:0;
+	left:0;
+}
+#topxImgContainer div.topxImage{
+	width:190px;
+	height:120px;
+	position:relative;
+	float:left;
+}
+#topxImgContainer div.topxImagesContainer{
+	position:absolute;
+	top:0;
+	left:50px;
+	background-color:transparent;
+	display:none;
+}
+#topxImgContainer div.topxImage img{
+	position:absolute;
+	top:0;
+	left:0;
+}
+#topxImgContainer div.topxImage span{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:190px;
+	height:30px;
+	color:#fff;
+	background-color:#0af;
+	display:none;
+}
+div#topxLeftArrows, div#topxRightArrows{
+	width:50px;
+	height:362px;
+	background-color:#fff;
+}
+div#topxRightArrows{
+	position:absolute;
+	right:0;
+	top:0;
+}
+div#topxLeftArrows{
+	position:absolute;
+	left:0;
+	top:0;
+}
+div#topxLeftArrows img, div#topxRightArrows img{
+	
+}
+div#topxLeftArrows img.topxPage1{
+	display:none;
+}
+#topxImgContainer div.Clear { clear: both; height: 0; overflow: hidden; }
