@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>RSS feed for kalimfleet.net</title>
+    <link>http://kalimfleet.net</link>
+    <description>kalimfleet.net</description>
+    <lastBuildDate>Wed, 29 Oct 2009 18:37:00 GMT</lastBuildDate>
+    <language>en-us</language>
+    <item>
+      <title>This is the title</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Wed 11 Nov 2009 21:10:08 +0000</pubDate>
+      <description>&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;This is the title&lt;/a&gt; - </description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Wed 11 Nov 2009 21:10:08 +0000</pubDate>
+      <description>&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;This is the title&lt;/a&gt; - </description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Wed 11 Nov 2009 20:44:17 +0000</pubDate>
+      <description>&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;This is the title&lt;/a&gt; - Here we go again</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Wed 11 Nov 2009 20:44:17 +0000</pubDate>
+      <description>&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;This is the title&lt;/a&gt; - Here we go again</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Wed 11 Nov 2009 20:44:17 +0000</pubDate>
+      <description>&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;This is the title&lt;/a&gt; - Here we go again</description>
+    </item>
+    <item>
+      <title>Here is a Title I entered</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Wed 11 Nov 2009 21:33:14 EST</pubDate>
+      <description>&lt;a href=foo.php &gt;foo&lt;/a&gt; - </description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Thu 12 Nov 2009 21:07:42 EST</pubDate>
+      <description>&lt;img src=\"images/article01_03.png\"/&gt;&lt;br /&gt;&lt;span style=\"font-size:8px;\"&gt;via:&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;This is the title&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Thu 12 Nov 2009 21:13:11 EST</pubDate>
+      <description>&lt;img src=http://localhost:8080/apache_upload/demos/demo37/images/images/article01_03.png/&gt;&lt;br /&gt;&lt;span style=\"font-size:8px;\"&gt;via:&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;This is the title&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Thu 12 Nov 2009 21:15:34 EST</pubDate>
+      <description>&lt;img src=http://localhost:8080/apache_upload/demos/demo37/images/article01_03.png/&gt;&lt;br /&gt;&lt;span style=\"font-size:8px;\"&gt;via:&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;This is the title&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Thu 12 Nov 2009 21:16:21 EST</pubDate>
+      <description>&lt;img src=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/article01_03.png/&gt;&lt;br /&gt;&lt;span style=\"font-size:8px;\"&gt;via:&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;This is the title&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Thu 12 Nov 2009 21:18:59 EST</pubDate>
+      <description>&lt;img src=\"http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/article01_03.png\"/&gt;&lt;br /&gt;&lt;span style=\"font-size:8px;\"&gt;via:&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;This is the title&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Thu 12 Nov 2009 21:26:23 EST</pubDate>
+      <description>&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/article01_03.png"/&gt;&lt;br /&gt;&lt;span style="font-size:8px;"&gt;via:&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;This is the title&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;The bomb feed updater for you son!</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://kalimfleet.net/#aboutme</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Thu 12 Nov 2009 21:31:11 EST</pubDate>
+      <description>&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/article01_03.png"/&gt;&lt;br /&gt;&lt;span style="font-size:10px;"&gt;via:&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;This is the title&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;Wow. This is some really cool way to update information on my website and feed it to subscribers in real time!</description>
+    </item>
+    <item>
+      <title>Old school Mac logo with Vista style folder - icon</title>
+      <link>&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;localhost:8080&lt;/a&gt;</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Thu 12 Nov 2009 22:44:53 EST</pubDate>
+      <description>img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/article02_oldschoolapplefolder.png"/&gt;&lt;br /&gt;&lt;span style="font-size:10px;"&gt;via: &lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;localhost:8080&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;Here is a funky old school mac logo with a nice vista style folder</description>
+    </item>
+    <item>
+      <title>Old school Mac log with Vista style folder</title>
+      <link>&lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;localhost:8080&lt;/a&gt;</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Thu 12 Nov 2009 22:47:25 EST</pubDate>
+      <description>&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/article02_oldschoolapplefolder.png"/&gt;&lt;br /&gt;&lt;span style="font-size:10px;"&gt;via: &lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;localhost:8080&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;Is it funky enough for you?</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Thu 12 Nov 2009 22:52:57 EST</pubDate>
+      <description>&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/article02_movie-icon.png"/&gt;&lt;br /&gt;&lt;span style="font-size:10px;"&gt;via: &lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;localhost:8080&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Fri 13 Nov 2009 11:56:41 EST</pubDate>
+      <description>&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_albumcover.jpg" alt="image"/&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_appswebsite.JPG" alt="image"/&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_movie-icon.png" alt="image"/&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_oldschoolapplefolder.png" alt="image"/&gt;&lt;br /&gt;&lt;span style="font-size:10px;"&gt;via: &lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;localhost:8080&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+    <item>
+      <title>This is the title bar skidoosh</title>
+      <link>http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Fri 13 Nov 2009 14:44:23 EST</pubDate>
+      <description>&lt;div&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_albumcover.jpg" alt="image" style="position:absolute; clip:rect(0px</description>
+    </item>
+    <item>
+      <title>This is the title bar skidoosh</title>
+      <link>http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Fri 13 Nov 2009 14:49:36 EST</pubDate>
+      <description>&lt;div&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_albumcover.jpg" alt="image" style="position:absolute; clip:rect(0px 128px 128px 0px);"/&gt;&lt;/div&gt;&lt;div&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_appswebsite.JPG" alt="image" style="position:absolute; clip:rect(0px 128px 128px 0px);"/&gt;&lt;/div&gt;&lt;div&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_movie-icon.png" alt="image" style="position:absolute; clip:rect(0px 128px 128px 0px);"/&gt;&lt;/div&gt;&lt;div&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_oldschoolapplefolder.png" alt="image" style="position:absolute; clip:rect(0px 128px 128px 0px);"/&gt;&lt;/div&gt;&lt;div&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/article001_01.png" alt="image" style="position:absolute; clip:rect(0px 128px 128px 0px);"/&gt;&lt;/div&gt;&lt;br /&gt;&lt;span style="font-size:10px;"&gt;via: &lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;localhost:8080&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+    <item>
+      <title>This is the title bar skidoosh</title>
+      <link>http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Fri 13 Nov 2009 14:52:11 EST</pubDate>
+      <description>&lt;div style="position:relative; float:left;"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_albumcover.jpg" alt="image" style="position:absolute; clip:rect(0px 128px 128px 0px);"/&gt;&lt;/div&gt;&lt;div style="position:relative; float:left;"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_appswebsite.JPG" alt="image" style="position:absolute; clip:rect(0px 128px 128px 0px);"/&gt;&lt;/div&gt;&lt;div style="position:relative; float:left;"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_movie-icon.png" alt="image" style="position:absolute; clip:rect(0px 128px 128px 0px);"/&gt;&lt;/div&gt;&lt;div style="position:relative; float:left;"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_oldschoolapplefolder.png" alt="image" style="position:absolute; clip:rect(0px 128px 128px 0px);"/&gt;&lt;/div&gt;&lt;div style="position:relative; float:left;"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/article001_01.png" alt="image" style="position:absolute; clip:rect(0px 128px 128px 0px);"/&gt;&lt;/div&gt;&lt;br /&gt;&lt;span style="font-size:10px;"&gt;via: &lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;localhost:8080&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+    <item>
+      <title>This is the title bar skidoosh</title>
+      <link>http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Fri 13 Nov 2009 14:57:56 EST</pubDate>
+      <description>&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 128px 128px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_albumcover.jpg" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 128px 128px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_appswebsite.JPG" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 128px 128px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_movie-icon.png" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 128px 128px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_oldschoolapplefolder.png" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 128px 128px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/article001_01.png" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;span style="font-size:10px;"&gt;via: &lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;localhost:8080&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Fri 13 Nov 2009 15:39:41 EST</pubDate>
+      <description>&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 256px 256px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_albumcover.jpg" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 256px 256px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_appswebsite.JPG" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 256px 256px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_movie-icon.png" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 256px 256px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_oldschoolapplefolder.png" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;span style="font-size:10px;"&gt;via: &lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;localhost:8080&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Fri 13 Nov 2009 15:41:09 EST</pubDate>
+      <description>&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 256px 256px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_albumcover.jpg" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 256px 256px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_appswebsite.JPG" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 256px 256px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_movie-icon.png" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:225px;"&gt;&lt;div style="position:absolute; clip:rect(0px 256px 256px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_oldschoolapplefolder.png" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style="font-size:10px;"&gt;via: &lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;localhost:8080&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+    <item>
+      <title>This is the title</title>
+      <link>http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php</link>
+      <guid>http://kalimfleet.net/</guid>
+      <pubDate>Fri 13 Nov 2009 15:42:05 EST</pubDate>
+      <description>&lt;div style="position:relative; height:265px;"&gt;&lt;div style="position:absolute; clip:rect(0px 256px 256px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_albumcover.jpg" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:265px;"&gt;&lt;div style="position:absolute; clip:rect(0px 256px 256px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_appswebsite.JPG" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:265px;"&gt;&lt;div style="position:absolute; clip:rect(0px 256px 256px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_movie-icon.png" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position:relative; height:265px;"&gt;&lt;div style="position:absolute; clip:rect(0px 256px 256px 0px);"&gt;&lt;img src="http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/images/This is the title_oldschoolapplefolder.png" alt="image" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;span style="font-size:10px;"&gt;via: &lt;a href=http://localhost:8080/apache_upload/lemonade-blog/demos/demo37/feedupdater.php &gt;localhost:8080&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    </item>
+  </channel>
+</rss>

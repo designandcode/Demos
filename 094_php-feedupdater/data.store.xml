@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>RSS feed for kalimfleet.net</title>
+    <link>http://kalimfleet.net</link>
+    <description>kalimfleet.net</description>
+    <lastBuildDate>Wed, 29 Oct 2009 18:37:00 GMT</lastBuildDate>
+    <language>en-us</language>
+    <item>
+      <title>&lt;a href= &gt;&lt;/a&gt;</title>
+      <link/>
+      <guid/>
+      <pubDate/>
+      <description/>
+    </item>
+    <item>
+      <title/>
+      <link/>
+      <guid/>
+      <pubDate/>
+      <description/>
+    </item>
+  </channel>
+</rss>
