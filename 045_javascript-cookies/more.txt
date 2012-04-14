@@ -1,0 +1,4 @@
+Store.js (localStorage,globalStorage,userData)
+AmplifyJS (localStorage,sessionStorage,globalStorage,userData)
+PersistJS (local,session,global,userData,gears)
+jQuery Offline plugin

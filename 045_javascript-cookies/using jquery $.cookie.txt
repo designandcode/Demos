@@ -1,0 +1,19 @@
+jQuery Code Snippet to set/get browser cookies for a users session. This could be used to store view states when a user clicks something. The example below shows the cookie being saved to store the visibility of an element.
+
+//event to hide element
+...
+$("#element").hide();
+$.cookie('cookie_name', 'not_in_view');
+
+//event to show element
+...
+$("#element").show();
+$.cookie('cookie_name', 'in_view');
+
+//cookie
+var cookie_name = $.cookie('cookie_name');
+
+//initialise
+if (cookie_name == 'in_view') {
+	$("#element").hide();
+};

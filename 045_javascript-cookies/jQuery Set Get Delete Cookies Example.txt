@@ -1,0 +1,72 @@
+/* Uses jquery.cookie.js */
+jQuery can be used to manipulate browser cookies and this little demonstration shows you how to create, access and remove cookies using a jQuery plugin developed by Klaus Hartl under a GLP licence.
+
+<html>
+<head>
+  <title>jquery cookie</title>
+
+  <script type="text/javascript" src="jquery-1.2.1.min.js"></script>
+  <script type="text/javascript" src="jquery.cookie.js"></script>
+
+  <script type="text/javascript">
+
+    $(function($) {
+
+      function displayMessage(msg) {
+        $('#message').html(msg).css({color: 'green'});
+      }
+
+      displayMessage('jQuery cookie plugin test');
+
+      $('#setSessionCookie').click(function() {
+        $.cookie('test', 'Hmmm, cookie');
+        displayMessage("Cookie 'test' has been set.");
+      });
+
+      $('#setCookie').click(function() {
+        $.cookie('test', 'Hmmm, cookie', { expires: 7 });
+        displayMessage("Cookie 'test' has been set and will expire in 7 days.");
+      });
+
+      $('#getCookie').click(function() {
+        displayMessage("The value of the cookie named 'test' is: " + $.cookie('test'));
+      });
+
+      $('#deleteCookie').click(function() {
+        $.cookie('test', null);
+        displayMessage("Cookie 'test' has been deleted.");
+      });
+
+      $('#testCookiesEnabled').click(function() {
+        $.cookie('testcookiesenabled', null);
+        $.cookie('testcookiesenabled', 'enabled');
+        if ($.cookie('testcookiesenabled')) {
+          displayMessage("Cookie: "+ $.cookie('testcookiesenabled'));
+        } else {
+          displayMessage("Cookies disabled");
+          $.cookie('testcookiesenabled', null);
+        }
+      });
+
+    });
+
+  </script>
+
+</head>
+
+<body>
+
+<p><span id="message" style="forecolor: red;"></span>
+
+<p><input type="button" id="testCookiesEnabled" value="Cookies enabled?"/></p>
+
+<p><input type="button" id="setSessionCookie" value="Set session cookie"/></p>
+
+<p><input type="button" id="setCookie" value="Set cookie expires in  7 days"/></p>
+
+<p><input type="button" id="getCookie" value="Show cookie value"/></p>
+
+<p><input type="button" id="deleteCookie" value="Delete the cookie"/></p>
+
+</body>
+</html>
