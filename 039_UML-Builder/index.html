@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<!--script type="text/javascript" src="jQuery/UMLClass.builder.js"></script-->
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script>
+$(document).ready(function() {
+
+	//Import the Class
+	$.getScript('jQuery/UMLClass.builder.js', function() {
+  
+	//Instantiate the UML Diagram
+	var aClass = new UMLClass("Class");
+	//Draw the UML Class container
+	aClass.UMLDrawClass();
+	//Prints the properties and properties block description if first argument set to true
+	//Third argument prints an elipsis if set to true
+	aClass.UMLDrawProperty(true, false, ["description" , false]);
+	//This is the last property - it has special class
+	aClass.UMLDrawProperty(false, false, ["property1" , true]);
+	//Prints the methods and method block description if the first argument set to true
+	aClass.UMLDrawMethod(true, false, "description");  //prints method block description
+	aClass.UMLDrawMethod(false, false, "method( )"); //prints method( )
+	aClass.UMLDrawMethod(false, false, "method1( )");  //prints method1( )
+	aClass.UMLDrawMethod(false, true); //prints elipsis
+	aClass.UMLDrawMethod(false); //prints nothing
+	aClass.UMLDrawMethod();  //prints nothing
+	
+	var bClass = new UMLClass("Class1");
+	bClass.UMLDrawClass();
+	bClass.UMLDrawProperty(true, false, ["description" , false]);
+	bClass.UMLDrawProperty(false, false, ["property1" , false]);
+	bClass.UMLDrawProperty(false, true, ["property2" , true]);
+	bClass.UMLDrawMethod();
+	
+	var cClass = new UMLClass("Class3");
+	cClass.UMLDrawClass();
+	cClass.UMLDrawProperty(true, false, ["description" , false]);
+	cClass.UMLDrawProperty(false, false, ["propertyAlpha" , false]);
+	cClass.UMLDrawProperty(false, true, ["propertyBeta" , true]);
+	cClass.UMLDrawMethod();
+  
+	});
+
+});	
+</script>
+<script>
+$(document).ready(function() {
+
+	//$("body").UMLBulider();
+	$.getScript('jQuery/UMLPackage.builder.js', function() {
+		var aPackage = new UMLPackage("Package");
+		aPackage.UMLDrawPackage();
+	});
+})	
+</script>
+<!--script>
+$(function(){
+	function UMLClass(className){
+		this.className = className;
+		this.UMLDrawClass = function(){
+			$("body").append('<div class="container ' + this.className  + '"><div class="header">' + this.className + '</div><div class="body"></div></div>');
+			};
+		this.UMLDrawProperty = function(description, elipsis, property){	
+			this.property = [property[0] , property[1]];
+			this.description = description;
+			this.elipsis = elipsis;
+			if(this.description == true) {
+				$(".container." + this.className + " .body").append('<div class="bodyUpper description">&lsaquo;&lsaquo;' + this.property[0] + '&rsaquo;&rsaquo;</div>')
+				}else if(this.description == false && this.property[1] == false){
+					$(".container." + this.className + " .body").append('<div class="bodyUpper">' + this.property[0] + '</div>')
+				}else if(this.property[1] == true && this.elipsis != true){
+					$(".container." + this.className + " .body").append('<div class="bodyUpper last">' + this.property[0] + '</div>')
+				}else{
+					$(".container." + this.className + " .body").append('<div class="bodyUpper last">' + '...' + '</div>')
+				}
+							
+		};
+		this.UMLDrawMethod = function(description, elipsis, method){
+		this.method = method;
+		this.description = description;
+		this.elipsis =  elipsis;
+		if (this.method != undefined && this.description == true){
+			$(".container." + this.className + " .body").append('<div class="bodyLower">&lsaquo;&lsaquo;' + this.method + '&rsaquo;&rsaquo;</div>');
+			}else if(this.method != undefined && this.elipsis == false){
+				$(".container." + this.className + " .body").append('<div class="bodyLower">' + this.method + '</div>');
+			}else if(this.elipsis == true){
+				$(".container." + this.className + " .body").append('<div class="bodyLower">' + '...' + '</div>');
+			}else if(this.method != undefined){
+				$(".container." + this.className + " .body").append('<div class="bodyLower">' + this.method + '</div>');
+			}
+		}
+		
+	}
+	
+	
+		//Instantiate the UML Diagram
+	var aClass = new UMLClass("Class");
+	//Draw the UML Class container
+	aClass.UMLDrawClass();
+	//Prints the properties and properties block description if first argument set to true
+	//Third argument prints an elipsis if set to true
+	aClass.UMLDrawProperty(true, false, ["description" , false]);
+	//This is the last property - it has special class
+	aClass.UMLDrawProperty(false, false, ["property1" , true]);
+	//Prints the methods and method block description if the first argument set to true
+	aClass.UMLDrawMethod(true, false, "description");  //prints method block description
+	aClass.UMLDrawMethod(false, false, "method( )"); //prints method( )
+	aClass.UMLDrawMethod(false, false, "method1( )");  //prints method1( )
+	aClass.UMLDrawMethod(false, true); //prints elipsis
+	aClass.UMLDrawMethod(false); //prints nothing
+	aClass.UMLDrawMethod();  //prints nothing
+	
+	var bClass = new UMLClass("Class1");
+	bClass.UMLDrawClass();
+	bClass.UMLDrawProperty(true, false, ["description" , false]);
+	bClass.UMLDrawProperty(false, false, ["property1" , false]);
+	//The elipsis replaces the property
+	bClass.UMLDrawProperty(false, true, ["property2" , true]);
+	bClass.UMLDrawMethod();
+	
+	var cClass = new UMLClass("Class3");
+	cClass.UMLDrawClass();
+	cClass.UMLDrawProperty(true, false, ["description" , false]);
+	cClass.UMLDrawProperty(false, false, ["propertyAlpha" , false]);
+	cClass.UMLDrawProperty(false, true, ["propertyBeta" , true]);
+	cClass.UMLDrawMethod();
+});
+</script-->
+</head>
+<body>
+<!--div class="container Class">
+	<div class="header">Class</div>
+	<div class="body">
+		<div class="bodyUpper description">&lsaquo;&lsaquo;description&rsaquo;&rsaquo;</div>
+		<div class="bodyUpper">property1</div>
+		<div class="bodyUpper last">property2</div>
+		<div class="bodyLower description">&lsaquo;&lsaquo;description&rsaquo;&rsaquo;</div>
+		<div class="bodyLower">method1()</div>
+		<div class="bodyLower">method2()</div>
+		<div class="bodyLower">...</div>
+	</div>
+</div-->
+<div class="container Package">
+	<div class="header">Package</div>
+	<div class="body">
+		<div class="member">Class1</div>
+		<div class="member">Class2</div>
+		<div class="member">Class3</div>
+		<div class="member">Class4</div>
+	</div>
+</div>
+</body>
+</html>
