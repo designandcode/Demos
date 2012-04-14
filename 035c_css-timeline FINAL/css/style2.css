@@ -1,0 +1,87 @@
+/*------------------------------------*\
+  CHART
+\*------------------------------------*/
+#chart{
+  width:520px;
+}
+#chart dt{
+  width:160px;
+  float:left;
+  margin:0 20px 5px 0;
+  padding:2px 0;
+  display:inline;
+  font-weight:bold;
+  text-align:right;
+}
+#chart dd{
+  width:339px;
+  border-right:1px solid #ddd;
+  float:left;
+  margin-bottom:5px;
+  display:inline;
+}
+#chart dd span{
+  color:#fff;
+  background:#09f;
+  text-align:center;
+  padding:2px 0;
+  display:block;
+  text-shadow:1px 1px 1px rgba(0,0,0,0.2);
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+  background:-webkit-gradient(linear, left top, left bottom, from(#09f), to(#077fd0));
+  -webkit-box-reflect:below 0
+  -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.25)));
+}
+#data-one{
+  width:47%;
+}
+#data-two{
+  width:59%;
+}
+#data-three{
+  width:26%;
+}
+#data-one{
+  -webkit-animation-name:bar-one; /* Give the bar an animation with a
+    unique name */
+}
+#data-two{
+  -webkit-animation-name:bar-two; /* Give the bar an animation with a
+    unique name */
+}
+#data-three{
+  -webkit-animation-name:bar-three; /* Give the bar an animation with a
+    unique name */
+}
+#data-one,#data-two,#data-three{ /* Define animation styles for all three
+    bars at once */
+  -webkit-animation-duration:0.5s; /* Animation duration in seconds */
+  -webkit-animation-iteration-count:1; /* Amount of times to loop */
+  -webkit-animation-timing-function:ease-out; /* Ease in, out etc. */
+}
+@-webkit-keyframes bar-one{
+  0%{ /* Define bar-one styles at 0% (0 seconds) */
+    width:0%;
+  }
+  100%{ /* Define bar-one styles at 100% (0.5 seconds) */
+    width:47%;
+  }
+}
+@-webkit-keyframes bar-two{
+  0%{ /* Define bar-two styles at 0% (0 seconds) */
+    width:0%;
+  }
+  100%{ /* Define bar-two styles at 100% (0.5 seconds) */
+    width:59%;
+  }
+}
+@-webkit-keyframes bar-three{
+  0%{ /* Define bar-three styles at 0% (0 seconds) */
+    width:0%;
+  }
+  100%{ /* Define bar-three styles at 100% (0.5 seconds) */
+    width:26%;
+  }
+}

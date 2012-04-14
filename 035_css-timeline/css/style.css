@@ -1,0 +1,185 @@
+body{
+	background:url(../images/toronto_skyline.jpg) no-repeat;
+	margin:0;
+	padding:0;
+	width:1260px;
+}
+
+div#timeline{
+	width:700px;
+	position:relative;
+	float:left;
+}
+div#tagline{
+	position:relative;
+	float:left;
+	clear:right;
+	width:540px;
+	height:600px;
+	border:1px solid #ccc;
+}	
+ul.events {
+	list-style-type: none;
+	margin: 0;
+	padding: 20px 0 20px 0;
+	width: 700px;
+	/*width:100%;*/
+	clear:both;
+}
+
+ul.events li {/*
+	-webkit-border-radius: 11px;
+	-moz-border-radius: 11px;
+	border-radius: 11px;*/
+	background: #eee;
+	border: 1px solid #ddd;
+	color: #707070;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 6px;
+	padding: 3px 0;
+	padding-right:5px;
+	position: relative;
+	text-align: right;
+	overflow:hidden;
+	white-space: nowrap;
+	width:89%;
+	width:90%;
+}
+
+ul.events li em {
+	color: #aaa;
+	font-weight: normal;
+	font-size: 0.9em;
+}
+
+ul.intervals {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+	width: 700px;
+	/*width:100%;*/
+}
+
+/* The width depends on the number of intervals. For example 100 / 7 = 14.29% -- then subtract a little bit for room for the borders */
+ul.intervals li {
+	border-right: 1px solid #ccc;
+	color: #999;
+	color:#fff;
+	float: left;
+	font-size: 1.2em;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 9%;
+}
+
+ul.intervals li.first {
+   border-left: 1px solid #ccc;
+}
+
+#container{
+	width: 600px;
+}
+
+.title{
+
+}
+
+.data{
+	height:40px;
+}
+
+ul.events li.width10{
+	width:9%;
+}
+
+ul.events li.width20{
+	width:18%;
+
+}
+
+ul.events li.width30{
+	width:27%;
+
+}
+
+ul.events li.width40{
+	width:36%;
+
+}
+
+ul.events li.width50{
+	width:45%;
+
+}
+
+ul.events li.width60{
+	width:54%;
+
+}
+
+ul.events li.width70{
+	width:63%;
+
+}
+
+ul.events li.width80{
+	width:72%;
+
+}
+
+ul.events li.width90{
+	width:81%;
+
+}
+
+ul.events li.width100{
+	width:90%;
+
+}
+
+ul.events li.offset10{
+	margin-left:9%;
+}
+
+ul.events li.offset20{
+	margin-left:18%;
+
+}
+
+ul.events li.offset30{
+	margin-left:27%;
+
+}
+
+ul.events li.offset0{
+	margin-left:36%;
+
+}
+
+ul.events li.offset50{
+	margin-left:45%;
+
+}
+
+ul.events li.offset60{
+	margin-left:54%;
+
+}
+
+ul.events li.offset70{
+	margin-left:63%;
+
+}
+
+ul.events li.offset80{
+	margin-left:72%;
+
+}
+
+ul.events li.offset90{
+	margin-left:81%;
+
+}

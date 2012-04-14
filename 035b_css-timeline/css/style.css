@@ -1,0 +1,64 @@
+/*------------------------------------*\
+  CHART
+\*------------------------------------*/
+.chart{
+  width:339px;
+}
+.chart dt{
+  width:160px;
+  float:left;
+  margin:0 20px 5px 0;
+  padding:2px 0;
+  display:inline;
+  font-weight:bold;
+  text-align:right;
+}
+.chart dd{
+  width:339px;
+  border-right:1px solid #ddd;
+  float:left;
+  margin-bottom:5px;
+  display:inline;
+}
+.chart dd span{
+  color:#fff;
+  background:#09f;
+  text-align:center;
+  padding:2px 0;
+  display:block;
+	height:20px;
+  text-shadow:1px 1px 1px rgba(0,0,0,0.2);
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+}
+
+ul#toggle{
+	margin:0;
+	padding:0;
+}
+ul#toggle li{
+		display:inline-block;
+		width:75px;
+		margin:0px;
+		padding:4px 7px;
+		/*background-color:#123;*/
+		background-color:#ccc;
+		/*color:#bce;*/
+		color:#123;
+		border:1px solid #aaa;
+		cursor:pointer;
+		zoom:1;
+		*display:inline;
+}
+ul#toggle li.active{
+	color:white;
+	background-color:#09f;
+}
+
+#chart-container{
+	border:1px solid #aaa;
+	width:339px;
+	padding-right:90px;
+	padding-bottom:30px;
+}

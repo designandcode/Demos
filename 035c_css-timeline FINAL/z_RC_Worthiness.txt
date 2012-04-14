@@ -1,0 +1,23 @@
+Determines whether a Release Candidate is ready for release
+
+1. Is there a use case? YES - Show percentage loading of an element/page/upload/download.
+2. Does it work in Firefox? YES
+3. Does it work in Chrome/Webkit? NO - numbers slower than width
+4. Does it work in IE? NO - numbers much slower than width - spans load full page then disappear
+5. Does it work in Opera? NO - numbers much slower than width - spans load full page then disappear
+
+Release it! - go to Next Step
+
++++++++++++++++++++++++++++++
+
+Determines if the Release Candidate Article is ready for release
+
+1. Has this document been completed?  C:\_projects\article_writing\articles.xlsx | articles-process-NEW
+
+Publish It! - go to Next Step
+
++++++++++++++++++++++++++++++
+
+Determines what to do after an article has been published
+
+1. C:\_projects\article_marketing\marketing_DESIGNTOPX.xlsx | Submit-MASTER

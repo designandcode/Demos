@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="jQuery/motion-data-2.0.0.js"></script>
+<script>
+	$(function(){
+	//alert('foo');
+		$('body').animatedChart({single: new Array(true,2500,"type1","300px")});
+		$('body').animatedChart({single: new Array(true,2500,"type2","450px")});
+		$('body').animatedChart({single: new Array(true,2500,"type3","600px")});
+	});
+</script>
+</head>
+<body>
+<div id="single-fixed">
+<h4>Single - Fixed Number</h4>
+<span class="type1"></span>
+<span class="type2"></span>
+<span class="type3"></span>
+</div>
+
+
+</body>
+</html>

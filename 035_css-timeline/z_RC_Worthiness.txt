@@ -1,0 +1,23 @@
+Determines whether a Release Candidate is ready for release
+
+1. Is there a use case? YES - portfolio website to show percentages of technology used to build the web site.
+2. Does it work in Firefox? YES
+3. Does it work in Chrome/Webkit? YES
+4. Does it work in IE? NO - can't call multiple classes on same element (offset & width)
+5. Does it work in Opera? YES
+
+Release it! - go to Next Step
+
++++++++++++++++++++++++++++++
+
+Determines if the Release Candidate Article is ready for release
+
+1. Has this document been completed?  C:\_projects\article_writing\articles.xlsx | articles-process-NEW
+
+Publish It! - go to Next Step
+
++++++++++++++++++++++++++++++
+
+Determines what to do after an article has been published
+
+1. C:\_projects\article_marketing\marketing_DESIGNTOPX.xlsx | Submit-MASTER

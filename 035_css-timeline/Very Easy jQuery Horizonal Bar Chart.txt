@@ -1,0 +1,63 @@
+http://www.jquery4u.com/jquery-charts/easy-jquery-horizonal-bar-chart/
+
+This is how to setup your own jQuery bar chart in just a few easy steps. The demo is a horizonal bar chart but you can change the settings of the plugin to vertical, change speed and colors.
+
+Demo
+
+Instructions
+
+Download the jquery.charts.js plugin
+Copy the HTML code below
+Change the data in the table
+That’s it! 
+
+HTML and jQuery Code
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="/js/jquery.charts.js"></script>
+
+</head>
+<body>
+
+<table id="stats">
+	<caption>Statistics</caption>
+
+	<thead>
+		<tr>
+			<th>Option</th>
+			<th>Popularity</th>
+		</tr>
+
+	</thead>
+	<tfoot>
+		<tr>
+			<td>Total</td>
+			<td>100</td>
+		</tr>
+	</tfoot>
+	<tbody>
+
+		<tr>
+			<td>Burnt</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>Buried</td>
+			<td>1</td>
+
+		</tr>
+
+	</tbody>
+</table>
+
+<script type="text/javascript">
+	$("#stats").charts();
+</script>
+
+</body>
+</html>
