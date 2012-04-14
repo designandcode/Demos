@@ -1,0 +1,103 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body>
+<script>
+//	$(function(){
+$.getJSON('db/users.json', function(data){
+	var parm = 0;
+	
+	function User(state){
+		//this.state = state;
+		this.setUser = function(newUser){
+			user = newUser;
+		}
+		
+		this.getUser = function(){
+			return user;
+		}
+		
+		this.getState = function(){
+			return state;
+		}
+		
+		this.setState = function(newState){
+			state = newState;
+		}
+	
+	};	
+	
+	//Insert Button Click Handler -  Button Click creates a new user object and assigns cookie logInStatus parm as parameter
+	
+	session = new User(parm);
+	$('.login').click(function(){
+		inputVal  = $('input:text').val();
+		for (i in data.db["users"]) {
+		if (data.db["users"][i][1] == inputVal) {
+		session.setState(1);
+		session.view(data.db["users"][i][1]);
+		$(this).attr("disabled","true");
+		$('.logout').removeAttr("disabled");
+		}
+		}
+		return false;
+	})
+	$('.logout').click(function(){
+		session.setState(0);
+		session.view();
+		$(this).attr("disabled","true");
+		$('.login').removeAttr("disabled");
+		return false;
+	})
+	//karl.setState(0);
+	
+	User.prototype.view = function(user){
+			if (session.getState() == 0){
+				//document.write("Please click the login button to login");
+				$('#message').empty();
+				$('#message').append('Please click the login button to login');
+			} else if (session.getState() == 1){
+				//document.write("You are logged in - to logout, please click the logout button");
+				$('#message').empty();
+				$('#message').append('Hello '+user+', You are logged in - to logout, please click the logout button');
+			} else if (session.getState() == undefined){
+				//document.write("You go to the Registration Page");
+				$('#message').empty();
+				$('#message').append("You don't have an account on the system.");
+			}
+		
+	};
+	
+	session.view();
+	});
+</script>
+<!--script>
+$(function(){
+	var parm = 0;
+	if (parm == 0) {
+		$('#container').prepend('Please click the login button to login');
+	}
+			//if (parm == 0){
+			//	document.write("Please click the login button to login");
+			//} 
+		
+});
+</script-->
+<div id="container">
+	<div id="message"></div>
+	<form>
+	<input type="text" />
+	<button class="login">Login</button>
+	<button class="logout" disabled>Logout</button>
+	</form>
+</div>
+</body>
+</html>

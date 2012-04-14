@@ -1,0 +1,86 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!--script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script-->
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body>
+<script>
+	loaded = true;
+	failed = false;
+	// Receives state from HTTP Header
+	state = 300;
+	
+	//Determines the HTTPState and then delegates responsibility HTTPView()
+	function HTTPState(){
+		if (state == 300){
+			return loaded;
+		} else{
+			return failed;
+			}
+	}
+	
+	// Receives request to submit page request view to view() or to load the errorpage
+	function HTTPView(){
+		//var ready = true;
+		if (HTTPState() == true){
+			//document.write("Loaded.htm");
+			return true;
+		} else{
+			document.write("Failed.htm");
+		}
+	}
+	
+	// grabs logInStatus param from cookies (0, 1, or 2)
+	/*
+	** loggedIn = 0;
+	** notLoggedIn = 1;
+	** notRegistered = 2;
+	*/
+	
+	//Process cookie on page load
+	//Return cookie val for logInStatus as parm
+	parm = 0;
+	
+	function User(state){
+		//this.state = state;
+		
+		
+		this.getState = function(){
+			return state;
+		}
+		
+		this.setState = function(newState){
+			state = newState;
+		}
+	
+	}	
+	
+	//Insert Button Click Handler -  Button Click creates a new user object and assigns cookie logInStatus parm as parameter
+	
+	karl = new User(parm);
+	
+	//document.write(karl.getState());
+	
+	User.prototype.view = function(){
+		if (HTTPView() == true){
+			if (karl.getState() == 0){
+				document.write("You go to the Auction Page");
+			} else if (karl.getState() == 1){
+				document.write("You go to the Login Page");
+			} else if (karl.getState() == undefined){
+				document.write("You go to the Registration Page");
+			}
+		} else 
+			return;
+	}
+	
+	karl.view();
+</script>
+</body>
+</html>
