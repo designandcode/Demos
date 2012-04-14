@@ -1,0 +1,139 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<!--<META HTTP-EQUIV="Pragma" CONTENT="no-cache">-->
+<!---------GOOGLE -------------->
+
+<!--<meta name="googlebot" content="noarchive">
+<!--<meta name="googlebot" content="nosnippet">-->
+<!--<meta name="googlebot" content="noindex">-->
+<!--<meta name="googlebot" content="nofollow">-->
+
+<!-----END GOOGLE -------------->
+<meta />
+<meta />
+<!--BEGIN CSS-DESKTOP-->
+<!-------------------------------------------------------------------->
+
+
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen and (min-device-width: 481px)" />
+<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+<!--<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />-->
+<!--<link rel="stylesheet" type="text/css" href="css/_reset.css"  media="screen and (min-device-width: 481px)" />-->
+<!-------------------------------------------------------------------->
+<!--END CSS-DESKTOP-->
+
+<!--BEGIN CSS-iPhone-->
+<!-------------------------------------------------------------------->
+<link rel="stylesheet" type="text/css" href="css/iphone.css" media="only screen and (max-device-width: 480px)" />
+<meta name = "viewport" content = "user-scalable=no, width=100%" />
+<!-------------------------------------------------------------------->
+<!--END CSS-iPhone-->
+
+
+<!--BEGIN jQuery plug-ins-->
+<!-------------------------------------------------------------------->
+<script type="text/javascript" src="js/library/jquery-1.3.2.js"></script>
+<script>
+$(function() {
+	
+	/*
+	// Plugin definition here
+	(function( $ ){
+
+		$.fn.highlight = function() {
+			
+								
+				this.css({ color: 'red', background: 'yellow' });
+				
+
+			};
+		
+	})( jQuery );
+
+	// Plugin call here
+	$('#header-wrapper').highlight();
+	*/
+	
+
+	$.ajaxSetup ({  
+					cache: false  
+			});  
+			var ajax_load = "<img src='img/load.gif' alt='loading...' />";  
+				
+	//  load() functions  
+			var loadUrl = "index.html";
+	$("#header-wrapper").click(function(){  
+			$("#header-wrapper")  
+					//.html(ajax_load)  
+					.load(loadUrl + "#sidebar-right-wrapper");  
+	});
+	
+	
+	
+});
+
+
+
+</script>
+<!--<script type="text/javascript" src="/js/plug-ins/jquery.cycle.lite.v1.0.js"></script>-->
+<!--<script type="text/javascript" src="/js/plug-ins/**********.js"></script>-->
+<!--<script type="text/javascript" src="/js/plug-ins/**********.js"></script>-->
+<!-------------------------------------------------------------------->
+<!--END jQuery plug-ins-->
+</head>
+<body>
+<!--BEGIN DESKTOP BODY-->
+<!-------------------------------------------------------------------->
+	<div id="header-wrapper" class="box-gray mobile-remove">
+		<span class="large-font">1</span>
+	</div>
+	
+	<div id="navigation-wrapper" class="box-gray mobile-remove">
+		<span class="large-font">1a</span>
+	</div>
+<!------------------------->	
+<div id="content-container">	
+	<div id="sidebar-left-wrapper remove" class="box-gray mobile-remove">
+		<span class="large-font remove">2</span>
+	</div>
+	
+	<div id="content-wrapper" class="box-gray mobile-remove">
+		<span class="large-font">3</span>
+	</div>
+	
+	<div id="sidebar-right-wrapper" class="box-red clear-right mobile-remove">
+		<span class="large-font">4</span>
+	</div>
+</div>	
+	<div id="footer-wrapper" class="box-gray mobile-remove">
+		<span class="large-font">5</span>
+	</div>
+
+<!-------------------------------------------------------------------->
+<!--END DESKTOP BODY-->
+
+<!--BEGIN MOBILE BODY-->
+<!-------------------------------------------------------------------->
+<div id="mobile-header" class="desktop-remove"><h1><a href="">Header</a></h1></div>
+<div id="mobile-tagline" class="desktop-remove">Here is the tagline</div>
+<div id="mobile-public" class="desktop-remove">
+			<ul>
+				<li>Post Title - Lorem ipsum dolor sit amet</li>
+				<li><p>Lorem ipsum dolor sit amet, veritatis eget, phasellus commodo</p>sed nulla wisi, magna <img src="images/place_img.png" />commodo nulla quam vulputate lacinia, lobortis voluptas fringilla, varius sed interdum. Quis quisque elit magnis nec ipsum hendrerit, suscipit lacus neque, nibh laboris, at volutpat vitae feugiat. Faucibus ut quis lorem dui, amet congue viverra ut tincidunt ac. Rutrum gravida eget, proin ut, mauris non vivamus elit mauris mollis laoreet, morbi vivamus lorem sed eu sed, mollis </li>
+			</ul>	
+</div>
+<div id="mobile-footer" class="desktop-remove">&copy;2010 - Designtopx.com</div>
+<!-------------------------------------------------------------------->
+<!--END MOBILE BODY-->
+</body>
+</html>

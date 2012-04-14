@@ -1,0 +1,132 @@
+body {
+    background-color: #000328; /* Background color #ddd */
+	background-image: url('../images/pinstripe.jpg');
+    color: #222;            /* Foreground color used for text */
+    font-family: Helvetica, sans-serif;
+	/*font-size:100%;*/
+    margin: 0;              /* Amount of negative space around the outside of the body */
+    padding: 0;             /* Amount of negative space around the inside of the body */
+}
+
+img {
+     max-width: 90%;
+	 position:relative;
+	 float:left;
+	 clear:both;
+	 margin: 5px auto 10px auto;
+}
+
+#mobile-header{
+
+}
+	#mobile-header h1 {
+		margin: 0;
+		padding: 0;
+	}
+	#mobile-header h1 a {
+		background-color: #ccc;
+		/*border-bottom: 1px solid #666;*/
+		color: #222;
+		display: block;
+		font-weight: bold;
+		font-size:11px;
+		padding: 2% 0;
+		text-align: center;
+		text-decoration: none;
+	}
+	#mobile-header h1 a {
+		text-shadow: 0px 1px 0px #fff;
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#999));
+	}
+	.mobile-extra{
+		/*color:#222;*/
+		color:#fff;
+		display:block;
+		font-size:20px;
+		font-weight:bold;
+		padding:10px 0;
+		text-align:center;
+		
+	}
+#mobile-tagline{
+	text-align:center;
+	background-color: #222;
+	/*border-bottom: 1px solid #666;*/
+	color: #ccc;
+	font-size:7px;
+}	
+	
+#mobile-nav{
+	
+}
+	#mobile-nav ul{
+	list-style: none;
+	margin: 10px;
+	padding: 0;
+}
+	
+	#mobile-nav ul li a{
+	background-color: blue;
+	border: 1px solid #fff;
+	color: #fff;
+	display: block;
+	font-size: 17px;
+	font-weight: bold;
+	margin-bottom: -1px;
+	padding: 12px 10px;
+	text-decoration: none;
+}
+
+	#mobile-nav ul li a {
+		-webkit-border-top-left-radius: 8px;
+		-webkit-border-top-right-radius: 8px;
+		-webkit-border-bottom-left-radius: 8px;
+		-webkit-border-bottom-right-radius: 8px;
+	}
+	
+#mobile-private{
+
+}
+#mobile-public{
+	
+}
+	#mobile-public ul{
+		list-style: none;
+		margin: 6% 2%;
+		padding: 0;
+	}
+	#mobile-public ul li{
+		background-color: #FFFFFF;
+		/*border: 1px solid #999999;*/
+		color: #222222;
+		display: block;
+		/*font-weight: bold;*/
+		font-size:5px;
+		margin-bottom: -1px;
+		padding: 2% 6%;
+		text-decoration: none;
+	}
+	#mobile-public ul li:first-child{
+		color:red;
+		font-weight: bold;
+		padding: 6% 6%;
+		font-size:7px;
+		border-bottom:1px solid #999;
+	}
+	#mobile-public ul li:first-child {
+		-webkit-border-top-left-radius: 4px;
+		-webkit-border-top-right-radius: 4px;
+	}
+	#mobile-public ul li:last-child {
+		-webkit-border-bottom-left-radius: 4px;
+		-webkit-border-bottom-right-radius: 4px;
+	}
+
+#mobile-footer{
+		font-size:5px;
+}
+	
+.mobile-remove{
+	display:none;
+}
+	
