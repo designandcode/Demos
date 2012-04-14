@@ -1,0 +1,20 @@
+body {
+	font-size:24px;
+}
+
+.smaller-font{
+	font-size:50%;
+}
+
+.larger-font{
+	font-size:200%;
+}
+
+.mobile-font{
+	font-size:5px;
+}
+
+.mobile-font-larger{
+	font-size:150%;
+}
+
