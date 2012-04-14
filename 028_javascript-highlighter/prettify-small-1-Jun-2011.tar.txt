@@ -1,0 +1,2 @@
+http://code.google.com/p/google-code-prettify/
+http://google-code-prettify.googlecode.com/svn/trunk/styles/index.html
