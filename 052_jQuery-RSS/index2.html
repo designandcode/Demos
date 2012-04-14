@@ -1,0 +1,80 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Yahoo Music - YQL</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body id="YQLYahooMusic">
+<div id="container"></div>
+<div id="debug"></div>
+</body>
+</html>
+<script>
+$(function(){
+	wrapper = {
+			span : function(name){
+				if (name != undefined)
+					return '<span>' + name + '</span>';
+				else
+					return "";
+			},
+			img : function(name){
+				if (name != undefined)
+					return '<img src="'+ name +'" />';
+				else
+					return "";
+			},
+			url : function(name,url){
+				if (name != undefined)
+					return '<a href="' + name + '">' + url + '</a>';
+				else
+					return "";
+			}
+	}
+$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20music.release.popular&format=json&diagnostics=true&callback=?", function(data){
+		count = data.query.results.Release.length;
+		count =  7;
+		for (i=0;i<count;i++)
+		  $('#container').append('<p class="box">'
+				//+ wrapper.img(data.results[i].profile_image_url) 
+				+ wrapper.span(data.query.results.Release[i].releaseYear)//http://developer.yahoo.com/music/
+				+ wrapper.span(data.query.results.Release[i].title)
+				+ wrapper.span(data.query.results.Release[i].Artist.name)
+				//+ wrapper.span("via: ")
+				//+ wrapper.span(data.results[i].source)
+				//+ "foo" + [i] +
+				+
+				'</p>'); 
+		keyArray = [];
+		for (key in data.query.results.Release[0]){
+			keyArray.push('data.query.results.Release[i].' + key);
+			//keyArray.push(key);
+		}
+		
+		keyCount = keyArray.length;
+		for (j=0;j<keyCount;j++){
+		$('#debug').append('<div>' +  keyArray[j]   + '</div>');	
+		}		
+        });
+		});
+		/*
+		keyArray[0] = UPC
+		keyArray[1] = explicit
+		keyArray[2] = flags
+		keyArray[3] = id
+		keyArray[4] = rating
+		keyArray[5] = releaseDate
+		keyArray[6] = releaseYear
+		keyArray[7] = rights
+		keyArray[8] = title
+		keyArray[9] = typeID
+		keyArray[10] = url
+		keyArray[11] = Artist
+		keyArray[12] = ItemInfo
+		*/
+</script>

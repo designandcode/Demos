@@ -1,0 +1,157 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body id="twitterSearch">
+<div id="container"></div>
+<div id="debug"></div>
+</body>
+</html>
+<script>
+/*
+$(function(){
+	wrapper = {
+			span : function(name){
+				if (name != undefined)
+					return '<span>' + name + '</span>';
+				else
+					return "";
+			},
+			img : function(name){
+				if (name != undefined)
+					return '<img src="'+ name +'" />';
+				else
+					return "";
+			},
+			url : function(name,url){
+				if (name != undefined)
+					return '<a href="' + name + '">' + url + '</a>';
+				else
+					return "";
+			}
+	}
+function feedUpdater(params){	
+$.getJSON("http://search.twitter.com/search.json?q=from%3Aweb2000&callback=?", function(data){
+		count = data.results.length;
+		count =  7;
+		for (i=0;i<count;i++)
+		  $('#container').append('<p class="box">'
+				+ wrapper.img(data.results[i].profile_image_url) 
+				+ wrapper.span(data.results[i].from_user)
+				+ wrapper.span(data.results[i].text)
+				+ wrapper.span("via: ")
+				+ wrapper.span(data.results[i].source)
+				+
+				"</p>");
+				
+		//setTimeout(function(){
+					//$('.box').fadeOut(2000).remove();
+					//$('#container').empty();
+		//			feedUpdater(params);
+		//	}, 3000);
+			
+        });
+		};
+		feedUpdater();
+		
+		$.getJSON("http://search.twitter.com/search.json?q=from%3Aweb2000&callback=?", function(data){
+		keyArray = [];
+		for (key in data.results[0]){
+			keyArray.push('data.results[i].' + key);
+			//keyArray.push(key);
+		}
+		
+		keyCount = keyArray.length;
+		for (j=0;j<keyCount;j++){
+		$('#debug').append('<div>' +  keyArray[j]   + '</div>');
+		}
+		});
+		});
+		
+		//keyArray[0] = profile_image_url
+		//keyArray[1] = created_at
+		//keyArray[2] = from_user
+		//keyArray[3] = metadata
+		//keyArray[4] = to_user_id
+		//keyArray[5] = text
+		//keyArray[6] = id
+		//keyArray[7] = from_user_id
+		//keyArray[8] = geo
+		//keyArray[9] = iso_language_code
+		//keyArray[10] = source
+		*/
+$(function(){
+	count = 7;
+	pArray = [];
+	dArray = ['foo','bar','baz','bat','wom','bom','fuz','fiz'];
+	eArray = ['one','two','three','four','five','six','seven','eight'];
+	p = '<p class="box"></p>';
+	
+	for (i=0;i<count;i++){
+		pArray.push(p);
+		$('#container').append(pArray[i]);
+		//$('p.box').eq(i).append(dArray[i]);
+	}
+		$('#debug').click(function(){
+		for (i=0;i<count;i++){
+			$('p.box').eq(i).contents().replaceWith(eArray[i]);
+			}
+		})
+	//alert(pArray[0]);
+	//alert(pArray[4]);
+	function feedUpdater(params){
+	$.getJSON("http://search.twitter.com/search.json?q=from%3Aweb2000&callback=?", function(data){
+		//return data.resutls;
+		//oResults = [created_at.push(data.results[i].created_at)];
+		//function oResults(name){
+		//	return created_at.push(data.results[i].created_at);
+		//}
+		//oKeys = ['profile_image_url', 'created_at'];
+		var oResults = {foo : function(name){
+					var mouse = {name : eval("data.results[i]."+name)};
+					return mouse.name;
+					//alert(mouse.name)
+					}
+		};
+		//oKeysCount = oResults.oKeys.length;
+		//oResults = [{profile_image_url : []}];
+		/*
+		profile_image_url = [];
+		created_at = [];
+		from_user = [];
+		metadata = [];
+		to_user_id = [];
+		text = [];
+		id = [];
+		from_user_id = [];
+		geo = [];
+		iso_language_code = [];
+		source = [];
+		*/
+			for (i=0;i<count;i++){
+				$('p.box').eq(i).empty();
+				$('p.box').eq(i).append(oResults.foo('profile_image_url'));
+				$('p.box').eq(i).append(oResults.foo('created_at'));
+				//for (j=0;j<oKeysCount;j++){
+					//oResults.foo(oKeys[j]);
+					//oResults[0];
+				//$('p.box').eq(i).append(oResults.foo(oResults.oKeys[j]));
+			//}	
+			}
+		//setTimeout(function(){
+		//			$('p.box').empty();
+		//			feedUpdater(params);
+		//	}, 100000);
+		
+	});
+	}
+		feedUpdater();
+});		
+</script>

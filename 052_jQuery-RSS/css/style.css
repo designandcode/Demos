@@ -1,0 +1,101 @@
+body{
+	width:1040px;
+}
+a:link{
+	color:blue;
+}
+a:visited{
+	color:#ccc;
+}
+a:hover{
+	color:#fa0;
+}
+body#twitterSearch{
+	background:#002364 url(../images/twitter_web2000.png) no-repeat top left;
+}
+body#twitterSearch .box{
+	color:#fff;
+}
+
+body#YQLYahooMusic{
+	background:#604574 url(../images/yahoo_header.png) no-repeat top left;
+}
+body#YQLYahooMusic .box{
+	color:#fff;
+}
+
+body#YQLYahooLocal{
+	background:#fff url(../images/sushi.jpg) no-repeat top left;
+}
+
+body#YQLYahooLocal .box{
+	background-color:rgba(255,255,255,0.4);
+	-pie-background:rgba(255,255,255,0.4);
+	padding:7px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	behavior: url(css/PIE.htc);
+}
+body#YQLYahooLocal .box img{
+	position:absolute;
+	bottom:10px;
+}
+body#YQLYahooLocal .box:hover{
+	border:1px solid #fff;
+	-moz-box-shadow: 0px 0px 5px #000;
+	-webkit-box-shadow: 0px 0px 5px #000;
+	box-shadow: 0px 0px 5px #000;
+	-pie-background:rgba(255,255,255,1.0);
+	behavior: url(css/PIE.htc);
+}
+body#YQLYahooLocal h1{
+	/*display:inline;
+	width:370px;
+	position:relative;
+	float:left;*/
+	color:#006;
+}
+body#YQLYahooLocal h1 span{
+	font-size:16px;
+}
+
+body#tumblr{
+	background:#fff url(../images/tumblr.png) repeat-y top left;
+}
+
+body#flickr{
+	background:#000 url(../images/flickr.jpg) no-repeat top left;
+}
+.box{
+	width:270px;
+	height:270px;
+	position:relative;
+	float:left;
+	border:1px solid #ccc;
+	margin:25px;
+}
+.box span{
+	display:block;
+	width:270px;
+}
+.box a{
+	display:block;
+	width:270px;
+}
+#debug{
+	position:relative;
+	float:left;
+	border:1px solid #ccc;
+	margin:25px;
+	width:270px;
+	color:#fff;
+	background-color:#fa0;
+	padding:5px;
+}
+#bottom{
+	clear:left;
+	width:270px;
+	font-size:10px;
+	color:#999;
+}

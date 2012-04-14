@@ -1,0 +1,90 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Sushi near SanFrancisco CA - YQL</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body id="YQLYahooLocal">
+<h1>Sushi - San Francisco, CA  <span><a href="index2a.html">Sushi - New York, NY</a></span></h1>
+<div id="container"></div>
+<div id="debug"></div>
+</body>
+</html>
+<script>
+$(function(){
+	wrapper = {
+			span : function(name){
+				if (name != undefined)
+					return '<span>' + name + '</span>';
+				else
+					return "";
+			},
+			img : function(name){
+				if (name != undefined)
+					return '<img src="'+ name +'" />';
+				else
+					return "";
+			},
+			url : function(name,url){
+				if (name != undefined)
+					return '<a href="' + name + '">' + url + '</a>';
+				else
+					return "";
+			}
+	}
+	city = {sanfrancicso : 'san%20francisco%2C%20ca',
+			newyork : 'new%20york%2C%20ny'};
+$.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20local.search%20where%20query%3D%22sushi%22%20and%20location%3D%22' + city.sanfrancicso + '%22&format=json&diagnostics=true&callback=?', function(data){
+		count = data.query.results.Result.length;
+		count =  7;
+		for (i=0;i<count;i++)
+		  $('#container').append('<p class="box">'
+				//+ wrapper.img(data.results[i].profile_image_url) 
+				+ wrapper.span(data.query.results.Result[i].Title)
+				+ wrapper.span(data.query.results.Result[i].Address)
+				+ wrapper.span(data.query.results.Result[i].City)
+				+ wrapper.span(data.query.results.Result[i].Phone)
+				+ wrapper.url(data.query.results.Result[i].BusinessUrl, "Website")
+				//+ wrapper.url(data.query.results.Result[i].BusinessUrl, data.query.results.Result[i].BusinessUrl)
+				+ wrapper.url(data.query.results.Result[i].MapUrl, "Map")
+				//+ wrapper.span("via: ")
+				//+ wrapper.span(data.results[i].source)
+				//+ "foo" + [i] +
+				+
+				'</p>'); 
+		keyArray = [];
+		for (key in data.query.results.Result[0]){
+			keyArray.push('data.query.results.Result[i].' + key);
+			//keyArray.push(key);
+		}
+		
+		keyCount = keyArray.length;
+		for (j=0;j<keyCount;j++){
+		$('#debug').append('<div>' +  keyArray[j]   + '</div>');	
+		}	
+        });
+		});
+		/*
+		keyArray[0] = id
+		keyArray[1] = Title
+		keyArray[2] = Address
+		keyArray[3] = City
+		keyArray[4] = State
+		keyArray[5] = Phone
+		keyArray[6] = Latitude
+		keyArray[7] = Longitude
+		keyArray[8] = Rating
+		keyArray[9] = Distance
+		keyArray[10] = Url
+		keyArray[11] = ClickUrl
+		keyArray[12] = MapUrl
+		keyArray[13] = BusinessUrl
+		keyArray[14] = BusinessClickUrl
+		keyArray[15] = Categories
+		*/
+</script>

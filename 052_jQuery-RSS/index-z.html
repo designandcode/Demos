@@ -1,0 +1,110 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Twitter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body id="twitterSearch">
+<div id="container"></div>
+<div id="debug"></div>
+</body>
+</html>
+<script>
+$(function(){
+	wrapper = {
+			span : function(name){
+				if (name != undefined)
+					return '<span>' + name + '</span>';
+				else
+					return "";
+			},
+			img : function(name){
+				if (name != undefined)
+					return '<img src="'+ name +'" />';
+				else
+					return "";
+			},
+			url : function(name,url){
+				if (name != undefined)
+					return '<a href="' + name + '">' + url + '</a>';
+				else
+					return "";
+			}
+	}
+function feedUpdater(params){	
+$.getJSON("http://search.twitter.com/search.json?q=from%3Aweb2000&callback=?", function(data){
+		total = data.results.length;
+		count =  7;
+		pArray = [];
+		p = '<p class="box"></p>';
+		for (k=0;k<total;k++){
+		pArray.push(p);
+		$('#container').append(pArray[k]);
+	}
+	keyArray = [];
+		for (key in data.results[0]){
+			keyArray.push(key);
+			//keyArray.push(key);
+		}
+		
+		keyCount = keyArray.length;
+		for (j=0;j<keyCount;j++){
+		$('#debug').append('<div>' +  keyArray[j]   + '</div>');
+		}
+		
+		//keyArray[0] = profile_image_url
+		//keyArray[1] = created_at
+		//keyArray[2] = from_user
+		//keyArray[3] = metadata
+		//keyArray[4] = to_user_id
+		//keyArray[5] = text
+		//keyArray[6] = id
+		//keyArray[7] = from_user_id
+		//keyArray[8] = geo
+		//keyArray[9] = iso_language_code
+		//keyArray[10] = source
+	var oResults = {foo : function(name){
+					var mouse = {name : eval("data.results[i]."+name)};
+					return mouse.name;
+					}
+		};
+		
+		for (i=0;i<total;i++){
+			for (m=0;m<=count;m++){
+				$('p.box').eq(m).hide();
+				}
+				$('p.box').eq(i).append(
+						  wrapper.img(oResults.foo(keyArray[0]))
+					//	+ wrapper.span(oResults.foo(keyArray[1]))
+						+ wrapper.span(oResults.foo(keyArray[2]))
+					//	+ wrapper.span(oResults.foo(keyArray[3]))
+					//	+ wrapper.span(oResults.foo(keyArray[4]))
+					//	+ wrapper.span('via: ')
+						+ wrapper.span(oResults.foo(keyArray[5]))
+					//	+ wrapper.span(oResults.foo(keyArray[6]))
+					//	+ wrapper.span(oResults.foo(keyArray[7]))
+					//	+ wrapper.span(oResults.foo(keyArray[8]))
+					//	+ wrapper.span(oResults.foo(keyArray[9]))
+					//	+ wrapper.span(oResults.foo(keyArray[10]))
+				);	
+			}
+		
+		function loadMore(){
+			var timeBetween = 10000;
+			var maxDelay = (count+1)*timeBetween
+			for (z=count;z>=0;z--){
+			$('p.box').eq(z).delay(maxDelay-z*timeBetween).fadeIn();
+			}
+		};
+		loadMore();
+        });
+		}
+		feedUpdater();
+		});
+		
+</script>

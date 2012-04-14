@@ -1,0 +1,91 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Tumblr</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body id="tumblr">
+<div id="container"></div>
+<div id="debug"></div>
+</body>
+</html>
+<script>
+$(function(){
+	wrapper = {
+			span : function(name){
+				if (name != undefined)
+					return '<span>' + name + '</span>';
+				else
+					return "";
+			},
+			img : function(name){
+				if (name != undefined)
+					return '<img src="'+ name +'" />';
+				else
+					return "";
+			},
+			url : function(name,url){
+				if (name != undefined)
+					return '<a href="' + name + '">' + url + '</a>';
+				else
+					return "";
+			}
+	}
+$.getJSON("http://pazaakshark.tumblr.com/api/read/json?callback=?", function(data){
+		count = data.posts.length;
+		count =  7;
+		//photo500 = ['photo-url-500'];
+		for (i=0;i<count;i++)
+		  $('#container').append('<p class="box">'
+				//+ wrapper.img(data.results[i].profile_image_url) 
+				+ wrapper.img(data.posts[i]['photo-url-500'])
+				//+ wrapper.span(data.results[i].text)
+				//+ wrapper.span("via: ")
+				//+ wrapper.span(data.results[i].source)
+				+
+				"</p>");  
+		keyArray = [];
+		for (key in data.posts[0]){
+			keyArray.push('data.posts[i].' + key);
+			//keyArray.push(key);
+		}
+		
+		keyCount = keyArray.length;
+		for (j=0;j<keyCount;j++){
+		$('#debug').append('<div>' +  keyArray[j]   + '</div>');	
+		}	
+        });
+		});
+		/*
+		keyArray[0] = id
+		keyArray[1] = url
+		keyArray[2] = url-with-slug
+		keyArray[3] = type
+		keyArray[4] = date-gmt
+		keyArray[5] = date
+		keyArray[6] = bookmarklet
+		keyArray[7] = mobile
+		keyArray[8] = feed-item
+		keyArray[9] = from-feed-id
+		keyArray[10] = unix-timestamp
+		keyArray[11] = format
+		keyArray[12] = reblog-key
+		keyArray[13] = slug
+		keyArray[14] = photo-caption
+		keyArray[15] = width
+		keyArray[16] = height
+		keyArray[17] = photo-url-1280
+		keyArray[18] = photo-url-500
+		keyArray[19] = photo-url-400
+		keyArray[20] = photo-url-250
+		keyArray[21] = photo-url-100
+		keyArray[22] = photo-url-75
+		keyArray[23] = photos
+		keyArray[24] = tags
+		*/
+</script>

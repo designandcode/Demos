@@ -1,0 +1,75 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Flickr</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body id="flickr">
+<div id="container"></div>
+<div id="debug"></div>
+</body>
+</html>
+<script>
+$(function(){
+	wrapper = {
+			span : function(name){
+				if (name != undefined)
+					return '<span>' + name + '</span>';
+				else
+					return "";
+			},
+			img : function(name){
+				if (name != undefined)
+					return '<img src="'+ name +'" />';
+				else
+					return "";
+			},
+			url : function(name,url){
+				if (name != undefined)
+					return '<a href="' + name + '">' + url + '</a>';
+				else
+					return "";
+			}
+	}
+//$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=lumierefl&tagmode=any&format=json&jsoncallback=?", function(data){
+$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=54762839@N03&lang=en-us&format=json&jsoncallback=?", function(data){
+		count = data.items.length;
+		count =  7;
+		for (i=0;i<count;i++)
+		  $('#container').append('<p class="box">'
+				+ wrapper.url(data.items[i].link, wrapper.img(data.items[i].media.m)) 
+				//+ wrapper.img(data.items[i].media.m)
+				//+ wrapper.span(data.results[i].text)
+				//+ wrapper.span("via: ")
+				//+ wrapper.span(data.results[i].source)
+				+
+				"</p>");  
+		keyArray = [];
+		for (key in data.items[0]){
+			keyArray.push('data.items[i].' + key);
+			//keyArray.push(key);
+		}
+		
+		keyCount = keyArray.length;
+		for (j=0;j<keyCount;j++){
+		$('#debug').append('<div>' +  keyArray[j]   + '</div>');	
+		}	
+        });
+		});
+		/*
+		keyArray[0] = title
+		keyArray[1] = link
+		keyArray[2] = media
+		keyArray[3] = date_taken
+		keyArray[4] = description
+		keyArray[5] = published
+		keyArray[6] = author
+		keyArray[7] = author_id
+		keyArray[8] = tags
+		*/
+</script>
