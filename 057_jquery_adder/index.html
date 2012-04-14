@@ -1,0 +1,58 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script>
+	$(function(){
+	
+	$('div.number').click(function(){
+		var firstnumber = parseFloat($('span', this).text());
+		
+	
+		var numberContainer = parseFloat($('div#addition span').text()) + firstnumber;
+		$('div#addition span').text(numberContainer);
+		
+	});
+	
+	
+	newNumberLength = $('div.number span').length;
+	
+	newNumber = new Array();
+	
+	sum = 0;
+	for (i=0;i<newNumberLength;i++){
+	newNumber.push(parseFloat($('div.number span').eq(i).text()));
+	
+	
+
+	sum += newNumber[i];
+	
+	}
+	
+	
+	
+	$('#addition span').text(sum);
+	
+	
+	
+	
+	
+	
+	});
+</script>
+</head>
+<body>
+<div id="first" class="number"><span>100.00</span></div>
+<div id="second" class="number"><span>200.00</span></div>
+<div id="third" class="number"><span>300.00</span></div>
+<div id="fourth" class="number"><span>400.00</span></div>
+<div id="fifth" class="number"><span>500.00</span></div>
+<div id="addition"><span>0.00</span></div>
+</body>
+</html>
