@@ -1,0 +1,6 @@
+<p><img src=images/albumart002_crop.jpg />Lorem ipsum dolor sit amet, arcu ac sed in, vestibulum duis, nunc fusce sollicitudin tortor massa nisl, dictumst imperdiet mauris porttitor mauris vitae magnis, eleifend
+</p>
+<p><img src=images/albumart004_crop.jpg />Sodales quis at magna tempor nullam, et nam, odio justo, ut laoreet malesuada montes torquent vestibulum dui
+</p>
+<p><img src=images/albumart005_crop.jpg />Enim quam tristique, lacus duis etiam, aliquam ac elit purus lacus libero vivamus, vitae amet arcu. Amet justo id ipsum suspendisse dignissim cras
+</p>
