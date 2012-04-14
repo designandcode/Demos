@@ -1,0 +1,18 @@
+body {
+
+}
+
+#wrapper{
+
+}
+
+#trips{
+	width:400px;
+}
+
+.too-much{
+	background-color:#f06;
+	color:#f6f;
+	font-weight:bold;
+	display:block;
+}

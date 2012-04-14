@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="article.xsl"?>
+<article>
+	<title>Some Title</title>
+	<title-slug>some-title</title-slug>
+	<intro>Some Intro</intro>
+	<!--base-url>http://www.designtopx.com/</base-url-->
+	<img-folder>wp-content/uploads/</img-folder>
+	<article-year>2010/</article-year>
+	<article-month>12/</article-month>
+	<description>
+		<url>http://www.yahoo.com/</url>
+		<subtitle>Some Subtitle</subtitle>
+		<step>Some Step</step>
+		<content>Lorem Ipsum Dolar Sit</content>
+		<image>article-image-001.jpg</image>
+	</description>
+	
+	<description>
+		<subtitle>Some Subtitle 2</subtitle>
+		<step>Some Step 2</step>
+		<content>Lorem Ipsum Dolar Sit</content>
+		<image>article-image-002.jpg</image>
+	</description>
+	
+	<description>	
+		<step>Some Step 3</step>
+		<content>Lorem Ipsum Dolar Sit</content>
+		<image>article-image-003.jpg</image>
+	</description>
+	
+	<description>
+		<step>Some Step 4</step>
+		<content>Lorem Ipsum Dolar Sit</content>
+		<image>article-image-004.jpg</image>
+	</description>
+	<closing>In closing, blah blah blah... What do you think?</closing>
+</article>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="trips.xsl"?>     
+<vacation>   
+    <title>My Vacations</title>   
+    <trip date="03/01/10">   
+        <country>USA</country>   
+        <state>Florida</state>   
+        <city>Orlando</city>   
+        <price>1000</price>   
+    </trip>   
+    <trip date="04/01/10">   
+        <country>USA</country>   
+        <state>Michigan</state>   
+        <city>Detroit</city>   
+        <price>600</price>   
+    </trip>   
+    <trip date="02/03/2010">   
+        <country>Spain</country>   
+        <city>Madrid</city>   
+        <price>5000</price>   
+    </trip>   
+    <trip date="05/01/10">   
+        <country>USA</country>   
+        <state>California</state>   
+        <city>San Jose</city>   
+        <price>800</price>   
+    </trip>   
+</vacation>
