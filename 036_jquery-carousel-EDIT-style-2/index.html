@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+        <title>Feature Carousel Demonstration Test</title>
+        <link rel="stylesheet" href="css/style.css" charset="utf-8" />
+        <script src="js/jquery-1.3.2.js" type="text/javascript" charset="utf-8"></script>
+        <!--script src="js/jquery.featureCarousel.js" type="text/javascript" charset="utf-8"></script-->
+				<script src="js/pagination-0.0.2.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            $(function() {
+						
+								$("#featureCarousel").paginate({n:1});
+            });
+        </script>
+        <script type="text/javascript">
+					$(function() {
+						//some effects
+						$("#featureCarousel #container")
+							.css({position:"relative",
+										width:"480px",
+										height:"300px",
+										overflow:"hidden"})
+						firstDivs = $("#featureCarousel #container > div");
+						lastDiv = firstDivs.length - 1; 
+						for (i=0;i<firstDivs.length;i++)
+							{
+								firstDivs.eq(i).show()
+									.css({position:"absolute",
+												left:(i*450+(15))+"px",
+												width:"450px",
+												height:"230px",
+												backgroundColor: "#FFF"});
+							}
+							$("#featureCarousel #container > div p")
+								.css({position:"absolute",
+											bottom:0,
+											backgroundColor:"#000",
+											color:"#fff",
+											padding:"8px"});
+							$("#featureCarousel #container > div a img")
+								.css({width:"100%",
+											border:0});
+						
+							$("#featureCarousel #container > div").eq(0).css({opacity: "1.0", "z-index": lastDiv, border: "3px solid red", top:0});
+							$("#featureCarousel #container > div").eq(0).siblings().css({opacity: "0.4", top:"3px"});
+							$("#navigation li").click(function(){
+								// li click behavior
+									var index = $("#navigation li").index(this);
+								
+									firstDivs.show()
+										
+									for (i=0;i<firstDivs.length;i++)
+										{
+											
+											$("#featureCarousel #container > div").eq(i)
+												.animate({ left: (((i+1-index)*450+(15)) - 450)+"px", queue: false }, 'slow')
+												.css({opacity: "0.4"});
+												
+												
+										}
+										
+										$("#featureCarousel #container > div").eq(index)
+										.css({"z-index": lastDiv,
+													opacity: "1.0", border: "3px solid red", top:0})
+										.siblings().css({"z-index": 0, border: "none", top:"3px"});
+										
+										
+							});
+						/*	
+						$("#featureCarousel #container > div").click(function(){
+							var index = $("#featureCarousel #container > div").index(this);
+							
+																
+								for (i=0;i<firstDivs.length;i++)
+										{
+											
+											$("#featureCarousel #container > div").eq(i)
+												.animate({ left: (((i+1-index)*450+(15)) - 450)+"px", queue: false }, 'slow')
+												.css({opacity: "0.4"});
+												
+										}	
+								
+											$("#navigation li").eq(index).addClass("active").siblings().removeClass("active");
+								
+								$("#featureCarousel #container > div").eq(index)
+										.css({"z-index": lastDiv,
+													opacity: "1.0", border: "3px solid red", top:0})
+										.siblings().css({"z-index": 0, border: "none", top:"3px"});
+						
+						});						
+						*/	
+							
+							
+					});
+				</script>
+				
+    </head>
+    <body>
+        <div id="featureCarousel">
+				<ul id="navigation"></ul>
+				<div id="container">
+							<div class="feature">
+									
+											<a href="#"><img alt="Image Caption" src="images/testImage1.png"></a>
+											<p>
+													This is some information that can go along with an image.
+													Anything can be placed here, including images.
+											</p>
+									
+							</div>
+							<div class="feature">
+									<a href="#"><img alt="Image Caption" src="images/testImage2.png"></a>
+									<div>
+											<p>
+													This is some information that can go along with an image.
+													Anything can be placed here, including images.
+											</p>
+									</div>
+							</div>
+							<div class="feature">
+									<a href="#"><img alt="Image Caption" src="images/testImage3.png"></a>
+									<div>
+											<p>
+													This is some information that can go along with an image.
+													Anything can be placed here, including images.
+											</p>
+									</div>
+							</div>
+							<div class="feature">
+									<a href="#"><img alt="Image Caption" src="images/testImage4.png"></a>
+									<div>
+											<p>
+													This is some information that can go along with an image.
+													Anything can be placed here, including images.
+											</p>
+									</div>
+							</div>
+							<div class="feature">
+									<a href="#"><img alt="Image Caption" src="images/testImage5.png"></a>
+									<div>
+											<p>
+													This is some information that can go along with an image.
+													Anything can be placed here, including images.
+											</p>
+									</div>
+							</div>
+					</div>
+        </div>
+    </body>
+</html>

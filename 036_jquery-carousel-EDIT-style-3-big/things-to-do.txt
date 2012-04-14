@@ -1,0 +1,9 @@
+make a plugin with two options
+
+circular
+
+
+or
+
+
+linear
