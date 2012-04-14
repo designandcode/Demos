@@ -1,0 +1,38 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
+<head>
+<title>jQuery Span Builder</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="jQuery/spanbuilder.js"></script>
+</head>
+<body>
+
+
+
+<p>
+Type your to-do below:<br />
+</p>
+
+<p>
+<!--<input class="remove" type="text" name="spanText" id="spanText"  />-->
+<textarea id="spanText"></textarea> <img id="newSpanButton" src="images/001_01.png" /><br /><span class="smaller-em">*Clicking Enter on your keyboard inserts a line break</span>
+<!--<img id="spanClose" src="images/001_02.png" />-->
+</p>
+
+<div class="spanBuilder">
+<div id="message_flash_container">
+<div id="message_flash">Message received!</div>
+<div id="message_flash_2">Message deleted!</div>
+<div id="message_flash_3">Nothing Entered</div>
+</div>
+
+<li href="javascript:void(0)" id="newSpanBuilt" class="hidden"><span>OLD Span</span><img id="spanClose2" src="images/001_02.png" /></li>
+
+</div>
+
+</body>
+</html>
