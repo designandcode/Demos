@@ -1,0 +1,364 @@
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script>
+	$(function(){
+		images1 = $('#imgContainer #group1 div img');
+		images2 = $('#imgContainer #group2 div img');
+		images2.hide();
+		images3 = $('#imgContainer #group3 div img');
+		images3.hide();
+		imgCount = images1.length;
+		images1.hide().each(function(){
+			
+			/* Fades them staggered based on order */
+			for (i=0;i<imgCount;i++)
+			$(images1[i]).fadeIn(500*i);
+			
+			
+		});
+		$("li.box1 img").click(function(){		
+			if ($("#imgContainer #group1").css("display") != "block"){
+			$("#imgContainer > div").fadeOut(2000);
+			$("#imgContainer #group1").show();
+			$("#imgContainer #group1 div").show();
+			images1.hide().each(function(){
+			
+			/* Fades them staggered based on order */
+			for (i=0;i<imgCount;i++)
+			$(images1[i]).fadeIn(500*i);
+			
+			
+			
+		});}
+		});
+		
+		$("li.box2 img").click(function(){
+			if ($("#imgContainer #group2").css("display") != "block"){
+			$("#imgContainer > div").fadeOut(2000);
+			$("#imgContainer #group2").show();
+			$("#imgContainer #group2 div").show();
+			images2.hide().each(function(){
+			
+			/* Fades them staggered based on order */
+			for (i=0;i<imgCount;i++)
+			$(images2[i]).fadeIn(500*i);
+			
+			
+			
+		});}
+		});
+	
+		$("li.box3 img").click(function(){
+			if ($("#imgContainer #group3").css("display") != "block"){
+			$("#imgContainer > div").fadeOut(2000);
+			$("#imgContainer #group3").show();
+			$("#imgContainer #group3 div").show();
+			images3.hide().each(function(){
+			
+			// Fades them staggered based on order
+			for (i=0;i<imgCount;i++)
+			$(images3[i]).fadeIn(500*i);
+			
+			
+			
+		});}
+		});
+		
+		
+		$("#imgContainer div#group1 div, #imgContainer div#group2 div, #imgContainer div#group3 div").mouseenter(function(){
+			var title = $(this).find('img').attr("alt");
+			
+			//$(this).attr("title", "");
+			$(this).find('span').append(title).show();
+			//$(".hoverText").append(title);
+			//$(".hoverText").show();
+			//$(".hoverText")
+		}).mouseleave(function(){
+			$(this).find('span').text("").hide();
+			//$(".hoverText").text("");
+			//$(".hoverText").hide();
+		});
+		
+		
+	});
+</script>
+</head>
+<body>
+<div id="imgContainer">
+	<div id="group1">
+		<div>
+			<a href="#">
+				<img src="images/purple01.jpg" alt="Here is the hover text" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/purple02.jpg" alt="Here is the hover text2" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/purple03.jpg" alt="Here is the hover text3" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/purple04.jpg" alt="Here is the hover text4" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/purple05.jpg" alt="Here is the hover text5" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/purple06.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/purple07.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/purple08.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/purple09.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/purple10.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/purple11.jpg" alt="Here is the hover text11" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/purple12.jpg" alt="Here is the hover text12" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<!--div><img src="images/antartica01.jpg" /></div-->
+		<!--div><img src="images/dummy01.gif" /></div>
+		<div><img src="images/dummy02.gif" /></div>
+		<div><img src="images/dummy03.gif" /></div>
+		<div><img src="images/dummy04.gif" /></div>
+		<div><img src="images/dummy05.gif" /></div>
+		<div><img src="images/dummy06.gif" /></div>
+		<div><img src="images/dummy07.gif" /></div>
+		<div><img src="images/dummy08.gif" /></div>
+		<div><img src="images/dummy09.gif" /></div>
+		<div><img src="images/dummy10.gif" /></div>
+		<div><img src="images/dummy11.gif" /></div>
+		<div><img src="images/dummy12.gif" /></div-->
+	</div>
+	<div id="group2">
+		<div>
+			<a href="#">
+				<img src="images/orange01.jpg" alt="Here is the hover text" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/orange02.jpg" alt="Here is the hover text2" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/orange03.jpg" alt="Here is the hover text3" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/orange04.jpg" alt="Here is the hover text4" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/orange05.jpg" alt="Here is the hover text5" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/orange06.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/orange07.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/orange08.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/orange09.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/orange10.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/orange11.jpg" alt="Here is the hover text11" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/orange12.jpg" alt="Here is the hover text12" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<!--div><img src="images/antartica02.jpg" /></div-->
+		<!--div><img src="images/think01.gif" /></div>
+		<div><img src="images/think02.gif" /></div>
+		<div><img src="images/think03.gif" /></div>
+		<div><img src="images/think04.gif" /></div>
+		<div><img src="images/think05.gif" /></div>
+		<div><img src="images/think06.gif" /></div>
+		<div><img src="images/think07.gif" /></div>
+		<div><img src="images/think08.gif" /></div>
+		<div><img src="images/think09.gif" /></div>
+		<div><img src="images/think10.gif" /></div>
+		<div><img src="images/think11.gif" /></div>
+		<div><img src="images/think12.gif" /></div-->
+	</div>
+	<div id="group3">
+		<div>
+			<a href="#">
+				<img src="images/yellow01.jpg" alt="Here is the hover text" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/yellow02.jpg" alt="Here is the hover text2" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/yellow03.jpg" alt="Here is the hover text3" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/yellow04.jpg" alt="Here is the hover text4" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/yellow05.jpg" alt="Here is the hover text5" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/yellow06.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/yellow07.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/yellow08.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/yellow09.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/yellow10.jpg" alt="Here is the hover text..." title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/yellow11.jpg" alt="Here is the hover text11" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<div>
+			<a href="#">
+				<img src="images/yellow12.jpg" alt="Here is the hover text12" title=""/>
+			</a>
+			<span class="hoverText"></span>
+		</div>
+		<!--div><img src="images/antartica03.jpg" /></div-->
+		<!--div><img src="images/flight01.gif" /></div>
+		<div><img src="images/flight02.gif" /></div>
+		<div><img src="images/flight03.gif" /></div>
+		<div><img src="images/flight04.gif" /></div>
+		<div><img src="images/flight05.gif" /></div>
+		<div><img src="images/flight06.gif" /></div>
+		<div><img src="images/flight07.gif" /></div>
+		<div><img src="images/flight08.gif" /></div>
+		<div><img src="images/flight09.gif" /></div>
+		<div><img src="images/flight10.gif" /></div>
+		<div><img src="images/flight11.gif" /></div>
+		<div><img src="images/flight12.gif" /></div-->
+	</div>
+</div>
+<div id="navContainer">
+	<ul>
+		<li class="box1"><img src="images/purple01a.gif" /></li>
+		<li class="box2"><img src="images/orange01a.gif" /></li>
+		<li class="box3"><img src="images/yellow01a.gif" /></li>
+		<!--li class="box4"></li-->
+	</ul>
+</div>
+</body>
+</html>
