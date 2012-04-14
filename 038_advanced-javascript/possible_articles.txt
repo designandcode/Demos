@@ -1,0 +1,15 @@
+Possible article
+
+line 2044 
+Composition
+Association
+
+line 2810
+Sort
+
+line 3012
+Method chaining
+
+line 3051
+Builder Pattern?
+The Builder Pattern is used to encapsulate the construction of a product and allow it to be constructed in steps.

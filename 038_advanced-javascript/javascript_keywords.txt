@@ -1,0 +1,244 @@
+js keywords
+
+/**
+for
+**/
+type
+reserved
+Usage
+for (var key in array) {
+  //do something to each item in array
+}
+
+Usage
+for (var i=0;i<3;i++) {
+  // do something to each item up to and including the third item in an array
+}
+
+/**
+hasOwnProperty()
+**/
+type
+method
+Usage
+if (array.hasOwnProperty(key)) {
+  //do some stuff to array only - skip all other objects in the namespace
+}
+
+/**
+prototype
+**/
+type
+method
+Usage
+String.prototype.somefunction = function() {
+  //extend the global String object to do some new behavior
+}
+
+Usage
+function Parent() {
+  this.ParentProperty = "some Parent property";
+}
+function Child() {
+  this.ChildProperty = "some Child property";
+}
+Child.prototype = new Parent();
+childObject = new Child()
+child.ParentProperty; // "some Parent property"
+
+/**
+valueOf()
+**/
+type
+method
+Usage
+String.prototype.getValue = function() {
+  return this.valueOf();
+}
+"foo".getValue(); // returns "foo"
+
+/**
+new
+this
+**/
+type
+keyword
+/**
+toUpperCase()
+bold()
+**/
+type
+method
+Usage
+function Cat(name,type) {
+  this.name = name.bold();
+  this.type = type.toUpperCase();
+}
+Felix = new Cat("felix", "shaggy");
+Bob = new Cat("bob", "minx");
+
+Felix.name; // "felix"
+Bob.type; // "MINX"
+
+/**
+? :
+**/
+type
+keyword
+(if true) ? "this" : "that";
+// if the statement in parenthesis returns true, then do the thing right after the question mark, if the thing in parenthesis returns false, do the thing after the colon
+
+
+/**
+return
+**/
+type
+keyword
+function foo() {
+  return "bar";
+}
+function baz(foo) {
+  document.write(foo);
+}
+baz(foo());
+
+/**
+var
+**/
+type
+keyword
+Usage
+Scope?
+Learn more
+
+/**
+.
+**/
+type
+keyword
+Usage
+foo.bar = "baz";
+foo.baz = function() { return "bar" };
+
+foo.bar; // "baz"
+foo.baz; // "function() { return "bar" }"
+foo.baz(); // "bar"
+
+/**
+[]
+push
+**/
+type
+keyword
+type
+method
+Usage
+foo['bar'] = "baz";
+
+foo.bar; // "baz"
+foo['bar']; // "baz"
+
+Usage
+foo = [];
+foo.push('bar','baz');
+
+foo[0]; // "bar"
+
+
+/**
+apply
+call
+**/
+type
+method
+Usage
+function format(text) {
+  document.write(text.bold());
+}
+format.apply(foo,["Hello"]);
+format.call(foo,"Hello");
+
+/**
+length
+**/
+type
+property
+Usage
+foo = ['one','two','three'];
+bar = "hello";
+baz = {one:'one', two:'two'};
+
+foo.length; // 3
+bar.length; // 5
+
+/**
+try
+catch
+finally
+**/
+type
+keyword
+Usage
+try {
+  var somearray = null;
+  document.write(somearray[18]);
+} catch (e) {	
+  document.write("Type error?: " + e.message);		
+} finally {
+  document.write("<br />Please set somearray to Type Array");
+}
+
+/**
+Function
+**/
+type
+keyword
+Usage
+var func = new Function( "x", "return x");
+func("foo"); // "foo"
+
+
+/**
+||
+**/
+type
+keyword
+Usage
+function foo(bar) {
+  this.bar = bar || 1;
+}
+baz = new foo();
+baz.bar; // 1
+
+/**
+arguments
+**/
+type
+keyword
+Usage
+function foo() {
+  return arguments[0];
+}
+foo(1,"bar",3); // 1
+
+/**
+sort
+**/
+type
+method
+Usage
+var numbers = [1,5,2,12,7,9];
+document.write(
+numbers.sort(function(a,b){ return a-b; }) + '<br />' +
+numbers.sort(function(a,b){ return b-a; })
+);
+
+/**
+typeof
+**/
+
+
+// line 2906
+/**
+instanceof
+**/

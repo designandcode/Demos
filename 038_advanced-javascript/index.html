@@ -1,0 +1,3247 @@
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/code-style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<script type="text/javascript" >
+	$(function(){
+		$("pre").wrapInner("<span></span>");
+		$('.code-block').mouseover(function(){
+		//alert($('pre span', this).width());
+			var blockWidth = $('pre span', this).width() + 40;
+			var defaultWidth = $('.code-block').width();
+			if (blockWidth - 40 > defaultWidth){
+			$(this).css({'width': blockWidth+'px'});
+			} else if (blockWidth -40 < defaultWidth) {
+			$(this).css({'width': defaultWidth+'px'});
+			}
+			$(this).unbind('mouseover');
+		});
+		
+});
+</script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body>
+<!--script type="text/javascript">
+	Object.prototype.p = function(){
+		
+		return document.write("<p>" + this.valueOf() + "</p>");
+		
+	}
+</script-->
+<script type="text/javascript">
+	var intValue = 1;
+	var floatValue = 3.0;
+	var stringValue = "This is a string\n";
+	var sqString = 'This is also a string';
+	
+	var emptyList = [];
+	
+	emptyList.push(intValue, floatValue, stringValue, sqString);
+	
+	for (var key in emptyList){
+		if (emptyList.hasOwnProperty(key))
+			{
+				// prints 1, 3, This is a string, This is also a string
+				document.write(emptyList[key] + "<br />");
+				console.log(emptyList[key]);
+			}
+	}	
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+<h1>Basic Types, Arrays, 
+Javscript Method, Iteration</h1>
+var intValue = 1;
+var floatValue = 3.0;
+var stringValue = "This is a string\n";
+var sqString = 'This is also a string';
+
+var emptyList = [];
+
+emptyList.push
+  (intValue, floatValue, stringValue, sqString);
+
+for (var key in emptyList){
+  if (emptyList.hasOwnProperty(key))
+    {
+      // prints 1, 3, This is a string, This is also a string
+      document.write(emptyList[key] + "<br />");
+    }
+}	
+</pre>
+</div>
+<hr>
+<h3>Arrays, Objects</h3>
+<script type="text/javascript">
+var foo = function() {
+	//document.write('foo' + "<br />");
+	//return false;
+	
+	//return 
+		var bar = {
+				one:'one',
+				two:'two'
+			}/*
+		bar = {
+				one:'one',
+				two:'two'
+			}
+		this.bar = {
+				one:'one',
+				two:'two'
+			}*/
+		return bar;
+}();
+document.write(foo.one + "<br />"); // one
+document.write(foo.one + "<br />"); // one
+//var foo = 'bar';
+// Full access to the variable bar as bar in foo is only within the scope of foo
+document.write(bar + "<br />"); // undefined
+var bar = 'foo';
+//foo.one = 'bar';
+document.write(foo.one + "<br />"); // undefined
+document.write(foo + "<br />"); // bar
+document.write(foo.one + "<br />"); // undefined
+document.write(bar + "<br />"); // foo
+document.write(bar.one + "<br />"); // undefined
+	var heterogenousMap = {	one : 1,
+							two : "two",
+							three : function(val,places){ 
+										return (val).toFixed(places)
+										}(3,2)			
+							};
+							
+	for (var key in heterogenousMap){
+		 if (heterogenousMap.hasOwnProperty(key))
+			{
+				// prints 1, two, 3.00
+				document.write(heterogenousMap[key] + "<br />");
+			}
+}	
+	//document.write(heterogenousMap.three());
+	
+	
+	var lineBreak = "<br />";
+	document.write("<h4>Implementation</h4>");
+	
+	
+	String.prototype.h1 = function(){
+		return "<h1>" + this.valueOf() + "</h1>";
+	}
+	String.prototype.someText = function(){
+		return this.valueOf() ;
+		//return "foo";
+	}
+
+	var someFoo = "bar";
+	//String.prototype.h2 = "<h2>" + String.prototype.someText.call(this) + "</h2>";
+	//Object.prototype.h2 = (2).toString();
+	
+	myString = new String ("This is my string");
+	
+	var markDown = {	h1 : function(text){
+								return "<h1>" + text + "</h1>";
+					}
+					};
+					
+	//prints string
+	document.write(typeof("Some Foo") + lineBreak);
+	
+	bar = new String("Some Foo");
+	
+	function Cat(name,type){
+		this.name = name;
+		this.type = type.toUpperCase();
+	}
+	Felix = new Cat("felix", "feline");
+	
+	function h2(someText){
+		this.someText = this.valueOf();
+	}
+	h2Object = new String("Some Bar");
+	document.write(
+	
+		bar	+                 //prints Some Foo
+		lineBreak +
+		bar +                 //prints Some Foo
+		lineBreak +
+		typeof("Some Foo") +  //prints string
+		lineBreak +
+		"Some Foo".length +   //prints 8
+		lineBreak +
+		"Some Foo".h2 +       //prints [object Window]
+		lineBreak +
+		"Some Foo".h1() +     //prints <h1>Some Foo</h1>
+		lineBreak +
+		"Some Foo".someText() +  //prints Some Foo
+		lineBreak +
+		myString.bold()  +     //prints <b>This is my string</b>
+		lineBreak +
+		Felix.type             //prints FELINE
+	
+	);
+	
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+<h1>Arrays, Objects</h1>
+var heterogenousMap = {	one : 1,
+  two : "two",
+  three : function(){ 
+    return (3).toFixed(2)
+  }()
+};
+
+for (var key in heterogenousMap){
+  if (heterogenousMap.hasOwnProperty(key))
+    {
+      // prints 1, two, 3.00
+      document.write(heterogenousMap[key] + "&lt;br />");
+    }
+}	
+
+
+
+var lineBreak = "&lt;br />";
+document.write("&lt;h4>Implementation&lt;/h4>");
+
+
+String.prototype.h1 = function(){
+  return "&lt;h1>" + this.valueOf() + "&lt;/h1>";
+}
+String.prototype.someText = function(){
+  return this.valueOf() ;
+
+}
+
+var someFoo = "bar";
+String.prototype.h2 = "&lt;h2>" + String.prototype.someText.call(this) + "&lt;/h2>";
+
+
+myString = new String ("This is my string");
+
+var markDown = {	h1 : function(text){
+    return "&lt;h1>" + text + "&lt;/h1>";
+  }
+};
+
+//prints string
+document.write(typeof("Some Foo") + lineBreak);
+
+bar = new String("Some Foo");
+
+function Cat(name,type){
+  this.name = name;
+  this.type = type.toUpperCase();
+}
+Felix = new Cat("felix", "feline");
+
+function h2(someText){
+  this.someText = this.valueOf();
+}
+h2Object = new String("Some Bar");
+document.write(
+
+bar	+                 //prints Some Foo
+lineBreak +
+bar +                 //prints Some Foo
+lineBreak +
+typeof("Some Foo") +  //prints string
+lineBreak +
+"Some Foo".length +   //prints 8
+lineBreak +
+"Some Foo".h2 +       //prints [object Window]
+lineBreak +
+"Some Foo".h1() +     //prints &lt;h1>Some Foo&lt;/h1>
+lineBreak +
+"Some Foo".someText() +  //prints Some Foo
+lineBreak +
+myString.bold()  +     //prints &lt;b>This is my string&lt;/b>
+lineBreak +
+Felix.type             //prints FELINE
+
+);
+	
+</pre>
+</div>
+<hr>
+<h3>Functions</h3>
+<script type="text/javascript">
+	var callable = function (message){
+		document.write("I converted a variable to a function and all I got was - <b>" + message + "</b><br />");
+	}
+	callable("foo"); //Prints I converted a variable to a function and all I got was <b>foo</b><br />
+	callable("bar");  //Prints I converted a variable to a function and all I got was <b>foo</b><br />
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+<h1>Functions</h1>
+var callable = function (message){
+  document.write("I converted a variable to a function and all I got was - &lt;b>" + message + "&lt;/b>&lt;br />");
+}
+callable("foo");   //Prints I converted a variable to a function and all I got was &lt;b>foo&lt;/b>&lt;br />
+callable("bar");   //Prints I converted a variable to a function and all I got was &lt;b>bar&lt;/b>&lt;br />
+</pre>
+</div>
+<hr>
+<h3>Closure</h3>
+<script type="text/javascript">
+	var res = function(){
+		document.write("<br />Closures let me use res() outside of the createClosure()");
+	}
+	
+	function createClosure(initial){
+		var res = function(a){
+			initial = initial + a;
+			document.write("Closure with modified state <b>"
+                     + initial + "</b>");
+		}
+		return res(10);
+	}
+	createClosure(10);
+	res();
+	
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+var res = function(){
+  document.write("&lt;br />Closures let me use res() outside of the createClosure()");
+}
+
+function createClosure(initial){
+    var res = function(a){
+    initial = initial + a;
+    document.write("Closure with modified state &lt;b>"
+     + initial + "&lt;/b>");
+  }
+  return res(10);
+}
+createClosure(10); //prints Closure with modified state &lt;b>20&lt;/b>
+res(); //prints Closures let me use res() outside of the createClosure()
+</pre>
+</div>
+<hr>
+<h3>Objects</h3>
+<script type="text/javascript">
+	function myObject(name, value){
+		this.name = name;
+		this.value = value;
+		this.foo = "bar";
+		var bar = "baz";
+		
+	}
+	
+	var my = new myObject("Hello", "Foo");
+	
+	document.write(my.name + " " + my.value + " " + my.foo + " " + my.bar);
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function myObject(name, value){
+  this.name = name;
+  this.value = value;
+  this.foo = "bar";
+  var bar = "baz";
+
+}
+
+var my = new myObject("Hello", "Foo");
+
+//prints Hello Foo bar undefined 
+document.write(my.name + " " + my.value + " " + my.foo + " " + my.bar);
+</pre>
+</div>
+<hr>
+<h4>Object Prototype</h4>
+<script type="text/javascript">
+	
+	
+	function Parent(){
+		this.bar = "I'm the bar";
+	}
+	
+	function Child(foo){
+		this.foo = foo;
+	}
+	
+	
+	Child.prototype = new Parent();
+	
+	parentObject = new Parent();
+	childObject = new Child("I'm ALSO the foo");
+	
+	document.write(parentObject.bar + "<br />");
+	document.write(childObject.bar + "<br />"); //provides get functionality to childObject
+	document.write(childObject.foo + "<br />");
+	
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Parent(){
+  this.bar = "I'm the foo";
+}
+
+function Child(foo){
+  this.foo = foo;
+}
+
+
+Child.prototype = new Parent();
+
+parentObject = new Parent();
+childObject = new Child("I'm ALSO the foo");
+
+ //Prints I'm the bar
+document.write(parentObject.bar + "&lt;br />");
+
+//Prints I'm the bar
+document.write(childObject.bar + "&lt;br />"); 
+
+//Prints I'm ALSO the foo
+document.write(childObject.foo + "&lt;br />"); 
+</pre>
+</div>
+<hr>
+<h3>More Objects</h3>
+<script type="text/javascript">
+	var me = {name: "Robert Deniro",
+			sex: "M",
+			say: function(value){
+				document.write(value);
+			}
+		};
+		
+		document.write(me.name + " ")
+		me.say("says hello world");
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+var me = {name: "Robert Deniro",
+    sex: "M",
+    say: function(value){
+      document.write(value);
+  }
+};
+
+//Prints Robert Deniro
+document.write(me.name + " ")
+
+//Prints says hello world
+me.say("says hello world");
+</pre>
+</div>
+<hr>
+<script type="text/javascript">
+	function Person(name){
+		this.name = name;
+		(name) ? this.publicMethod=function() {return this.name} : this.publicMethod=function() {return "<br />defaultName"};
+	
+		/*
+		if(name){
+			this.publicMethod = function(){
+				document.write(this.name);
+			}
+		}else{
+			this.publicMethod = function(){
+				document.write("<br />defaultName")
+			}
+		}
+		*/
+	}
+	
+	var robert = new Person("Robert");
+	var foo = new Person();
+	document.write(robert.publicMethod());
+	document.write(foo.publicMethod());
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Person(name){
+    this.name = name;
+
+  if(name){
+    this.publicMethod = function(){
+      document.write(privateName);
+    }
+  }else{
+    this.publicMethod = function(){
+      document.write("&lt;br />defaultName")
+    }
+  }
+}
+
+var robert = new Person("Robert");
+var foo = new Person();
+robert.publicMethod();  //Prints Robert
+foo.publicMethod();     //Prints defaultName
+</pre>
+</div>
+<hr>
+<script type="text/javascript">
+	function Cat(name,sound){
+		this.name = name;
+		this.sound = sound;
+		this.talk = function(){
+			document.write("<b>" + this.name + "</b> says " + this.sound + "<br />");
+		}
+		
+		
+	}
+	
+	// Initialize objects of the Cat class with 2 explicit parameters
+	cat1 = new Cat("Felix","Something");
+	// Perform method talk of the Cat class on the object
+	cat1.talk();
+	cat2 = new Cat("Ginger","Nothing");
+	cat2.talk();
+	
+	// add a method to the Cat class called changeName() & changeSound()
+	Cat.prototype.changeName = function(name) {
+		this.name = name;
+	}
+	Cat.prototype.changeSound = function(sound) {
+		this.sound = sound;
+	}
+
+	firstCat = new Cat("pursur", "purrr");
+	firstCat.talk();
+	// Perform method changeName of the Cat class on the object firstCat
+	firstCat.changeName("Bill");
+	firstCat.talk();
+	cat2.changeSound("Meow!");
+	cat2.talk();
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Cat(name,sound){
+    this.name = name;
+    this.sound = sound;
+    this.talk = function(){
+      document.write("&lt;b>" + this.name + "&lt;/b> says " + this.sound + "&lt;br />");
+    }
+
+
+}
+
+// Initialize objects of the Cat class with 2 explicit parameters
+cat1 = new Cat("Felix","Something");
+// Perform method talk of the Cat class on the object
+
+//Prints Felix says Something
+cat1.talk();
+cat2 = new Cat("Ginger","Nothing");
+
+//Prints Ginger says Nothing
+cat2.talk();
+
+// add a method to the Cat class called changeName() & changeSound()
+Cat.prototype.changeName = function(name) {
+  this.name = name;
+}
+Cat.prototype.changeSound = function(sound) {
+  this.sound = sound;
+}
+
+firstCat = new Cat("pursur", "purrr");
+
+//Prints pursur says purrr
+firstCat.talk();
+
+// Perform method changeName of the Cat class on the object firstCat
+firstCat.changeName("Bill");
+
+//Prints Bill says purrr
+firstCat.talk();
+cat2.changeSound("Meow!");
+
+//Prints Ginger says Meow!
+cat2.talk();
+</pre>
+</div>
+<hr>
+<script type="text/javascript">
+	function Foo(){
+		var fixedNumber = 5;
+		this.x = 5;
+		this.SubtractX = function(z){
+			this.x -= z;
+			document.write(fixedNumber + " minus " + z + " equals " + this.x + "<br />");
+		}
+	}
+	
+	// Add AddX method to the Foo Class
+	Foo.prototype.AddX = function(y){
+		var fixedNumber = this.x;
+		this.x += y;
+		document.write(y + " plus " + fixedNumber + " equals " + this.x + "<br />");
+	}
+	
+	obj1 = new Foo();
+	obj1.SubtractX(1);
+	obj1.AddX(11);
+	obj1.AddX(11);
+	
+	obj2 = new Foo();
+	obj2.AddX(11);
+	
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Foo(){
+    var fixedNumber = 5;
+    this.x = 5;
+    this.SubtractX = function(z){
+      this.x -= z;
+      document.write(fixedNumber + " minus " + z + " equals " + this.x + "&lt;br />");
+    }
+}
+
+// Add AddX method to the Foo Class
+Foo.prototype.AddX = function(y){
+  var fixedNumber = this.x;
+  this.x += y;
+  document.write(y + " plus " + fixedNumber + " equals " + this.x + "&lt;br />");
+}
+
+obj1 = new Foo();
+//this.x is now equal to 4
+obj1.SubtractX(1);  //Prints 5 minus 1 equals 4
+
+//this.x is now equal to 15
+obj1.AddX(11);      //Prints 11 plus 4 equals 15
+
+//this.x is now equal to 26
+obj1.AddX(11);      //Prints 11 plus 15 equals 26
+
+obj2 = new Foo();
+obj2.AddX(11);      //Prints 11 plus 5 equals 16
+</pre>
+</div>
+<hr>
+<h4>Polymorphism</h4>
+<script type="text/javascript">
+	function A(){
+		this.x = 1;
+	}
+	
+	A.prototype.increaseIt = function(){
+		this.x += 1;
+		document.write(this.x + "<br />");
+	}
+	
+	function B(){
+		this.x = 1;
+	}
+	
+	B.prototype.increaseIt = function(){
+		this.x += 2;
+		document.write(this.x + "<br />");
+	}
+	
+	a = new A;
+	b = new B;
+	
+	a.increaseIt(); // mutate x using the increaseIt method of A class
+	b.increaseIt(); // mutate x using the increaseIt method of B class
+	b.increaseIt(); // mutate x on the current object b using the increaseIt method of B class
+	document.write("<br />" + a.x + " , " + b.x); // access current value of x
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function A(){
+  this.x = 1;
+}
+
+A.prototype.increaseIt = function(){
+  this.x += 1;
+  document.write(this.x + "&lt;br />");
+}
+
+function B(){
+  this.x = 1;
+}
+
+B.prototype.increaseIt = function(){
+  this.x += 2;
+  document.write(this.x + "&lt;br />");
+}
+
+a = new A;
+b = new B;
+
+// Prints 2
+a.increaseIt(); // mutate x using the increaseIt method of A class
+
+// Prints 3
+b.increaseIt(); // mutate x using the increaseIt method of B class
+
+// Prints 5
+b.increaseIt(); // mutate x on the current object b using the increaseIt method of B class
+
+// Prints 2, 5
+document.write("&lt;br />" + a.x + " , " + b.x); // access current value of x
+</pre>
+</div>
+<hr>
+<h4>Getter/Setter</h4>
+<script type="text/javascript">
+	function A(){
+		var x = 7;
+		
+		this.GetX = function(){
+			return x;
+		}
+		this.SetX = function(y){
+			x = y;
+		}
+	}
+	
+	
+	obj1 = new A;
+	obj2 = new A;
+	
+	// returns the current value of x
+	document.write(obj1.GetX() + " " + obj2.GetX() + "<br />");
+	
+	
+	obj2.SetX(14);
+	document.write(obj1.GetX() + "<br />");
+	document.write(obj2.GetX());
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function A(){
+  var x = 7;
+
+  this.GetX = function(){
+    return x;
+  }
+  this.SetX = function(y){
+    x = y;
+  }
+}
+
+
+obj1 = new A;
+obj2 = new A;
+
+// returns the current value of x
+// Prints 7  7
+document.write(obj1.GetX() + " " + obj2.GetX() + "&lt;br />");
+
+
+obj2.SetX(14);
+
+// Prints 7
+document.write(obj1.GetX() + "&lt;br />");
+
+// Prints 14
+document.write(obj2.GetX());
+</pre>
+</div>
+<hr>
+<h4>Getter/Setter 2</h4>
+<script type="text/javascript">
+	function One(){
+		//this.message = message;
+		
+		this.set = function(message){
+			(message) ? x=message : x="Please set a message";
+		}
+		
+		this.get = function(){
+			return x;
+		}
+	}
+	
+		
+	e = new One;
+	e.set();
+	document.write(e.get() + "<br />");
+	e.set("Hello, World!");
+	document.write(e.get());
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function One(){
+  //this.message = message;
+
+  this.set = function(message){
+    (message) ? x=message : x="Please set a message";
+  }
+
+  this.get = function(){
+    return x;
+  }
+}
+
+
+e = new One;
+e.set();
+
+// Prints Please set a message
+document.write(e.get() + "&lt;br />");
+e.set("Hello, World!");
+
+// Prints Hello, World!
+document.write(e.get());
+</pre>
+</div>
+<hr>
+<h4>Creating Methods</h4>
+<script type="text/javascript">
+	
+	function Circle(radius){
+		/*Properties*/
+		this.radius = radius;
+		
+		/*Methods*/
+		this.getArea = function(){
+			return (this.radius*this.radius*3.14);
+		};
+		this.getCircumference = function(){
+			var diameter = this.radius*2;
+			var circumference = diameter*3.14;
+			return circumference;
+		}
+	}
+	
+		
+	var bigCircle = new Circle(100);
+	var smallCircle = new Circle(2);
+	
+	document.write(bigCircle.getArea() + "<br />");
+	document.write(bigCircle.getCircumference() + "<br />");
+	document.write(smallCircle.getArea() + "<br />");
+	document.write(smallCircle.getCircumference() + "<br />");
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Circle(radius){
+  /*Properties*/
+  this.radius = radius;
+
+  /*Methods*/
+  this.getArea = function(){
+    return (this.radius*this.radius*3.14);
+  };
+  this.getCircumference = function(){
+    var diameter = this.radius*2;
+    var circumference = diameter*3.14;
+    return circumference;
+  }
+}
+
+
+var bigCircle = new Circle(100);
+var smallCircle = new Circle(2);
+
+// Prints 31400
+document.write(bigCircle.getArea() + "&lt;br />");
+
+//Prints 628
+document.write(bigCircle.getCircumference() + "&lt;br />");
+
+// Prints 12.56
+document.write(smallCircle.getArea() + "&lt;br />");
+
+// Prints 12.56
+document.write(smallCircle.getCircumference() + "&lt;br />");
+</pre>
+</div>
+<hr>
+<h4>Dependencies</h4>
+<script type="text/javascript">
+	function Person(lastName, firstName){
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.fullName =  this.firstName + " " + this.lastName;
+	}
+	
+	var DnnyGdmn = new Person ("Goodman","Danny");
+	var DvdFlngn = new Person("Flanagan","David"); 
+	var TmMyrs = new Person("Myers","Tom"); 
+	var AlxNkmvsky = new Person("Nakhimovsky","Alexander");
+	
+	function Book(title, pages, price){
+		this.title = title; 
+		 this.pages = pages; 
+		 this.price = price; 
+		 this.authors = []; 
+		 for(i=0;i<arguments.length-3;i++){ 
+		   this.authors[i] = arguments[i+3]; 
+		 }
+	}
+	
+	 var JavaNut = new Book("Java Foundation Classes in a Nutshell", 731, 29.95, DvdFlngn); 
+	 var JSTDR = new Book("Javascript: The Definitive Guide (3rd Edition)", 776, 39.95, DvdFlngn); 
+	 var JSBible = new Book("Javascript Bible, 4th Edition", 1200, 49.99, DnnyGdmn); 
+	 var DHTMLTDR = new Book("Dynamic Html: The Definitive Reference", 1073, 44.95, DnnyGdmn); 
+	 var JSObj = new Book("JavaScript Objects", 450, 39.99, TmMyrs, AlxNkmvsky);
+	 
+	 
+	 
+	 document.write(JavaNut.authors[0].fullName + "<br />");
+	 document.write(JSObj.authors[1].fullName + "<br />");
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Person(lastName, firstName){
+  this.lastName = lastName;
+  this.firstName = firstName;
+  this.fullName =  this.firstName + " " + this.lastName;
+}
+
+var DnnyGdmn = new Person ("Goodman","Danny");	 
+var DvdFlngn = new Person("Flanagan","David"); 
+var TmMyrs = new Person("Myers","Tom"); 
+var AlxNkmvsky = new Person("Nakhimovsky","Alexander");
+
+function Book(title, pages, price){
+  this.title = title; 
+  this.pages = pages; 
+  this.price = price; 
+  this.authors = []; 
+  for(i=0;i&lt;arguments.length-3;i++){ 
+    this.authors[i] = arguments[i+3]; 
+  }
+}
+
+var JavaNut = new Book("Java Foundation Classes in a Nutshell", 731, 29.95, DvdFlngn); 
+var JSTDR = new Book("Javascript: The Definitive Guide (3rd Edition)", 776, 39.95, DvdFlngn); 
+var JSBible = new Book("Javascript Bible, 4th Edition", 1200, 49.99, DnnyGdmn); 
+var DHTMLTDR = new Book("Dynamic Html: The Definitive Reference", 1073, 44.95, DnnyGdmn); 
+var JSObj = new Book("JavaScript Objects", 450, 39.99, TmMyrs, AlxNkmvsky);
+
+
+// Prints David
+document.write(JavaNut.authors[0].fullName + "&lt;br />");
+
+// Prints Alexander
+document.write(JSObj.authors[1].fullName + "&lt;br />");
+</pre>
+</div>
+<hr>
+<h4>Inheritance</h4>
+<script type="text/javascript">
+	function Square(){  
+	this.side=5;
+	
+}  
+
+	// define middle property to the Square class and declare value of 4
+	Square.prototype.middle = 4; 
+	
+	var squareObj = new Square();
+	var squareObj2 = new Square();  
+	document.write(squareObj.side + "<br />"); 
+	document.write(squareObj.middle + "<br />"); 
+	document.write(squareObj2.side + "<br />");
+	document.write(squareObj2.middle + "<br />");
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Square(){  
+  this.side=5;
+}  
+
+// define middle property to the Square class and declare value of 4
+Square.prototype.middle = 4; 
+
+var squareObj = new Square();
+var squareObj2 = new Square();  
+
+// Prints 5
+document.write(squareObj.side + "&lt;br />"); 
+
+// Prints 4
+document.write(squareObj.middle + "&lt;br />"); 
+
+// Prints 5
+document.write(squareObj2.side + "&lt;br />");
+
+// Prints 4
+document.write(squareObj2.middle + "&lt;br />");
+</pre>
+</div>
+<h4>Inheritance</h4>
+<script type="text/javascript">
+function Pet(name) {
+	this.getName = function() { return name; };
+	this.setName = function(newName) { name = newName; };
+	this.foo = "bar";
+}
+
+function Dependant(taxDeduction) {
+	this.taxDeduction = "0% - Dogs can't be declared as dependants";
+}
+
+
+function Dog(name, breed) {
+Pet.call(this, name);	// THE MONEY - INHERIT THE getter/setter from parent Pet class
+this.getBreed = function() { return breed; };
+}
+
+
+var dog = new Dog("Buddy", "Great Dane");
+
+document.write(dog.getName() + "<br />");
+document.write(dog.getBreed() + "<br />");
+document.write(dog.foo + "<br />");	// foo property inherited from parent Pet class
+dog.setName("Rover");
+document.write(dog.getName() + "<br />");
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Pet(name) {
+  this.getName = function() { return name; };
+  this.setName = function(newName) { name = newName; };
+  this.foo = "bar";
+}
+
+function Dog(name, breed) {
+  Pet.call(this, name);	// THE MONEY - INHERIT THE getter/setter from parent Pet class
+  this.getBreed = function() { return breed; };
+}
+
+Dog.prototype = new Pet();
+
+var dog = new Dog("Buddy", "Great Dane");
+
+// Prints Buddy
+document.write(dog.getName() + "&lt;br />");
+
+// Prints Great Dane
+document.write(dog.getBreed() + "&lt;br />");
+
+// Prints bar
+document.write(dog.foo + "&lt;br />");	// foo property inherited from parent Pet class
+</pre>
+</div>
+<h4>Inheritance & Abstraction</h4>
+<script type="text/javascript">
+	function Car(color){
+		this.name = "Generic";
+		this.wheels = 4;
+		this.doors = 4;
+		this.color = color;
+		this.speed = 0;
+		this.accelerate = function(){
+			return this.speed += 20;
+		};
+		this.brake = function(){
+			return this.speed -= 20;
+		};
+	};
+	/* Corvette Extends Car */
+	function Corvette(color){
+		this.serialNumber = "HK13DWN9"; //added property
+		this.name = "Corvette";
+		this.doors = 2;
+		this.color = color;
+		this.accelerate = function(){
+			return this.speed += 40;
+		};
+	};
+	Corvette.prototype = new Car();
+	
+	/*Ares Extends Car */
+	function Ares(color){
+		this.name = "Ares";
+		this.color = color;
+		this.accelerate = function(){
+			return this.speed += 10;
+		};
+		this.brake = function(){
+			return this.speed -= 10;
+		};
+	};
+	Ares.prototype = new Car();
+	
+	var myCar = new Car("white");
+	var myCorvette = new Corvette("red");
+	var myAres = new Ares("blue");
+	
+	document.write(myCar.name + "<br />");
+	document.write(myCorvette.name + "<br />");
+	document.write(myAres.name + "<br />");
+	document.write(myAres.doors + "<br />");
+	document.write(myAres.wheels + "<br />");
+	document.write(myCorvette.serialNumber + "<br />");
+	document.write(myCorvette.name + "  Accelerates: <br />");
+	document.write(myCorvette.accelerate() + "<br />");
+	document.write(myCorvette.accelerate() + "<br />");
+	document.write(myCorvette.accelerate() + "<br />");
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Car(color){
+  this.name = "Generic";
+  this.wheels = 4;
+  this.doors = 4;
+  this.color = color;
+  this.speed = 0;
+  this.accelerate = function(){
+    return this.speed += 20;
+  };
+  this.brake = function(){
+    return this.speed -= 20;
+  };
+};
+/* Corvette Extends Car */
+function Corvette(color){
+  this.serialNumber = "HK13DWN9"; //added property
+  this.name = "Corvette";
+  this.doors = 2;
+  this.color = color;
+  this.accelerate = function(){
+    return this.speed += 40;
+  };
+};
+Corvette.prototype = new Car();
+
+/*Ares Extends Car */
+function Ares(color){
+  this.name = "Ares";
+  this.color = color;
+  this.accelerate = function(){
+    return this.speed += 10;
+  };
+  this.brake = function(){
+    return this.speed -= 10;
+  };
+};
+Ares.prototype = new Car();
+
+var myCar = new Car("white");
+var myCorvette = new Corvette("red");
+var myAres = new Ares("blue");
+
+// Prints Generic
+document.write(myCar.name + "&lt;br />");
+
+// Prints Corvette
+document.write(myCorvette.name + "&lt;br />");
+
+// Prints Ares
+document.write(myAres.name + "&lt;br />");
+
+// Prints 4
+document.write(myAres.doors + "&lt;br />");
+
+// Prints 4
+document.write(myAres.wheels + "&lt;br />");
+
+// Prints HK13DWN9
+document.write(myCorvette.serialNumber + "&lt;br />");
+
+// Prints Corvette Accelerates:
+document.write(myCorvette.name + "  Accelerates: &lt;br />");
+
+// Prints 40
+document.write(myCorvette.accelerate() + "&lt;br />");
+
+// Prints 80
+document.write(myCorvette.accelerate() + "&lt;br />");
+
+// Prints 120
+document.write(myCorvette.accelerate() + "&lt;br />");
+</pre>
+</div>
+<h4>Inheritance</h4>
+<script type="text/javascript">
+// Declare two objects - we're going to want Lion to
+// inherit from cat
+function Cat()
+{
+  this.eyes = 2;
+  this.legs = 4;
+  this.diet = 'carnivore';
+
+  //return true;
+}
+
+function Lion()
+{
+  this.mane = "true";
+  this.origin = 'Africa';
+
+  //return true;
+}
+
+// Now comes the inheritance
+Lion.prototype = new Cat();
+
+// We can now obtain lion.diet
+var simba = new Lion();
+var kitteh = new Cat();
+
+//var simba_diet = simba.diet;
+document.write(simba.diet + "<br />");
+document.write(kitteh.mane);
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+// Declare two objects - we're going to want Lion to
+// inherit from cat
+function Cat()
+ {
+  this.eyes = 2;
+  this.legs = 4;
+  this.diet = 'carnivore';
+
+  //return true;
+}
+
+function Lion()
+ {
+  this.mane = "true";
+  this.origin = 'Africa';
+
+  //return true;
+}
+
+// Now comes the inheritance
+Lion.prototype = new Cat();
+
+// We can now obtain lion.diet
+var simba = new Lion();
+var kitteh = new Cat();
+
+//var simba_diet = simba.diet;
+// Prints carnivore
+document.write(simba.diet + "&lt;br />");
+
+// Prints undefined
+document.write(kitteh.mane);
+</pre>
+</div>
+<h4>Private Members</h4>
+<script type="text/javascript">
+function Product(){
+	var partNum = 7; // private member
+	//this.partNum = num;
+	this.setPartNum = function(num){
+		x = partNum + num;
+	}
+	this.getPartNum = function(){
+		return x;
+	}
+}
+var tshirt = new Product;
+tshirt.partNum = "E"; // does nothing
+tshirt.setPartNum("E");
+//document.write(tshirt.getPartNum());
+document.write(tshirt.getPartNum());
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Product(){
+  var partNum = 7; // private member
+  //this.partNum = num;
+  this.setPartNum = function(num){
+    x = partNum + num;
+  }
+  this.getPartNum = function(){
+    return x;
+  }
+}
+var tshirt = new Product;
+tshirt.partNum = "E"; // does nothing
+tshirt.setPartNum("E");
+//document.write(tshirt.getPartNum());
+
+// Prints 7E
+document.write(tshirt.getPartNum());
+</pre>
+</div>
+<h4>Private Methods</h4>
+<script type="text/javascript">
+function Product(member){
+	var partNum = 7; // private member
+	this.member = member;
+	//this.partNum = num;
+	this.setPartNum = function(num){
+		internalMethod()
+		x = this.member + partNum + num;
+	}
+	this.getPartNum = function(){
+		return x;
+	}
+	function internalMethod(){
+		partNum++;
+	}
+}
+var tshirt = new Product(10);
+tshirt.partNum = "E"; // does nothing
+tshirt.setPartNum("E");
+//document.write(tshirt.getPartNum());
+document.write(tshirt.getPartNum());
+/*tshirt.internalMethod();*/ // throws error
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Product(member){
+  var partNum = 7; // private member
+  this.member = member;
+  //this.partNum = num;
+  this.setPartNum = function(num){
+   internalMethod()
+    x = this.member + partNum + num;
+  }
+  this.getPartNum = function(){
+    return x;
+  }
+  function internalMethod(){
+    partNum++;
+  }
+}
+var tshirt = new Product(10);
+tshirt.partNum = "E"; // does nothing
+tshirt.setPartNum("E");
+//document.write(tshirt.getPartNum());
+
+// Prints 18E
+document.write(tshirt.getPartNum());
+/*tshirt.internalMethod();*/ // throws error
+</pre>
+</div>
+<h4>Recursion</h4>
+<script type="text/javascript">
+/*
+var addNumbers = function sumNumbers(numArray,indexVal,resultArray) {
+   
+	 //var resultArray = [0, ''];
+   // recursion test
+   if (indexVal == numArray.length) 
+      return resultArray;
+
+   // perform numberic addition
+   resultArray[0] += Number(numArray[indexVal]);
+
+   // perform string addition
+   if (resultArray[1].length > 0) 
+     resultArray[1] += " and ";
+   resultArray[1] += numArray[indexVal].toString();
+   
+   // increment index
+   indexVal++;
+
+   // call function again, return results
+   return sumNumbers(numArray,indexVal,resultArray);
+}
+
+// create numeric array, and the result array
+var numArray = ['1','35.4','-14','44','0.5'];
+//var resultArray = new Array(0,'');
+// call function
+var result = addNumbers(numArray, 0, [0, '']);
+
+// output
+document.writeln(result[0] + "<br />");
+document.writeln(result[1] + "<br />");
+*/
+function addChar(arr, type) {
+	if (type == "Number") {
+		var result = 0;
+		for (i=0;i<arr.length;i++) {
+			result += Number(arr[i]);
+		}
+	}
+	if (type == "String") {
+		var result = "";
+		for (i=0;i<arr.length;i++) {
+			result += String(arr[i]);
+		}
+	}
+	return result;
+}
+
+var numArray = ['1','35.4','-14','44','0.5'];
+var resultNum = addChar(numArray, "Number");
+var resultChar = addChar(numArray, "String");
+document.write(resultNum + "<br />");
+document.write(resultChar + "<br />");
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+var addNumbers = function sumNumbers(numArray,indexVal,resultArray) {
+
+  // recursion test
+  if (indexVal == numArray.length) 
+  return resultArray;
+
+  // perform numberic addition
+  resultArray[0] += Number(numArray[indexVal]);
+
+  // perform string addition
+  if (resultArray[1].length > 0) 
+  resultArray[1] += " and ";
+  resultArray[1] += numArray[indexVal].toString();
+
+  // increment index
+  indexVal++;
+
+  // call function again, return results
+  return sumNumbers(numArray,indexVal,resultArray);
+}
+
+// create numeric array, and the result array
+var numArray = ['1','35.4','-14','44','0.5'];
+var resultArray = new Array(0,'');
+// call function
+var result = addNumbers(numArray,0, resultArray);
+
+// output
+// Prints 66.9
+document.writeln(result[0] + "&lt;br />");
+
+// Prints 1 and 35.4 and -14 and 44 and 0.5
+document.writeln(result[1]);
+</pre>
+</div>
+<h4>Apply/Call</h4>
+<script type="text/javascript">
+function speak(line) {
+document.write("The ", this.adjective.bold(), " rabbit says '", line, "'");
+}
+var whiteRabbit = {adjective: "white", speak: speak};
+var fatRabbit = {adjective: "fat", speak: speak};
+
+
+whiteRabbit.speak("Oh my ears and whiskers, how late it's getting!");
+
+
+fatRabbit.speak("I could sure use a carrot right now.");	
+
+speak.apply(fatRabbit, ["Yum."]);
+
+speak.call(fatRabbit, "Burp.");	
+		
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function speak(line) {
+  document.write("The ", this.adjective.bold(), " rabbit says '", line, "'");
+}
+var whiteRabbit = {adjective: "white", speak: speak};
+var fatRabbit = {adjective: "fat", speak: speak};
+
+// Prints The white rabbit says 'Oh my ears and whiskers, how late it's getting!'
+whiteRabbit.speak("Oh my ears and whiskers, how late it's getting!");
+
+// Prints The fat rabbit says 'I could sure use a carrot right now.'
+fatRabbit.speak("I could sure use a carrot right now.");	
+
+// Prints 'The fat rabbit says 'Yum.'
+speak.apply(fatRabbit, ["Yum."]);
+
+// Prints 'The fat rabbit says 'Burp.'
+speak.call(fatRabbit, "Burp.");	
+</pre>
+</div>
+<h4>Callback Functions</h4>
+<script type="text/javascript">
+// check color range callback function
+function checkColor(element) {
+  return (element >= 0 && element < 256);
+}
+
+// check to ensure you have three RGB colors
+function checkCount(element) {
+  return (element.length == 3);
+}
+
+// all in one check for valid
+/*             */
+
+// color array
+var colors = new Array(  );
+colors[0] = [0,262,255];
+colors[1] = [255,255,255];
+colors[2] = [255,0,0];
+colors[3] = [0,255,0];
+colors[4] = [0,0,255];
+colors[5] = [-5,999,255];
+colors[5] = [125,0,0,255];
+
+// filter on color range
+var testedColors = new Array(  );
+for (var i in colors) {
+		if (colors.hasOwnProperty(i))
+			{
+       testedColors[i] = colors[i].filter(checkColor);
+			 //document.write(testedColors[i] + "<br />");
+			}
+}
+
+// filter on three values
+var newTested = testedColors.filter(checkCount);
+for (i in newTested) {
+	if (newTested.hasOwnProperty(i))
+				{
+   document.writeln(newTested[i] + "<br />");
+		}
+}
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+// check color range callback function
+function checkColor(element,index,array) {
+  return (element >= 0 && element < 256);
+}
+
+// check to ensure you have three RGB colors
+function checkCount(element,index,array) {
+  return (element.length == 3);
+}
+
+// color array
+var colors = new Array(  );
+colors[0] = [0,262,255];
+colors[1] = [255,255,255];
+colors[2] = [255,0,0];
+colors[3] = [0,255,0];
+colors[4] = [0,0,255];
+colors[5] = [-5,999,255];
+colors[5] = [125,0,0,255];
+
+// filter on color range
+var testedColors = new Array(  );
+for (var i in colors) {
+  if (colors.hasOwnProperty(i))
+   {
+    testedColors[i] = colors[i].filter(checkColor);
+    //document.write(testedColors[i] + "&lt;br />");
+   }
+}
+
+// filter on three values
+var newTested = testedColors.filter(checkCount);
+
+// Prints 255,255,255
+// Prints 255,0,0
+// Prints 0,255,0
+// Prints 0,0,255
+for (i in newTested) {
+  if (newTested.hasOwnProperty(i))
+   {
+    document.writeln(newTested[i] + "&lt;br />");
+   }
+}
+</pre>
+</div>
+<h4>Nested functions and closures</h4>
+<script type="text/javascript">
+// outer function
+function outerFunc(base) {
+
+   var punc = "!";
+
+   // inner function
+   function returnString(ext) {
+     return base + ext + punc;
+   }
+   
+   return returnString;
+}
+
+// create access to innerfunction
+var baseString = outerFunc("Hello ");
+
+// innerfunction still has access to outer function argument
+var newString = baseString("World");
+document.writeln(newString);
+
+// and still
+var notherString = baseString("Reader");
+document.writeln(notherString);
+
+// create another instance of inner function
+var anotherBase = outerFunc("Hiya, Hey ");
+
+// another local string
+var lastString = anotherBase("you");
+document.writeln(lastString);
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+// outer function
+function outerFunc(base) {
+
+  var punc = "!";
+
+  // inner function
+  function returnString(ext) {
+    return base + ext + punc;
+  }
+
+  return returnString;
+}
+
+// create access to innerfunction
+var baseString = outerFunc("Hello ");
+
+// innerfunction still has access to outer function argument
+var newString = baseString("World");
+
+// Prints Hello World!
+document.writeln(newString);
+
+// and still
+var notherString = baseString("Reader");
+
+// Prints Hello Reader!
+document.writeln(notherString);
+
+// create another instance of inner function
+var anotherBase = outerFunc("Hiya, Hey ");
+
+// another local string
+var lastString = anotherBase("you");
+
+// Prints Hiya, Hey you!
+document.writeln(lastString);
+</pre>
+</div>
+<h4>Try, Throw, Catch, Finally</h4>
+<script type="text/javascript">
+/*
+	There are six error types implemented in JavaScript 1.5 engines:
+	EvalError - Raised by eval when used incorrectly
+	RangeError - Numeric value exceeds its range
+	ReferenceError - Invalid reference is used
+	SyntaxError - Used with invalid syntax
+	TypeError - Raised when variable is not the type expected
+	URIError - Raised when encodeURI() or decodeURI() are used incorrectly
+*/
+
+try {
+	var somearray = null;
+	document.write(somearray[18]);
+	} catch (e) {
+		//if (e instanceof TypeError) {
+			document.write("Type error?: " + e.message);
+		//}
+	}
+	finally {
+		//somearray = null;
+		document.write("<br />Please set somearray to Type Array");
+	}
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+/*
+There are six error types implemented in JavaScript 1.5 engines:
+EvalError - Raised by eval when used incorrectly
+RangeError - Numeric value exceeds its range
+ReferenceError - Invalid reference is used
+SyntaxError - Used with invalid syntax
+TypeError - Raised when variable is not the type expected
+URIError - Raised when encodeURI() or decodeURI() are used incorrectly
+*/
+
+try {
+  var somearray = null;
+  document.write(somearray[18]);
+  } catch (e) {
+    //if (e instanceof TypeError) {
+    document.write("Type error: " + e.message);
+  }
+finally {
+somearray = null;
+}
+// Prints Type error: somearray is null;
+</pre>
+</div>
+<h4>Static Properties, Static Members</h4>
+<script type="text/javascript">
+// Declare an object literal "class"
+var Foo = { status : 'ready',
+			printStatus : function(){
+				//document.write(this.status);
+				return this.status;
+			}
+};
+
+// Print "class" property directly from the "class"
+document.write("1." + Foo.status + "<br />");
+// Change "class" property
+Foo.status = "waiting";
+// Print changed "class" property
+document.write("2." + Foo.status + "<br />");
+
+// Print "class" method directly from the "class"
+document.write("3." + Foo.printStatus() + "<br />");
+
+function Bar(){
+	//HELLO = "hello"
+	this.HELLO = (function(){
+		HELLO = "hello"
+		return HELLO;
+	})();
+}
+
+someBar = new Bar();
+document.write("4." + someBar.HELLO + "<br />");
+
+someBar.HELLO = "goodbye";
+document.write("5. "); 
+document.write(someBar.HELLO + "<br />");
+
+var Fubar = {	STATUS : function(){
+				document.write("FOO" + "<br />");
+		}
+
+}
+document.write("6. "); 
+Fubar.STATUS();
+
+//Fubar.STATUS() = "bar?";
+document.write("7. "); 
+Fubar.STATUS();
+
+
+function Hello(){
+	this.FOO = function(){
+		return "HELLO";
+		//document.write("HELLO");
+	};
+};
+
+
+Hello = {	FOO : (function(){
+				return "HELLO";
+			})()
+	
+}
+
+document.write("8. "); 
+document.write(Hello.FOO);
+Hello.FOO = "BAR";
+document.write("<br />9. "); 
+document.write(Hello.FOO);
+
+function Hello(){
+	//this.FOO = "awesome";
+	var FOO = "awesome";
+	this.BAR = function(){
+	//if (this.FOO == "awesome"){
+		return FOO;
+	//};
+}
+}
+
+/*
+var Hello = {
+	FOO : new Hello,
+	BAR : (function(){
+		
+			return "HELLO";
+		
+	})()
+}
+*/
+//Hello.FOO = "awesome";
+Hello.FOO = (function(){
+	return "Hello";
+})();
+
+
+function Status(text){
+	this.text = text;
+}
+
+foo.world = "world";
+var world = new Status(foo.world);
+document.write("<br />10. "); 
+document.write(world.text);
+
+Hello = {
+	ONE : "foo",
+	FOO : (function(){
+		return "FOO";
+	})(),
+	BAR : (function(){
+		return "BAR";
+	})(),
+	BAZ : (function(){
+		return "BAZ";
+	})()
+}
+
+//document.write(Hello.BAR);
+document.write("<br />11. "); 
+document.write(Hello.FOO);
+//Hello.FOO = "awesome";
+document.write("<br />12. "); 
+document.write(Hello.BAR);
+document.write("<br />13. "); 
+document.write(Hello.BAZ);
+document.write("<br />14. "); 
+document.write(Hello.ONE);
+
+Hello.FOO = "Peace";
+var someVar = Hello.FOO;
+document.write("<br />15. "); 
+document.write(someVar);
+
+Math.PI = 1.2345645;
+document.write("<br />16. "); 
+document.write(Math.PI);
+/*************************************************/
+/* THE MONEY HERE */
+/*
+Object.prototype.FOO = (function(){
+		
+		return "HELLO";
+		
+	})();
+*/	
+Object.prototype.FOO = "hello";
+
+document.write("<br />17. "); 
+document.write(Hello.FOO.FOO);
+document.write("<br />18. "); 
+document.write(Hello.FOO.FOO);
+//Hello.FOO = "Peace";
+document.write("<br />19. "); 
+document.write(Hello.FOO.FOO);
+
+// Create an empty object and copy it to Object object
+Hello = Hello.FOO;
+
+// Apply static "FOO" property as defined in Object.prototype.FOO
+document.write("<br />20. "); 
+document.write(Object.FOO);
+document.write("<br />21. "); 
+document.write(Object.FOO);
+document.write("<br />22. "); 
+document.write(Object.FOO);
+// It doesn't matter what we try to change the "FOO" property to - it will always be set 
+Object.FOO = "Peace";
+document.write("<br />23. "); 
+document.write(Object.FOO);
+// We can even try to change the referenced object 	
+//Hello.FOO = "Peace";
+document.write("<br />24. "); 
+document.write(Object.FOO);
+
+Booyah = {FOO: function(){return "Bar"}()};
+document.write("<br />25. "); 
+document.write(Booyah.FOO);
+Booyah.FOO = "Foo";
+document.write("<br />26. "); 
+document.write(Booyah.FOO);
+
+
+</script>
+
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+// Declare an object literal "class"
+var Foo = { status : 'ready',
+  printStatus : function(){
+    //document.write(this.status);
+    return this.status;
+  }
+};
+
+// Print "class" property directly from the "class"
+
+// Prints 1.ready
+document.write("1." + Foo.status + "&lt;br />");
+// Change "class" property
+Foo.status = "waiting";
+// Print changed "class" property
+
+// Prints 2.waiting
+document.write("2." + Foo.status + "&lt;br />");
+
+// Print "class" method directly from the "class"
+
+// Prints 3.waiting
+document.write("3." + Foo.printStatus() + "&lt;br />");
+
+function Bar(){
+  //HELLO = "hello"
+  this.HELLO = (function(){
+  HELLO = "hello"
+  return HELLO;
+  })();
+}
+
+someBar = new Bar();
+
+// Prints 4.hello
+document.write("4." + someBar.HELLO + "&lt;br />");
+
+someBar.HELLO = "goodbye";
+
+// Prints goodbye
+document.write(someBar.HELLO + "&lt;br />");
+
+var Fubar = {	STATUS : function(){
+    document.write("FOO" + "&lt;br />");
+  }
+
+}
+
+// Prints FOO
+Fubar.STATUS();
+
+//Fubar.STATUS() = "bar?";
+
+// Prints 6. 
+document.write("6. "); 
+
+// Prints FOO
+Fubar.STATUS();
+
+
+function Hello(){
+  this.FOO = function(){
+    return "HELLO";
+  //document.write("HELLO");
+  };
+};
+
+
+Hello = {	FOO : (function(){
+    return "HELLO";
+  })()
+
+}
+
+// Prints HELLO
+document.write(Hello.FOO);
+
+Hello.FOO = "BAR";
+
+// Prints BAR
+document.write(Hello.FOO);
+
+function Hello(){
+  //this.FOO = "awesome";
+  var FOO = "awesome";
+  this.BAR = function(){
+    //if (this.FOO == "awesome"){
+    return FOO;
+  }
+}
+
+/*
+var Hello = {
+  FOO : new Hello,
+  BAR : (function(){
+
+    return "HELLO";
+
+  })()
+}
+*/
+//Hello.FOO = "awesome";
+Hello.FOO = (function(){
+  return "Hello";
+})();
+
+
+function Status(text){
+  this.text = text;
+}
+
+foo.world = "world";
+var world = new Status(foo.world);
+
+// Prints world
+document.write(world.text);
+
+Hello = {
+  ONE : "foo",
+  FOO : (function(){
+    return "FOO";
+  })(),
+BAR : (function(){
+    return "BAR";
+  })(),
+BAZ : (function(){
+    return "BAZ";
+  })()
+}
+
+//document.write(Hello.BAR);
+
+// Prints FOO
+document.write(Hello.FOO);
+//Hello.FOO = "awesome";
+
+// Prints BAR
+document.write(Hello.BAR);
+
+// Prints BAZ
+document.write(Hello.BAZ);
+
+// Prints foo
+document.write(Hello.ONE);
+
+Hello.FOO = "Peace";
+var someVar = Hello.FOO;
+
+// Prints Peace
+document.write(someVar);
+
+Math.PI = 1.2345645;
+
+// Prints 3.141592653589793
+document.write(Math.PI);
+/*************************************************/
+/* THE MONEY HERE */
+/*
+Object.prototype.FOO = (function(){
+
+  return "HELLO";
+
+})();
+*/	
+Object.prototype.FOO = "hello";
+
+// Prints hello
+document.write(Hello.FOO.FOO);
+
+// Prints hello
+document.write(Hello.FOO.FOO);
+//Hello.FOO = "Peace";
+
+// Prints hello
+document.write(Hello.FOO.FOO);
+
+// Create an empty object and copy it to Object object
+Object = Hello.FOO;
+
+// Apply static "FOO" property as defined in Object.prototype.FOO
+
+// Prints hello
+document.write(Object.FOO);
+
+// Prints hello
+document.write(Object.FOO);
+
+// Prints hello
+document.write(Object.FOO);
+// It doesn't matter what we try to change the "FOO" property to - it will always be set 
+Object.FOO = "Peace";
+
+// Prints hello
+document.write(Object.FOO);
+// We can even try to change the referenced object 	
+Hello.FOO = "Peace";
+
+// Prints hello
+document.write(Object.FOO);
+</pre>
+</div>
+<h3>Composition</h3>
+<h4>Association</h4>
+<script type="text/javascript">
+// Define an object
+function member(name, day){
+	this.name = name;
+	this.day = day;
+}
+
+//Define a list of members
+//members = [new member("suzy", "tuesday"), new member("bob", "wednesday"), new member("rick", "tuesday")];
+members = {
+	suzy: new member("suzy", "tuesday"),
+	bob: new member("bob", "wednesday"),
+	rick: new member("rick", "tuesday")
+}
+/*
+function group(day){
+	
+	document.write("<br />" + day + " members:<br />");
+	for (i=0;i<members.length;i++){
+		if (members[i].day == day) {
+		document.write(members[i].name + " ");
+		}
+	}
+};
+*/
+function group(day){
+	
+	document.write("<br />" + day + " members:<br />");
+	for (i in members){
+		if (members[i].day == day) {
+		document.write(members[i].name + " ");
+		}
+	}
+};
+
+group("tuesday");
+group("wednesday");
+
+// add member james
+members['james'] = new member("james", "tuesday");
+//members.push(new member("james","tuesday"));
+group("tuesday");
+
+// reschedule bob to tuesday
+members['bob'].day = "tuesday";
+//members[1].day = "tuesday";
+
+group("tuesday");
+group("wednesday");
+
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+// Define an object
+function member(name, day){
+  this.name = name;
+  this.day = day;
+}
+// Define an object
+function group(day){
+  this.day = day;
+  if (this.day == "tuesday"){
+    //this.member1 = new member("suzy", "tuesday");
+    //this.member2 = new member("rick", "tuesday");
+    this.member = [new member("suzy", "tuesday"), new member("rick", "tuesday")];
+}
+  if (this.day == "wednesday"){
+    this.member = new member("bob", "wednesday");
+  }
+}
+var tuesday = new group("tuesday");
+
+// Prints suzyrick
+for (var i=0; i < tuesday.member.length; i++){
+  document.write(tuesday.member[i].name);
+}
+</pre>
+</div>
+<h3>Functions as Objects</h3>
+<h4>using the Function Constructor</h4>
+<script type="text/javascript">
+//var func = new Function("x", "document.write(x) + '<br />';");
+//var func = new Function("x", "result = 1; for (var i in x) {if (x.hasOwnProperty(i)){ result *= x[i] }}; return result;");
+var func = new Function("x", "result = 1; for (i=0;i<x.length;i++) { result *= x[i] }; return result;");
+document.write(func([3,2,6]));
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+var func = new Function("x", "document.write(x) + '&lt;br />';");
+
+// Prints blah3
+func("blah3");
+</pre>
+</div>
+<h4>Passing a function as an argument for another function</h4>
+<script type="text/javascript">
+function square(x) {
+	return x * x;
+}
+function add(x) {
+	return x + x;
+}
+function operateOn(num, func) {
+	return func(num);
+}
+// displays 256
+document.write(operateOn(16, square) + '<br />');
+// displays 32
+document.write(operateOn(16, add) + '<br />');
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function square(x) {
+  return x * x;
+}
+function operateOn(num, func) {
+  return func(num);
+}
+
+// Prints 256
+document.write(operateOn(16, square) + '&lt;br />');
+</pre>
+</div>
+<h4>Create a function from another function</h4>
+<script type="text/javascript">
+function makeIncrementer() {
+	return function(x) { return x + 1; };
+}
+// create named function inc(x)
+var inc = makeIncrementer();
+// displays 8
+document.write(inc(7) + '<br />');
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function makeIncrementer() {
+  return function(x) { return x + 1; };
+}
+// create named function inc(x)
+var inc = makeIncrementer();
+
+// Prints 8
+document.write(inc(7) + '&lt;br />');
+</pre>
+</div>
+<h4>Functions stored as array elements</h4>
+<script type="text/javascript">
+// functions stored as array elements
+var arr = [];
+arr[0] = function(x) { return x * x; };
+arr[1] = arr[0](2);
+arr[2] = arr[0](arr[1]);
+arr[3] = arr[0](arr[2]);
+// displays 4
+document.write(arr[1] + '<br />');
+// displays 16
+document.write(arr[2] + '<br />');
+// displays 256
+document.write(arr[3] + '<br />');
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+// functions stored as array elements
+var arr = [];
+arr[0] = function(x) { return x * x; };
+arr[1] = arr[0](2);
+arr[2] = arr[0](arr[1]);
+arr[3] = arr[0](arr[2]);
+
+// Prints 4
+document.write(arr[1] + '&lt;br />');
+
+// Prints 4
+document.write(arr[2] + '&lt;br />');
+
+// Prints 256
+document.write(arr[3] + '&lt;br />');
+</pre>
+</div>
+<h4>Calling a function as a method of an object</h4>
+<script type="text/javascript">
+
+function name(){
+	//this.method2call = function(){
+		//document.write("Foo");
+		document.write(this.name);
+	//}
+}
+var steve = {
+	name : "steve"
+}
+
+name.call(steve);
+document.write("<br />" + steve.name);
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Foo(){
+  document.write("Foo");
+}
+var bar = {
+  name : "steve"
+}
+
+// Prints Foo
+Foo.call(bar);
+</pre>
+</div>
+<h4>Namespacing</h4>
+<script type="text/javascript">
+Pet = function(name) { this.name = name; return name; };
+var pet = new Pet("Spot");
+document.write(pet.name + "<br />");
+
+document.write(pet.name + "<br />");
+
+var XMLDagNS = {};
+XMLDagNS.Pet = function(name) { this.name = name; return name; };
+var pet = new XMLDagNS.Pet("Woofie");
+document.write(pet.name + "<br />");
+
+
+var MSDNMagNS = {};
+MSDNMagNS.Math = {};
+MSDNMagNS.Math.PI = 3.131243564;
+
+document.write(MSDNMagNS.Math.PI + '<br />');
+document.write(Math.PI);
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+Pet = function(name) { this.name = name; return name; };
+var pet = new Pet("Spot");
+
+// Prints Spot
+document.write(pet.name + "&lt;br />");
+
+// Prints Spot
+document.write(pet.name + "&lt;br />");
+
+var XMLDagNS = {};
+XMLDagNS.Pet = function(name) { this.name = name; return name; };
+
+var MSDNMagNS = {};
+MSDNMagNS.Math = {};
+MSDNMagNS.Math.PI = 3.131243564;
+
+// Prints 3.131243564
+document.write(MSDNMagNS.Math.PI + '&lt;br />');
+
+// Prints 3.141592653589793
+document.write(Math.PI);
+</pre>
+</div>
+<h4>Encapsulation</h4>
+<script type="text/javascript">
+// Define the Employee class
+function Employee(num, fname, lname) {
+    this.getFullName = function () {
+        return fname + " " + lname;
+    }
+};
+ 
+// Instantiate an Employee object
+var john = new Employee("4815162342", "John", "Doe"); //fname and lname variables are only accessible through a new object
+//john.getFullName().p();
+document.write(john.getFullName());
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+// Define the Employee class
+function Employee(num, fname, lname) {
+  this.getFullName = function () {
+    return fname + " " + lname;
+  }
+};
+
+// Instantiate an Employee object
+// fname and lname variables are only accessible through a new object
+var john = new Employee("4815162342", "John", "Doe"); 
+
+// Prints John Doe
+john.getFullName().p();
+</pre>
+</div>
+<h4>Polymorphism</h4>
+<script type="text/javascript">
+function Person(employeeId, data) {
+	this.employeeId = employeeId;
+		for (key in data)
+			{
+				if (data.hasOwnProperty(key))
+					{
+						this[key] = data[key];
+					}
+			}
+	
+};
+var ara = new Person(1234, {
+    fname: "Ara",
+    lname: "Pehlivanian",
+    tel: "514-555-1234",
+    dob: "1976-05-17"
+});
+var bob = new Person(4321, {
+    fname: "Bob",
+    lname: "Evans",
+    tel: "555-555-5555",
+    dob: "1970-01-27",
+		ssn: "000-00-0001"
+});
+document.write(
+ara.employeeId + '<br />' +
+ara.fname + '<br />' +
+ara.lname + '<br />' 
+);
+document.write("-------------------<br />");
+document.write(
+bob.employeeId + '<br />' +
+bob.fname + '<br />' +
+bob.lname + '<br />'  +
+bob.ssn + '<br />'
+);
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Person(employeeId, data) {
+  this.employeeId = employeeId;
+  for (key in data)
+   {
+    if (data.hasOwnProperty(key))
+    {
+     this[key] = data[key];
+    }
+   }
+
+};
+var ara = new Person(1234, {
+  fname: "Ara",
+  lname: "Pehlivanian",
+  tel: "514-555-1234",
+  dob: "1976-05-17"
+});
+
+// Prints 1234
+ara.employeeId.p();
+
+// Prints Ara
+ara.fname.p();
+
+// Prints Pehlivanian
+ara.lname.p();
+</pre>
+</div>
+<h4>Iterator</h4>
+<script type="text/javascript">
+function Iterator(){
+			this.x = 0;
+			this.increaseIt = function(step){
+			step = step || 1;
+			this.x += step;
+			document.write(this.x + "<br />");
+		}
+			this.decreaseIt = function(step){
+			step = step || 1;
+			this.x -= step;
+			document.write(this.x + "<br />");
+		}
+	}
+	
+	
+	
+	
+	a = new Iterator;
+	b = new Iterator;
+	
+	a.increaseIt(); // mutate x using the increaseIt method of A class
+	a.increaseIt(); // mutate x using the increaseIt method of A class
+	a.increaseIt(); // mutate x using the increaseIt method of A class
+	a.decreaseIt(); // mutate x using the decreaseIt method of A class
+	a.increaseIt(3); // mutate x using the increaseIt method of A class
+	document.write(
+		a.x + '<br />' + b.x // print current value of this.x
+	);
+	
+	
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Iterator(){
+  this.x = 0;
+  this.increaseIt = function(){
+    this.x += 1;
+    document.write(this.x + "&lt;br />");
+  }
+  this.decreaseIt = function(){
+    this.x -= 1;
+    document.write(this.x + "&lt;br />");
+  }
+}
+
+
+
+
+a = new Iterator;
+b = new Iterator;
+
+// Prints 1
+a.increaseIt(); // mutate x using the increaseIt method of A class
+
+// Prints 2
+a.increaseIt(); // mutate x using the increaseIt method of A class
+
+// Prints 3
+a.increaseIt(); // mutate x using the increaseIt method of A class
+
+// Prints 2
+a.decreaseIt(); // mutate x using the increaseIt method of A class
+
+// Prints 3
+a.increaseIt(); // mutate x using the increaseIt method of A class
+
+// Prints 3
+a.x.p();        // returns the current value of the x property of object a
+
+// Prints 0
+b.x.p();        // returns the current value of the x property of object b
+</pre>
+</div>
+<br>
+<script type="text/javascript">
+var incrementVar = 0;
+function Incrementor(direction, step){
+	step = step || 1;
+	if (direction == 1)
+		{
+			var value = 1;
+			incrementVar = incrementVar + step;
+			return incrementVar;
+		}
+	else if(direction == -1)
+		{
+			var value = 1;
+			incrementVar = incrementVar - step;
+			return incrementVar;
+		}
+}
+
+document.write(Incrementor(1) + "<br />");
+document.write(Incrementor(1) + "<br />");
+document.write(Incrementor(1) + "<br />");
+document.write(Incrementor(-1) + "<br />");
+document.write(Incrementor(1) + "<br />");
+document.write(Incrementor(1,2) + "<br />");
+	
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+var incrementVar = 0;
+function Incrementor(direction){
+  if (direction == 1)
+   {
+    var value = 1;
+    incrementVar = incrementVar + value;
+    return incrementVar;
+   }
+  else if(direction == 0)
+   {
+    var value = 1;
+    incrementVar = incrementVar - value;
+    return incrementVar;
+   }
+}
+
+// Prints 1
+document.write(Incrementor(1) + "&lt;br />");
+
+// Prints 2
+document.write(Incrementor(1) + "&lt;br />");
+
+// Prints 3
+document.write(Incrementor(1) + "&lt;br />");
+
+// Prints 2
+document.write(Incrementor(0) + "&lt;br />");
+
+// Prints 3
+document.write(Incrementor(1) + "&lt;br />");
+</pre>
+</div>
+<br>
+<script type="text/javascript">
+function arrayExt(){
+	array = [];
+	this.current = 0;
+	this.push = function(){
+		
+		for (i=0;i<arguments.length;i++)
+		{
+     array.push(arguments[i]);
+		}
+		
+	};
+	this.first = function(){
+	 this.push();
+   return array[0];
+ };
+	this.last = function(){
+	 this.push();
+   return array[array.length - 1];
+ };
+  this.next = function(){
+	 this.push();
+	 if (this.current < array.length - 1)
+		{
+		 this.current += 1;
+	  }
+	 else if (this.current == array.length)
+    {
+		  this.current = array.length - 1;
+    }		
+		 return array[this.current];
+	 
+	};
+  this.prev = function(){
+	 this.push();
+	 if (this.current > 0)
+		{
+			this.current -= 1;
+		}
+	 else if (this.current == 0)
+		{
+			this.current = 0;
+		}
+	 return array[this.current];
+	}
+}
+
+var list = new arrayExt;
+list.push("bob","sue","mike","john");
+document.write('The Array - bob: list[0], sue: list[1], mike: list[2], john: list[3]<br />');
+
+document.write("First: " + list.first() + " : current(list[" + list.current + "])<br />");
+
+document.write("Still First: " + list.prev() + " : current(list[" + list.current + "])<br />");
+
+document.write("Last: " + list.last() + " : current(list[" + list.current + "])<br />");
+
+document.write("Next: " + list.next() + " : current(list[" + list.current + "])<br />");
+
+document.write("Next: " + list.next() + " : current(list[" + list.current + "])<br />");
+
+document.write("Next | Last: " + list.next() + " : current(list[" + list.current + "])<br />");
+
+document.write("Next | Last: " + list.next() + " : current(list[" + list.current + "])<br />");
+
+document.write("Next | Last: " + list.next() + " : current(list[" + list.current + "])<br />");
+
+document.write("Next | Last: " + list.next() + " : current(list[" + list.current + "])<br />");
+
+document.write("Previous: " + list.prev() + " : current(list[" + list.current + "])<br />");
+
+document.write("Last: " + list.last() + " : current(list[" + list.current + "])<br />");
+
+
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function arrayExt(){
+	array = [];
+	this.current = 0;
+	this.push = function(){
+		
+		for (i=0;i&lt;arguments.length;i++)
+		{
+     array.push(arguments[i]);
+		}
+		
+	};
+	this.first = function(){
+	 this.push();
+   return array[0];
+ };
+	this.last = function(){
+	 this.push();
+   return array[array.length - 1];
+ };
+  this.next = function(){
+	 this.push();
+	 if (this.current &lt; array.length - 1)
+		{
+		 this.current += 1;
+	  }
+	 else if (this.current == array.length)
+    {
+		  this.current = array.length - 1;
+    }		
+		 return array[this.current];
+	 
+	};
+  this.prev = function(){
+	 this.push();
+	 if (this.current > 0)
+		{
+			this.current -= 1;
+		}
+	 else if (this.current == 0)
+		{
+			this.current = 0;
+		}
+	 return array[this.current];
+	}
+}
+
+var list = new arrayExt;
+list.push("bob","sue","mike","john");
+document.write(list.first() + " : current[" + list.current + "]&lt;br />");
+
+document.write(list.prev() + " : current[" + list.current + "]&lt;br />");
+
+document.write(list.last() + " : current[" + list.current + "]&lt;br />");
+
+document.write(list.next() + " : current[" + list.current + "]&lt;br />");
+
+document.write(list.next() + " : current[" + list.current + "]&lt;br />");
+
+document.write(list.next() + " : current[" + list.current + "]&lt;br />");
+
+document.write(list.next() + " : current[" + list.current + "]&lt;br />");
+
+document.write(list.next() + " : current[" + list.current + "]&lt;br />");
+
+document.write(list.next() + " : current[" + list.current + "]&lt;br />");
+
+document.write(list.prev() + " : current[" + list.current + "]&lt;br />");
+
+document.write(list.last() + " : current[" + list.current + "]&lt;br />");
+</pre>
+</div>
+<br>
+<script type="text/javascript">
+/*
+** I want the second object to go up by one each time the first object does, but only after the first object has reached a certain value
+*/
+function A(){
+	this.x = 0;
+	this.increaseIt = function(){
+		this.x += 1;
+	  b = new B(this.x);
+	}
+}
+
+function B(val){
+	//this.x = (val + 2) || 0;
+	if (val > 1)
+	 {
+	  //this.x = val + 2
+		this.x = val - 1;
+	 }
+	else
+   {
+    this.x = 0;
+   }	 
+}
+
+
+var a = new A;
+//var b = new B;
+
+document.write(a.x + " a.x<br />");
+document.write(b.x + " b.x<br />");
+
+a.increaseIt();
+document.write(a.x + " a.x<br />");
+document.write(b.x + " b.x<br />");
+
+a.increaseIt();
+document.write(a.x + " a.x<br />");
+document.write(b.x + " b.x<br />");
+
+a.increaseIt();
+document.write(a.x + " a.x<br />");
+document.write(b.x + " b.x<br />");
+
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function A(){
+  this.x = 0;
+  this.increaseIt = function(){
+    this.x += 1;
+    b = new B(this.x);
+  }
+}
+
+function B(val){
+  //this.x = (val + 2) || 0;
+  if (val > 1)
+   {
+    //this.x = val + 2
+    this.x = val - 1;
+   }
+  else
+   {
+    this.x = 0;
+   }	 
+}
+
+
+var a = new A;
+var b = new B;
+
+// a.x = b.x set to 0
+document.write(a.x + " a.x&lt;br />");
+document.write(b.x + " b.x&lt;br />");
+
+// a.x set to 1 but b.x not ready to increment yet
+a.increaseIt();
+document.write(a.x + " a.x&lt;br />");
+document.write(b.x + " b.x&lt;br />");
+
+// a.x set to 2, b.x set to a.x - 1 == 1
+a.increaseIt();
+document.write(a.x + " a.x&lt;br />");
+document.write(b.x + " b.x&lt;br />");
+
+// a.x set to 3, b.x set to a.x - 1 == 2
+a.increaseIt();
+document.write(a.x + " a.x&lt;br />");
+document.write(b.x + " b.x&lt;br />");
+</pre>
+</div>
+<br>
+<script type="text/javascript">
+var numbers = [1,5,2,12,7,9];
+document.write(
+numbers.sort() + '<br />' +
+numbers.sort(function(a,b){ return a-b; }) + '<br />' +
+numbers.sort(function(a,b){ return b-a; })
+);
+
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+
+var numbers = [1,5,2,12,7,9];
+numbers.sort(function(a,b){ return a-b; }).p();
+
+numbers.sort(function(a,b){ return b-a; }).p();
+</pre>
+</div>
+<br>
+<script type="text/javascript">
+/*
+function AssertException(exp, message){ 
+	this.exp = exp; 
+	this.message = message;
+	this.fail = function(){
+		return this.message.fontcolor("red") + ": " + this.exp;
+	}
+}
+
+function assert(exp, message){
+	if (!eval(exp)) {
+		throw new AssertException(exp, message);
+	}else {
+		document.write("Pass: ".fontcolor("green") + exp);
+	}
+}
+
+
+// Test for falsy expression
+try {
+	assert("1 + 1 == 1", 'Fail');
+} catch (e) {
+	if (e instanceof AssertException){
+		e.fail().p();
+	} 
+}
+
+// Test for truthy expression
+try {
+	assert("1 + 1 == 2", 'Fail');
+} catch (e) {
+	if (e instanceof AssertException){
+		e.fail().p();
+	} 
+}
+*/
+function AssertException(exp){ 
+	this.exp = exp; 
+	this.fail = function(){
+		return "Fail: ".fontcolor("red") + this.exp;
+	}
+}
+
+function assert(exp){
+	if (!eval(exp)) {
+		throw new AssertException(exp);
+	}else {
+		//("Pass: ".fontcolor("green") + exp).p();
+		document.write("Pass: ".fontcolor("green") + exp)
+	}
+}
+
+Array.prototype.Assertions = function(callback){
+	
+	for (var i=0; i < this.length; i++){
+		callback(this[i]);
+	}
+	
+}
+
+
+var a = 1;
+var b = 1;
+var c = 1;
+var d = 2;
+var obj;
+
+var units = ["1+1==1","1+1==2","obj != null","obj == null","obj == undefined","a+b==c","a+b==d"];
+
+units.Assertions(function(item){
+	try {
+		assert(item);
+	} catch (e) {
+		if (e instanceof AssertException){
+			document.write(e.fail());
+			//e.fail().p();
+		} 
+	}
+});
+
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+
+function AssertException(exp){ 
+  this.exp = exp; 
+  this.fail = function(){
+    return "Fail: ".fontcolor("red") + this.exp;
+  }
+}
+
+function assert(exp){
+  if (!eval(exp)) {
+    throw new AssertException(exp);
+  }else {
+    ("Pass: ".fontcolor("green") + exp).p();
+  }
+}
+
+Array.prototype.Assertions = function(callback){
+  for (var i=0; i &lt; this.length; i++){
+    callback(this[i]);
+  }
+}
+
+
+var a = 1;
+var b = 1;
+var c = 1;
+var d = 2;
+var obj;
+
+var units = ["1+1==1","1+1==2","obj != null","obj == null","obj == undefined","a+b==c","a+b==d"];
+
+units.Assertions(function(item){
+  try {
+    assert(item);
+  } catch (e) {
+    if (e instanceof AssertException){
+    e.fail().p();
+    } 
+  }
+});
+</pre>
+</div>
+<br>
+<script type="text/javascript">
+function Point(x,y){
+	this.x = x;
+	this.y = y;
+}
+p1 = new Point(5,10);
+document.write(p1.x);
+
+(function(o){
+	o.add = function(){
+		return this.x + this.y;
+	}
+	o.subtract = function(){
+		return this.x - this.y;
+	}
+})(Point.prototype);
+
+document.write("<br />");
+document.write(p1.add());
+document.write("<br />");
+document.write(p1.subtract());
+
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Point(x,y){
+	this.x = x;
+	this.y = y;
+}
+p1 = new Point(5,10);
+document.write(p1.x);
+
+(function(o){
+	o.add = function(){
+		return this.x + this.y;
+	}
+	o.subtract = function(){
+		return this.x - this.y;
+	}
+})(Point.prototype);
+
+document.write("&lt;br />");
+document.write(p1.add());
+document.write("&lt;br />");
+document.write(p1.subtract());
+</pre>
+</div>
+<br>
+<script type="text/javascript">
+function Point(){
+	this.setx = function(newX){
+		this.x = newX;
+		return this;
+	}
+	this.sety = function(newY){
+		this.y = newY;
+		return this;
+	}
+}
+o = new Point();
+o.setx(14).sety(2).setx("lame");
+document.write(o.x);
+document.write("<br />");
+document.write(o.y);
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+function Point(){
+this.setx = function(newX){
+	this.x = newX
+	return this;
+}
+this.sety = function(newY){
+	this.y = newY
+	return this;
+}
+}
+o = new Point();
+o.setx(1).sety(2);
+document.write(o.x);
+document.write("&lt;br />");
+document.write(o.y);
+</pre>
+</div>
+<br>
+<script type="text/javascript">
+
+	var Titanium = {
+		UI : 
+			{
+				Meta : function(obj)
+					{
+						return obj;
+					},
+				CreateHTML : function(obj)
+					{
+						for (i in obj)
+							{
+								if (obj.hasOwnProperty(i))
+									{
+										document.write(obj[i])
+									}
+							}
+					}	
+			}
+	}
+	var win1 = Titanium.UI.Meta({title:"Some awesome Website", description:"This website, the website you are on right now.. is awesome."});
+	
+	//Prints "Some awesome WebsiteThis website, the website you are on right now.. is awesome."
+	Titanium.UI.CreateHTML(win1);
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+var Titanium = {
+  UI : 
+    {
+      Meta : function(obj)
+       {
+         return obj;
+       },
+      CreateHTML : function(obj)
+       {
+         for (i in obj)
+          {
+            if (obj.hasOwnProperty(i))
+             {
+               document.write(obj[i])
+             }
+          }
+       }	
+    }
+}
+var win1 = Titanium.UI.Meta({
+	title:"Some awesome Website", 
+	description:"This website, the website you are on right now.. is awesome."
+	});
+
+//Prints "Some awesome WebsiteThis website, the website you are on right now.. is awesome."
+Titanium.UI.CreateHTML(win1);
+</pre>
+</div>
+<br>
+
+<script type="text/javascript">
+
+	var someObject = {
+		foo: function() {	return 'foo'	},
+		bar: function() { return 'bar'  },
+		kill: function() { 
+			for (i in someObject) {
+				//delete this.foo; delete this.bar 
+				delete this.someObject[i];
+			}
+		}
+	}
+	document.write(someObject.foo() + ' ' + someObject.bar());
+	someObject.kill();
+	document.write(someObject.foo() + ' ' + someObject.bar()); // causes error because these methods have been deleted
+	alert(someObject.foo()); // causes error because these methods have been deleted
+</script>
+<!--------------------------------------->
+<!--------------------------------------->
+<div id="code-block-1" class="code-block">
+<pre>
+var Titanium = {
+  UI : 
+    {
+      Meta : function(obj)
+       {
+         return obj;
+       },
+      CreateHTML : function(obj)
+       {
+         for (i in obj)
+          {
+            if (obj.hasOwnProperty(i))
+             {
+               document.write(obj[i])
+             }
+          }
+       }	
+    }
+}
+var win1 = Titanium.UI.Meta({
+	title:"Some awesome Website", 
+	description:"This website, the website you are on right now.. is awesome."
+	});
+
+//Prints "Some awesome WebsiteThis website, the website you are on right now.. is awesome."
+Titanium.UI.CreateHTML(win1);
+</pre>
+</div>
+<br>
+<div>
+<script type="text/javascript">
+	console.log('myfunction says:');
+	var fooarray = ['one','two','three',4,'five'];
+	for (i=0;i<5;i++) {
+		//if (i == 3) {
+		if (i == fooarray.indexOf("three") + 1) {
+			break;
+		}
+		console.log(fooarray[i]);
+	}
+</script>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
