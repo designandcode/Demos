@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!--script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script-->
+<script type="text/javascript" src="http://designtopx-web-dev-tools-js.googlecode.com/svn/trunk/designtopx-web-dev-tools-0.01.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+
+<!--[if IE]>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+
+$("h1[rel='external']").ieCSS({elem:["background-color","#ccc",
+									"color","red",
+									"text-decoration","underline"]});
+									
+$("h1[rel='internal']").ieCSS({elem:["margin-left","150px",
+									"color","green"]});
+									
+									
+$("div#sibling h1 + h2").ieCSS({elem:["color","orange"]});
+
+
+$("ul#listOne li:first-child").ieCSS({elem:["color","#00f",
+											"font-weight","bold"]});
+
+$("ul#listOne li:nth-child(3)").ieCSS({elem:["color","#0ae",
+											"font-weight","bold"]});
+
+$("ul#listOne li:nth-child(3n+2)").ieCSS({elem:["background-color","#0fa"]});
+
+$("input").focus(function(){$(this).ieCSS({elem:["background-color","#fff",
+											"border","1px solid blue"]})
+							});
+
+
+$("input").blur(function(){$(this).ieCSS({elem:["background-color","#eee",
+												"border","1px solid blue"]})
+							});
+								
+});
+</script>
+<![endif]-->
+<script>
+$(function(){
+	$("div.placeholder").drawit({
+						width: 75,
+						height: 75,
+						jFloat: "left",
+						bcolor: "red",
+						margin: "auto 10px 10px auto",
+						display: "block",
+						bgroundcolor: "#ccc",
+						fcolor: "#333"
+						});
+});
+</script>
+</head>
+<body>
+<h1 class="function-title">IE CSS 2.1 (jQuery.fn.ieCSS)</h1>
+<h3>Focus - input:focus</h3>
+<p><input type="text" name="first"/> &lt;input type="text" name="first"/&gt;</p>
+<p><input type="text" name="second"/> &lt;input type="text"/&gt; name="second"</p>
+<hr />
+<h3>Style based on rel - h1[rel='external'] and h1[rel='internal']</h3>
+<h1 rel="external">Big Red</h1> &lt;h1 rel="external">Big Red&lt;/h1&gt;
+<h1 rel="internal">Not Red</h1> &lt;h1 rel="internal">Not Red&lt;/h1&gt;
+<hr />
+<h3>Style siblings</h3>
+<ul id="listOne">
+<li>First - li:first-child</li>
+<li>Second - li:nth-child(3n+2)</li>
+<li>Third - li:nth-child(3)</li>
+<li>Fourth</li>
+<li>5th - li:nth-child(3n+2)</li>
+<li>Sixth</li>
+</ul>
+<hr />
+<h3>Style siblings pt2</h3>
+<div id="sibling">
+<h1>One</h1>
+<h3>Three</h3>
+<h2>Two</h2>
+<h1>One</h1>
+<h2>*Two</h2>div#sibling h1 + h2
+</div>
+<hr />
+<h1 class="function-title">Placeholder (jQuery.fn.drawit)</h1>
+<div class="placeholder"></div>
+<div>Lorem ipsum dolor sit amet, nunc sed gravida interdum et, donec hymenaeos et a in, id est at condimentum vitae. Ultricies suspendisse arcu amet ullamcorper eu, congue penatibus nulla elit, omnis donec, iaculis eros rhoncus vitae ridiculus. Sit lorem arcu habitasse faucibus. Quam fringilla tincidunt at massa, dui vestibulum. Pede proin nonummy mauris et tristique, tempor in, wisi et laoreet, parturient felis consectetuer orci massa donec. Convallis a velit amet congue turpis. Nec iaculis sociosqu tincidunt duis dapibus quis, egestas magnam vitae potenti tempus, et leo wisi felis dui quisque consectetuer, eu nisl, ac vivamus.
+Lorem ipsum dolor sit amet, nunc sed gravida interdum et, donec hymenaeos et a in, id est at condimentum vitae. Ultricies suspendisse arcu amet ullamcorper eu, congue penatibus nulla elit, omnis donec, iaculis eros rhoncus vitae ridiculus. Sit lorem arcu habitasse faucibus. Quam fringilla tincidunt at massa, dui vestibulum. Pede proin nonummy mauris et tristique, tempor in, wisi et laoreet, parturient felis consectetuer orci massa donec. Convallis a velit amet congue turpis. Nec iaculis sociosqu tincidunt duis dapibus quis, egestas magnam vitae potenti tempus, et leo wisi felis dui quisque consectetuer, eu nisl, ac vivamus.
+</div>
+<div>Clear?</div>
+</body>
+</html>
