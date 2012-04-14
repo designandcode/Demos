@@ -1,0 +1,113 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+	<script>
+		$(function(){
+		
+		
+		/*
+			$("input.text").live("mousedown", function(){
+				value = [];
+				value.push($(this).val());
+				$(this).val("");
+			}).live("mouseout", function(){
+				if ($(this).val() != ""){
+					$(this).val($(this).val());
+				}else{
+					$(this).val(value[0]);
+				}
+			});
+		*/	
+			$("input.text").attr("readonly", "true");
+			
+			
+			
+			//groupHeader checkbox behavior
+			$("input.header").live("click", function(){
+				if ($(this).attr("checked")){
+					$(this).parent().find("ul li input:checkbox").attr("checked", "checked");
+					$(this).parent().find("ul li.groupItem").css({"background-color" : "#6AACCF"});
+					$(this).parent().find("li.groupItem input.text").css({"background-color" : "#6AACCF"});
+				}else{
+					$(this).parent().find("ul li input:checkbox").removeAttr("checked");
+					$(this).parent().find("ul li.groupItem").css({"background-color" : "transparent"});
+					$(this).parent().find("li.groupItem input.text").css({"background-color" : "transparent"});
+				}
+			});
+			
+			$("li.groupHeader").live("click", function(){
+			count = $("input.item", this).length;
+			countChecked = $("input.item:checked", this).length;
+			if (countChecked == count){
+				$("input.header", this).attr("checked", "checked");
+			}else{
+				$("input.header", this).removeAttr("checked", "checked");
+			}
+			});
+			
+			//groupItem checkbox behavior
+			$("input.item").live("click", function(){
+				if ($(this).attr("checked")){
+					$(this).parent().css({"background-color" : "#6AACCF"});
+					$(this).next().css({"background-color" : "#6AACCF"});
+				}else{
+					$(this).parent().css({"background-color" : "transparent"});
+					$(this).next().css({"background-color" : "transparent"});
+				}
+			});
+			
+			$("#done").hide();
+			$("body").live("click", function(){
+				count = $("input:checkbox").length;
+				countChecked = $("input:checked").length;
+				if (count == countChecked){
+					$("#done").show();
+				}else{
+					$("#done").hide();
+				}
+			});
+			
+			$("span.header").live("click", function(){
+				$(this).next().append('<li class="groupItem"><input class="item" type="checkbox" /><input class="text" type="text" value="Click to edit me" /><span class="item">Remove Task</span></li>');
+			});
+			$("span.item").live("click", function(){
+				$(this).parent().remove();
+			});
+			
+		});
+	</script>
+</head>
+<body>
+<h1>My Daily Web Promotion Checklist</h1>
+<div id="checklistContainer">  
+<ul class="checklist">  
+ 
+	<li class="groupHeader" id="group1"><input class="header" type="checkbox" /><input class="text" type="text" value="Click to edit me" /><span class="header">Add Task</span>
+	<ul>
+	<li class="groupItem"><input class="item" type="checkbox" /><input class="text" type="text" value="Click to edit me" /><span class="item">Remove Task</span></li>
+	<li class="groupItem"><input class="item" type="checkbox" /><input class="text" type="text" value="Click to edit me" /><span class="item">Remove Task</span></li>  
+	</ul>
+	</li> 
+  
+	<li class="groupHeader" id="group2"><input class="header" type="checkbox" /><input class="text" type="text" value="Click to edit me" /><span class="header">Add Task</span>
+	<ul>
+	<li class="groupItem"><input class="item" type="checkbox" /><input class="text" type="text" value="Click to edit me" /><span class="item">Remove Task</span></li>
+	<li class="groupItem"><input class="item" type="checkbox" /><input class="text" type="text" value="Click to edit me" /><span class="item">Remove Task</span></li>
+	<li class="groupItem"><input class="item" type="checkbox" /><input class="text" type="text" value="Click to edit me" /><span class="item">Remove Task</span></li>
+	<li class="groupItem"><input class="item" type="checkbox" /><input class="text" type="text" value="Click to edit me" /><span class="item">Remove Task</span></li>    
+	</ul>
+	</li>   
+  
+</ul>
+<div class="Clear"></div>  
+<div id="done">Done!</div>
+<div class="Clear"></div>
+ </div>   
+</body>
+</html>
