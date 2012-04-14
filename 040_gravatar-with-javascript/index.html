@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="jQuery/jshash-2.2/md5-min.js"></script>
+
+<script type="text/javascript">
+/*
+**
+**For more options see http://en.gravatar.com/site/implement/url
+**Inspired by http://www.1stwebdesigner.com/tutorials/how-to-implementing-gravatar-in-your-php-application/
+**
+*/
+$(function(){
+    hash = [hex_md5("dafaefewefewfeees@gmail.com"),hex_md5("nofeeapartmentbook@gmail.com")];
+    //hmac = hex_hmac_md5("key", "data");
+	//alert(hash);
+	count = hash.length;
+	for (i=0;i<count;i++)
+		{
+			$("#avatars").append('<p class="'  +  hash[i]  +  '"><img src="http://www.gravatar.com/avatar/'  +  hash[i]  +   '.jpg" /></p>');
+			
+		
+		}
+			//Use your own custom Gravatar to replace the default Gravatar
+			$("#avatars p.73622cf05b55d60e15cdfd676b022b48 img").replaceWith('<img src="images/Reddit (2).png" />');
+});	
+</script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body>
+<div id="avatars">
+<h4>Default Avatar</h4>
+<p><img src="http://www.gravatar.com/avatar/" /></p>
+<hr />
+<h4>Custom Avatar</h4>
+</div>
+</body>
+</html>
