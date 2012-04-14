@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Simplest jQuery Spotlight Effect Tutorial</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="jQuery/jquery-1.3.2.min.js"></script>
+<!-- Inspired by http://www.queness.com/post/3470/simplest-jquery-spotlight-effect-tutorial -->
+	
+	<script type="text/javascript">
+	/*<![CDATA[*/
+	
+	$(document).ready(function () {
+
+		//loop through all the children in #items
+		//save title value to a span and then remove the value of the title to avoid tooltips
+		$('#items .item').each(function () {
+			title = $(this).attr('title');
+			$(this).append('<span class="caption">' + title + '</span>');	
+			$(this).attr('title','');
+		});
+
+		$('#items .item').hover(
+			function () {
+				//set the opacity of all siblings
+				$(this).siblings().css({'opacity': '0.1'});	
+				
+				//set the opacity of current item to full, and add the effect class
+				$(this).css({'opacity': '1.0'}).addClass('effect');
+				
+				//show the caption
+				$(this).children('.caption').show();	
+			},
+			function () {
+				//hide the caption
+				$(this).children('.caption').hide();		
+			}
+		);
+		
+		$('#items').mouseleave(function () {
+			//reset all the opacity to full and remove effect class
+			$(this).children().fadeTo('100', '1.0').removeClass('effect');		
+		});
+		
+	});
+	
+	/*]]>*/
+	</script>
+	<style type="text/css">
+		body {
+			font-family:arial;
+			margin-top:70px;
+		}
+		
+		img {border:none;}
+		
+		div#items a {
+			text-decoration:none;
+			color:#3deeee;	
+		}
+		
+		div#items {
+			width:786px;
+			margin:0 auto;
+		}
+
+		#items .item {
+			display:block;
+			width:190px;
+			height:120px;
+			border:2px solid #666;	
+			float:left;
+			position:relative;
+		}
+		
+		#items .item .caption {	
+			position:absolute;
+			top:80px;
+			left:2px;
+			padding:3px;
+			font-size:10px;
+			width:180px;
+			display:none;
+			background:#000;
+		}
+				
+		.clear {
+			clear:both;	
+		}
+	
+		.effect {
+			box-shadow: 0 0 10px #444;	
+			-moz-box-shadow: 0 0 10px #444;	
+			-webkit-box-shadow: 0 0 10px #444;	
+		}
+	
+	</style>
+	
+</head>
+<body>
+
+	<div id="items">
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+
+
+
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		
+		
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		
+		
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+		<a class="item" href="#" title="Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.">
+			<img src="dummy.gif" width="190" height="120"/>
+		</a>
+
+
+	</div>	
+	<div class="clear"></div>
+
+</body>
+</html>
