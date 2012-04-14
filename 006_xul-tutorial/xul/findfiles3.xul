@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window
+    id="findfile-window"
+    title="Insert HTML - Find Files"
+	orient="vertical"
+	align="start"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+<!-- Other elements go here --> 
+  
+<listbox rows="3">
+  <listitem label="Butter Pecan" value="bpecan"/>
+  <listitem label="Chocolate Chip" value="chocchip"/>
+  <listitem label="Raspberry Ripple" value="raspripple"/>
+  <listitem label="Squash Swirl" value="squash"/>
+</listbox>
+
+<listbox>
+  <listcols>
+    <listcol/>
+    <listcol/>
+  </listcols>
+  <listitem>
+    <listcell label="George"/>
+    <listcell label="House Painter"/>
+  </listitem>
+  <listitem>
+    <listcell label="Mary Ellen"/>
+    <listcell label="Candle Maker"/>
+  </listitem>
+  <listitem>
+    <listcell label="Roger"/>
+    <listcell label="Swashbuckler"/>
+  </listitem>
+</listbox>
+
+<listbox>
+
+  <listhead>
+    <listheader label="Name"/>
+    <listheader label="Occupation"/>
+  </listhead>
+
+  <listcols>
+    <listcol/>
+    <listcol flex="1"/>
+  </listcols>
+
+  <listitem>
+    <listcell label="George"/>
+    <listcell label="House Painter"/>
+  </listitem>
+  <listitem>
+    <listcell label="Mary Ellen"/>
+    <listcell label="Candle Maker"/>
+  </listitem>
+  <listitem>
+    <listcell label="Roger"/>
+    <listcell label="Swashbuckler"/>
+  </listitem>
+
+</listbox>
+
+<menulist label="Bus">
+  <menupopup>
+    <menuitem label="Car"/>
+    <menuitem label="Taxi"/>
+    <menuitem label="Bus" selected="true"/>
+    <menuitem label="Train"/>
+  </menupopup>
+</menulist>
+
+<menulist editable="true">
+  <menupopup>
+    <menuitem label="www.mozilla.org"/>
+    <menuitem label="www.xulplanet.com"/>
+    <menuitem label="www.dmoz.org"/>
+  </menupopup>
+</menulist>
+
+<progressmeter
+    id="identifier"
+    mode="undetermined"
+    value="50"/>
+	
+	<textbox id="find-text"/>
+	<progressmeter value="50" style="margin: 4px;"/>
+	<button id="find-button" label="Find" default="true"/>
+
+</window>

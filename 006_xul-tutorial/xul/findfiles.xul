@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window
+    id="findfile-window"
+    title="Find Files"
+	orient="vertical"
+	align="start"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+<!-- Other elements go here --> 
+  
+  <label value="This is some text"/>
+  <label>This is some longer text that will wrap onto several lines.</label>
+  
+  <button id="find-button" label="Find"/>
+  <button id="cancel-button" label="Cancel"/>
+  
+  <label value="Click here:" control="open-button"/>
+<button id="open-button" label="Open"/>
+
+<description>
+  This longer section of text is displayed.
+</description>
+
+
+<image src="skin/dummy.png" />
+
+
+
+<label control="some-text" value="Enter some text"/>
+<textbox id="some-text"/>
+
+
+<label control="some-password" value="Enter a password"/>
+<textbox id="some-password" type="password" maxlength="8"/>
+
+<textbox multiline="true"
+         value="This is some text that could wrap onto multiple lines."/>
+		 
+
+
+</window>

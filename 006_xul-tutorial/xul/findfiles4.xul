@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window
+    id="findfile-window"
+    title="HTML Elements - Find Files"
+	orient="vertical"
+	align="start"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+<!-- Other elements go here --> 
+  
+<html:img src="skin/dummy.png" />
+
+<html:input type="checkbox" value="true"/>
+
+<html:table>
+  <html:tr>
+    <html:td>
+      A simple table
+    </html:td>
+  </html:tr>
+</html:table>
+
+<html:p>
+  Search for:
+  <html:input id="find-text"/>
+  <button id="okbutton" label="OK"/>
+</html:p>
+
+<html:p>
+  Click the box below to remember this decision. 
+  <html:p>
+    <html:input id="rtd" type="checkbox"/>
+    <html:label for="rtd">Remember This Decision</html:label>
+  </html:p>
+</html:p>
+
+
+
+<html:div>
+    Would you like to save the following documents?
+    <html:hr/>
+</html:div>   
+Expense Report 1
+What I Did Last Summer
+<button id="yes" label="Yes"/>
+<button id="no" label="No"/>
+
+
+<button>
+  <description value="This is a"/>
+  <description value="rather strange" style="color: red;"/>
+  <description value="button"/>
+</button>
+
+<button type="menu" label="Device">
+  <menupopup>
+    <menuitem label="Printer"/>
+    <menuitem label="Mouse"/>
+    <menuitem label="Keyboard"/>
+  </menupopup>
+</button>
+
+
+</window>

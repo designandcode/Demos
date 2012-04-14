@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window
+    id="findfile-window"
+    title="Find Files"
+	orient="vertical"
+	align="start"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+<!-- Other elements go here --> 
+  
+<label value="Search for:" control="find-text"/>
+<textbox id="find-text"/>
+
+<button id="find-button" label="Find"/>		 
+
+<checkbox id="case-sensitive" checked="true" label="Case sensitive"/>
+<radio id="orange" label="Orange"/>
+<radio id="violet" selected="true" label="Violet"/>
+<radio id="yellow" label="Yellow"/>
+
+<textbox type="number" min="1" max="20"/>
+<textbox type="number" increment="10" max="100" decimalplaces="2" />
+
+<scale value="40" min="1" max="50"/>
+
+
+<timepicker value="15:30:00"/>
+<datepicker type="grid"/>
+
+<listbox>
+  <listitem label="Butter Pecan"/>
+  <listitem label="Chocolate Chip"/>
+  <listitem label="Raspberry Ripple"/>
+  <listitem label="Squash Swirl"/>
+</listbox>
+
+</window>
