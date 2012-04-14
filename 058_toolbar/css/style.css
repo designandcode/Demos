@@ -1,0 +1,31 @@
+/*
+#parent{
+	margin:0;
+	padding:0;
+}
+#parent h1{
+	position:relative;
+	padding:8px;
+	margin:0;
+	width:100%;
+	position:fixed;
+	border-bottom:1px solid #ccc;
+	background-color:#0af;
+	
+}
+#parent h1 span{
+	position:absolute;
+	top:8px;
+	right:30px;
+}
+#parent h1 span a{
+	text-decoration:none;
+	color:#fff;
+}
+#parent iframe{
+	width:100%;
+	display:block;
+	margin-top:80px;
+	overflow:auto;
+	
+}*/
