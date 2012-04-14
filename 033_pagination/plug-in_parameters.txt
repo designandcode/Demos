@@ -1,0 +1,20 @@
+Bugs
+
+Firefox: 
+
+ie7: tabs not stretching
+
+
+Controls:
+n : number of elements to show at a time : 1 by default
+containerName : the class or id you give to the container : #container by default
+containerChildren : the element container type for container separating each child item : div by default
+controlName : the id or class you give the control : #navigation by default
+controlChildren : the control children element type : li by default
+tabStyled : whether to use tabbed style controls : false by default
+tabStretched : whether to stretch each tab control so they all fill the length of the container : true by default
+cycling : whether to allow the control to page through automatically : true by default
+ 
+
+*Added v.0.0.4
+fadeInChildren : control fadeIn speed : 0 by default

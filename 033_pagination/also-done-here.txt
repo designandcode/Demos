@@ -1,0 +1,7 @@
+http://cssglobe.com/post/9801/easy-paginate-jquery-plugin-for-pagination
+Demo: http://cssglobe.com/lab/easypaginate/02.html
+
++++++++++++++++++++++
+
+http://th3silverlining.com/2010/04/15/pajination-a-jquery-pagination-plugin/
+Demo: http://dl.dropbox.com/u/4151695/html/pajinate-0.2/examples/example1.html

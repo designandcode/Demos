@@ -1,0 +1,111 @@
+body{
+	width:1180px;
+	background:#AAAAAA url(../images/background_gradient.png) repeat-x;
+}
+#page-set, #page-set2{
+	position:relative;
+	/*float:left;*/
+	width:280px;
+	margin-top:60px;
+	margin-right:60px;
+}
+#page-set{
+	margin-top:30px;
+}
+#container, #container2{
+	position:relative;
+	width:100%;
+	/*width:300px;
+	height:565px;*/
+	padding:15px;
+	/*margin-top:30px;*/
+	background-color:#acf;
+}
+#container div, #container2 div {
+	display:inline-block;
+	margin:15px;
+}
+.section{
+	border-bottom:1px dotted #999;
+	padding:7px;
+}
+
+h2{
+	color:#fff;
+	/*width:90px;*/
+	padding:7px;
+	margin:7px;
+	background-color:#000;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+}
+.page1 h2{
+	/*background-color:#000;*/
+}
+
+.page2 h2{
+	/*background-color:#caf;*/
+}
+
+.page3 h2{
+	/*background-color:#fac;*/
+}
+
+.page4 h2{
+	/*background-color:#afc;*/
+}
+/* pagination style */
+ul.page-styled{
+	margin:0;
+	padding:0;
+	margin-bottom:30px;
+}
+
+	ul.page-styled li{
+		display:inline;
+		margin:5px;
+		padding:4px 7px;
+		background-color:#123;
+		color:#bce;
+		border:1px solid #aaa;
+		cursor:pointer;
+	}
+
+/* tabination style */
+	ul.tab-styled{
+		margin:0;
+		padding:0;
+		margin-bottom:0px;
+		/*width:530px;*/
+	}
+	ul.tab-styled li{
+		display:inline-block;
+		width:50px;
+		margin:0px;
+		padding:4px 7px;
+		background-color:#123;
+		color:#bce;
+		border:1px solid #aaa;
+		cursor:pointer;
+		zoom:1;
+		*display:inline;
+		text-align:center;
+	}
+	
+	ul.page-styled li.active, ul.tab-styled li.active{
+		background-color:#ccc;
+		border-color:#123;
+		color:#777
+	}
+	
+	/* some extra mark-up to display use case*/
+	.sidebar{
+		position:relative;
+		width:100%;
+		height:150px;
+		background-color: #00f;
+		margin:30px 0;
+		color:#fff;
+		padding:15px;
+	}
