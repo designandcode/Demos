@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<!--script type="text/javascript" src="jQuery/WriteMe.js"></script-->
+<!--script type="text/javascript" src="jQuery/WriteMeArgs.js"></script>
+<script type="text/javascript" src="jQuery/WriteMeArray.js"></script>
+<script type="text/javascript" src="jQuery/WriteMeObj.js"></script>
+<script type="text/javascript" src="jQuery/WriteMeArgsList.js"></script-->
+<script type="text/javascript" src="tests/tests.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+<script>
+	$(function(){
+		//$("body").tests(); Works if tests/01_qunit-test.js exists and has logic - else prints no tests (only test container)
+		$("body").tests({pages: ['WriteMeArgsDList', 'WriteMeArrayDList'/*, 'WriteMeArgs', 'WriteMeArray', 'WriteMeObj'*/]}); //tests will be run in this order
+		
+	});
+</script>
+<script>
+	$(function(){
+	
+	
+	
+		
+		var ArgsSection = function(){
+			writeMe("ul","Some Foo",".section5");
+			writeMe("dl..Some Title","GoodBye","Foo","Bar","Baz","Bat",".section1");
+			writeMe("div","GoodBye","Foo","Bar","Baz","Bat",".section2");
+			writeMe("p",'<img src="images/dummy.png" />',"Foo","Bar","Baz","Bat",".section3");
+			writeMe("blockquote",".section4");
+		};
+		
+		var ArraySection = function(){
+			writeMe(["ul","Some Foo",".section5"]);
+			writeMe(["ol","GoodBye","Foo","Bar","Baz","Bat",".section1"]);
+			writeMe(["div","GoodBye","Foo","Bar","Baz","Bat",".section2"]);
+			writeMe(["table..Important Header",'<img src="images/dummy.png" />',"Foo","Bar","Baz","Bat",".section3"]);
+			writeMe(["blockquote",".section4"]);
+		};
+		
+		var ObjSection = function(){
+			writeMe({0:"ul",1:"Some Foo",2:".section5"});
+			writeMe({0:"ol",1:"GoodBye",2:"Foo",3:"Bar",4:"Baz",5:"Bat",6:".section1"});
+			writeMe({0:"dl..Some Title",1:"GoodBye",2:"Foo",3:"Bar",4:"Baz",5:"Bat",6:".section2"});
+			writeMe({0:"p",1:'<img src="images/dummy.png" />',2:"Foo",3:"Bar",4:"Baz",5:"Bat",6:".section3"});
+			writeMe({0:"blockquote",1:".section4"});
+		};
+		
+		$.getScript('jQuery/WriteMe.js', function(){
+		
+		
+			ArgsSection();
+			ArraySection();
+			ObjSection();
+		});
+		
+		
+	});
+</script>
+</head>
+<body>
+<div id="container" class="args">
+	<div class="section1">
+		section1
+		Arguments
+	</div>
+	<div class="section2">
+		section2
+	</div>
+	<div class="section3">
+		section3
+	</div>
+	<div class="section4">
+		section4
+	</div>
+	<div class="section5">
+		section5
+	</div>
+</div>
+<div id="container" class="array">
+	<div class="section1">
+		section1
+		Array
+	</div>
+	<div class="section2">
+		section2
+	</div>
+	<div class="section3">
+		section3
+	</div>
+	<div class="section4">
+		section4
+	</div>
+	<div class="section5">
+		section5
+	</div>
+</div>
+<div id="container" class="object">
+	<div class="section1">
+		Object
+		section1
+	</div>
+	<div class="section2">
+		section2
+	</div>
+	<div class="section3">
+		section3
+	</div>
+	<div class="section4">
+		section4
+	</div>
+	<div class="section5">
+		section5
+	</div>
+</div>
+<div id="container" class="edgecases">
+	<div class="section1">
+		Error Handling
+		section1
+	</div>
+	<div class="section2">
+		section2
+	</div>
+	<div class="section3">
+		section3
+	</div>
+	<div class="section4">
+		section4
+	</div>
+	<div class="section5">
+		section5
+	</div>
+</div>
+</body>
+</html>
