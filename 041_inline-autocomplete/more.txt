@@ -1,0 +1,7 @@
+http://jquery.bassistance.de/autocomplete/demo/
+http://www.ajaxdaddy.com/demo-jquery-autocomplete.html
+http://www.devbridge.com/projects/autocomplete/jquery/
+http://juliocesar.github.com/jquery-domsearch/
+http://www.devbridge.com/projects/autocomplete/jquery/
+http://www.jquery4u.com/plugins/10-jquery-search-scripts/
+http://polarblau.github.com/suggest/

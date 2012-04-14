@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="jQuery/jquery.asuggest.js"></script>
+<script type="text/javascript" src="jQuery/jquery.a-tools.1.4.1.js"></script>
+<script>
+/*
+** For more usage http://imankulov.github.com/asuggest/
+*/
+$(function(){
+ var suggests = ["hello", "world", "helium", "ball", "balloon"];
+    $("#area1").asuggest(suggests);
+    $("#area2").asuggest(suggests);
+	
+	});
+</script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body>
+<p><textarea id='area1'>hello</textarea></p>
+<p><input type="text" id="area2"/></p>
+</body>
+</html>
