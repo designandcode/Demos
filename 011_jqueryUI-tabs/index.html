@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/css" href="http://jqueryui.com/latest/themes/base/ui.all.css" rel="stylesheet" />
+  <script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+  <script type="text/javascript" src="jQuery/ui.core.js"></script>
+  <script type="text/javascript" src="jQuery/ui.tabs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#tabs").tabs();
+  });
+  </script>
+</head>
+<body style="font-size:62.5%;">
+  
+<div id="tabs" style="width:400px; height:200px;">
+    <ul>
+        <li><a href="#fragment-1"><span>One</span></a></li>
+        <li><a href="#fragment-2"><span>Two</span></a></li>
+        <li><a href="#fragment-3"><span>Three</span></a></li>
+    </ul>
+    <div id="fragment-1">
+        <p>First tab is active by default:</p>
+        <pre><code style="color:#00f">$('#example').tabs();</code></pre>
+    </div>
+    <div id="fragment-2">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    </div>
+    <div id="fragment-3">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    </div>
+</div>
+</body>
+</html>
