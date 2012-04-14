@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>EMPTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jQuery/jquery-1.3.2.js"></script>
+<script>
+	$(function(){
+		areahovers = ["#bluehover", "#redhover", "#greenhover"];
+		tooltips = ["#bluehover", "#redhover", "#greenhover"];
+		contents = [".bluehover", ".redhover", ".greenhover"];
+		
+			$("area[href='" + areahovers[0] + "']").mouseenter(function(){
+				//$(tooltips[0]).show();
+				$(tooltips[0]).css("visibility", "visible");
+			}).mouseleave(function(){
+				$(tooltips[0]).css("visibility", "hidden");
+			}).click(function(){
+				//$(contents[0]).show().siblings().hide();
+				$("#blueContainer").show(1000);
+				$("#redContainer, #greenContainer").hide();
+			});
+			$("area[href='" + areahovers[1] + "']").mouseenter(function(){
+				$(tooltips[1]).css("visibility", "visible");
+			}).mouseleave(function(){
+				$(tooltips[1]).css("visibility", "hidden");
+			}).click(function(){
+				//$(contents[1]).show().siblings().hide();
+				$("#redContainer").show(1000);
+				$("#blueContainer, #greenContainer").hide();
+			});
+			$("area[href='" + areahovers[2] + "']").mouseenter(function(){
+				$(tooltips[2]).css("visibility", "visible");
+			}).mouseleave(function(){
+				$(tooltips[2]).css("visibility", "hidden");
+			}).click(function(){
+				//$(contents[2]).show().siblings().hide();
+				$("#greenContainer").show(1000);
+				$("#blueContainer, #redContainer").hide();
+			});
+		
+	});
+</script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script-->
+</head>
+<body>
+<div id="container">
+<h1><span>Wordpress Themes by Color</span></h1>
+<img src="images/interinfograph.png" width="296" height="258" border="0" usemap="#map" id="imgmap"/>
+
+<map name="map">
+<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+<!-- #$-:Please do not edit lines starting with "#$" -->
+<!-- #$VERSION:2.3 -->
+<!-- #$AUTHOR:Fleet -->
+<area shape="poly" coords="90,35,145,22,145,89,122,93,123,92" href="#bluehover" />
+<area shape="poly" coords="48,188,102,156,122,174,90,229" href="#redhover" />
+<area shape="poly" coords="160,171,178,156,234,190,194,228" href="#greenhover" />
+</map>
+<div id="bluehover">Click to see blue themes!</div>
+<div id="redhover">Click to see red themes!</div>
+<div id="greenhover">Click to see green themes!</div>
+<div id="blueContainer">
+<div class="bluehover">
+	<h3>Blue</h3>
+	<p>*Woo Themes - Inspire<a href="http://www.woothemes.com/amember/go.php?r=31232&i=l76"><img src="images/woo_inspire.jpg" /></a></p>
+	<p>*Woo Themes - Spectrum<a href="http://www.woothemes.com/amember/go.php?r=31232&i=l73"><img src="images/woo_spectrum.jpg" /></a></p>
+	<p>*StudioPress - Agent Press<a href="https://www.e-junkie.com/ecom/gb.php?ii=643385&c=ib&aff=126296&cl=10214" target="ejejcsingle"><img src="images/sp_agentpress.png" /></a></p>
+	<p>*StudioPress - Metric<a href="https://www.e-junkie.com/ecom/gb.php?ii=674315&c=ib&aff=126296&cl=10214" target="ejejcsingle"><img src="images/sp_metric.png" /></a></p>
+	<p class="disclaimer">*Premium Theme</p>	
+	<p class="last"><a href="http://www.nattywp.com/index.php?property=Blue">Need More Themes?  Click here for Free blue Wordpress themes.</a></p>
+</div> 
+</div>
+<div id="redContainer">
+<div class="redhover">
+	<h3>Red</h3>
+	<p>*Woo Themes - Newsport<a href="http://www.woothemes.com/amember/go.php?r=31232&i=l16"><img src="images/woo_newsport.jpg" /></a></p>
+	<p>*Templatic - Hospitality<a href="http://templatic.com/members/go.php?r=6447&i=l40"><img src="images/templatic_hospitality.png" /></a></p>
+	<p>*Elegant Themes - GrungeMag<a href="http://www.elegantthemes.com/affiliates/idevaffiliate.php?id=5000&keyword=elegantredgrungemag&url=21"><img src="images/elegant_grungemag.png" /></a></p>
+	<p>*Elegant Themes - Wooden<a href="http://www.elegantthemes.com/affiliates/idevaffiliate.php?id=5000&keyword=elegentredwooden&url=26"><img src="images/elegant_wooden.png" /></a></p>
+	<p class="disclaimer">*Premium Theme</p>	
+	<p class="last"><a href="http://www.nattywp.com/index.php?property=Red">Need More Themes?  Click here for Free red Wordpress themes.</a></p>
+</div>
+</div>
+ 
+<div id="greenContainer">
+<div class="greenhover">
+	<h3>Green</h3>
+	<p>*Woo Themes - Suit and Tie<a href="http://www.woothemes.com/amember/go.php?r=31232&i=l7"><img src="images/woo_suitandtie.jpg" /></a></p>
+	<p>*Woo Themes - Groovy Video<a href="http://www.woothemes.com/amember/go.php?r=31232&i=l13"><img src="images/woo_groovyvideo.jpg" /></a></p>
+	<p>*Woo Themes - Live Wire<a href="http://www.woothemes.com/amember/go.php?r=31232&i=l30"><img src="images/woo_livewire.jpg" /></a></p>
+	<p>*StudioPress - Going Green<a href="https://www.e-junkie.com/ecom/gb.php?ii=701273&c=ib&aff=126296&cl=10214" target="ejejcsingle"><img src="images/sp_goinggreen.png" /></a></p>
+	<p class="disclaimer">*Premium Theme</p>	
+	<p class="last"><a href="http://www.nattywp.com/index.php?property=Green">Need More Themes?  Click here for Free green Wordpress themes.</a></p>
+</div>
+</div>
+</div>
+</body>
+</html>
